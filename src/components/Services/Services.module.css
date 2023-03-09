@@ -1,0 +1,115 @@
+/* .back{
+    background-color: #fafafa;
+    background-image: url(../../images/3.jpg);
+    background-color: rgba(0, 0, 0, 0.959);
+}
+.bigLetter{
+font-size: 80px;
+font-weight: 700;
+color: rgb(230, 230, 230);
+}
+.title{
+    font-size: 40px;
+    font-weight: 900;
+    color: #282828;
+    color: #41b2df;
+    }
+.par{
+        font-size: 18px;
+        color: rgb(153, 153, 153);
+        margin-bottom: 70px;
+    }
+
+.sertxt h3:hover{
+color: #d6242a;
+}
+.service-text h3{
+color: #000;
+}
+
+.icon {
+position: relative;
+font-size: 32px;
+line-height: 32px;
+font-weight: normal;
+margin-right: 20px;
+text-align: center;
+color: #41b2df;
+}
+.ser{
+position: relative;
+
+width: calc(100% - 52px);
+} */
+.Services{
+    margin-top: 50px;
+}
+.Services h3{
+    font-size: 80px;
+    font-weight: 900;
+    color: rgb(230, 230, 230);
+    }
+    .Services h2{
+    font-size: 40px;
+    font-weight: 900;
+    color: #4b86b4;
+    }
+    .Services p{
+        font-size: 18px;
+        color: #999;
+        margin-bottom: 30px;
+    }
+    /* .Services .members-icon{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    
+    } */
+    /* .member-name{
+        background-color: honeydew;
+    }
+    .member-cap h5{
+      
+        color: #2b2424;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .member-cap h6{
+        color:#2b2424;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .member-cap p{
+        color: honeydew;
+        font-family: 'Times New Roman', Times, serif;
+        font-size:18px;
+    }
+    
+    .members-layer{
+    background-color: rgba(94, 77, 77, 0.5) !important;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    }
+    .members:hover .members-layer{
+    opacity: 1;
+    }
+    .members-item:hover .members-details{
+    top: 0;
+    }
+    .members-item:hover img{
+    transform: scale(1.1);
+    }
+    .members-item img{
+    transition: all 0.5s;
+    }
+    .line {
+    width: 30px;
+    height: 2px;
+    background-color: #e65f78;
+    transition: all 0.5s;
+    
+    }  */

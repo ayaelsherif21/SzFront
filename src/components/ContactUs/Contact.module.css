@@ -1,0 +1,90 @@
+.contact{
+    background-color: #e7eff6;
+    margin-top: 40px;
+    background-image: url('../../images/dotted-map.png');
+}
+.contact h3{
+    font-size: 80px;
+    font-weight: 900;
+    color: rgb(230, 230, 230);
+    
+}
+.contact h2{
+    font-size: 55px;
+    font-weight: 900;
+    color: #4b86b4;
+    
+}
+.contact p{
+    font-size: 18px;
+    color: rgb(153, 153, 153);
+    margin-bottom: 40px;
+ }
+.contInfo{
+    margin: 0 0 30px 0;
+}
+.contInfo h3{
+    font-size: 32px;
+    line-height: 32px;
+    font-family: "Poppins", sans-serif;
+    color: #282828;
+    font-weight: 600;
+}
+.contactContent{
+    clear: both;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    
+}
+.icon{
+    color: #4b86b4;
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: normal;
+    margin-right: 20px;
+    text-align: center;
+}
+.contactText h4:hover{
+    color: #4b86b4
+}
+.box{
+    width: 98.24561403508772%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.box input{
+    width: 100%;
+    line-height: 1;
+    padding: 14px 18px;
+    color: #a6a6a6;
+    border-radius: 3px;
+    border: 2px solid #eee;
+    background-color: #fff;
+}
+.boxBtn{
+    background-color: #4b86b4;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 25px;
+    line-height: 1;
+    font-weight: 700;
+    border-width: 0;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+.boxBtn i:hover{
+    color: #000000
+}
+/* .btn1{
+    background-color: #d6242a;
+    color: #000;
+} */

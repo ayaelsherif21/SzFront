@@ -1,0 +1,19 @@
+.about{
+    margin-top: 60px;
+}
+.about h3{
+font-size: 80px;
+font-weight: 900;
+color: rgb(230, 230, 230);
+}
+.about h2{
+
+font-size: 40px;
+font-weight: 900;
+color:  #4b86b4;
+}
+.about p{
+font-size: 18px;
+color: rgb(82, 82, 82);
+margin-bottom: 50px;
+}
