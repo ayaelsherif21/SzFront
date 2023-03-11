@@ -1,0 +1,60 @@
+
+.bigContainer{
+    display: flex;
+    /*margin-top: 3.5rem;*/
+
+}
+.leftContainer{
+
+    /* background-color: #61dafb;     */
+    background-color:  #5FBEE4;
+    height:   100vh;
+    
+
+
+
+}
+.PGbuttons{
+    /*display: block;*/
+    /*margin: 0px 10px 1rem 10px;*/
+    /*width: 100%;*/
+
+}
+.PGButtonHolder{
+    text-align: center;
+    margin: 0 2rem;
+
+    display: grid;
+}
+.rightContainer{
+    background-color: aqua;
+
+}
+.profilePicture img{
+    margin: 5rem auto auto;
+    /*padding-top: 3rem;*/
+}
+.profilePicture{
+    display: grid;
+    margin: auto;
+    justify-content: center;
+}
+.userTabs{
+    justify-content: center;
+    display: grid;
+}
+.profilePicture img{
+    /*background-image: url("./UserProfile-Male-PNG.png");*/
+
+    flex: 1;
+    width: 70%;
+    resizeMode: 'contain'
+    /*width: 20%;*/
+}
+.PGData{
+    text-align: center;
+}
+
+.contactButton{
+    margin-bottom: 3rem;
+}

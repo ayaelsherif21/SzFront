@@ -60,9 +60,9 @@ const schema=Joi.object({
   }}>
     <div className={"container w-50 my-5 m-auto p-5 mt-9"} >
       <div>
-      <div className={"Header my-3"}>
-        <h1 style={{color :"#2a4d69"
-  }}>Welcome to the Family</h1>
+      <div className=" Header my-3 ">
+        <h1 style={{color :"#2a4d69",textAlign:"center"
+  }}>Register Guest</h1>
         {errorMsg ? <div className='alert alert-denger p-1'>{errorMsg}</div> : ""}
         {errorList.map((error,index)=><div key={index} className='alert alert-danger p-2'>{error.message}</div>)}
       </div>
@@ -147,5 +147,3 @@ const schema=Joi.object({
     </div>
   );
 }
-
-// export default Register;
