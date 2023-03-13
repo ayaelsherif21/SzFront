@@ -4,6 +4,30 @@
     /*margin-top: 3.5rem;*/
 
 }
+
+.alerts{
+    position: absolute;
+    margin:  auto;
+    display: none;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    /*justify-content: center;*/
+    text-align: center;
+}
+
+.alertBox{
+    vertical-align: center;
+    background-color: white;
+    border-radius: 5%;
+    width: 20%;
+    margin: auto;
+    padding: 2rem 0;
+}
+.alertButtons{
+    justify-content: space-around;
+    display: flex;
+}
 .leftContainer{
 
     /* background-color: #61dafb;     */
@@ -29,6 +53,10 @@
 .rightContainer{
     background-color: aqua;
 
+}
+
+.PGButtons {
+    background-color: red;
 }
 .profilePicture img{
     margin: 5rem auto auto;
