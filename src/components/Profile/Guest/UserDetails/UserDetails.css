@@ -1,0 +1,11 @@
+body{
+    background-color: #282c34;
+}
+
+.greetTest{
+    color: red;
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    font-size: larger;
+}
