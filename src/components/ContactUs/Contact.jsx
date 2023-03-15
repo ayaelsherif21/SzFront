@@ -40,7 +40,7 @@ export default function Contact() {
         <div className="container">
           <div className="row">
             <div className={`col-md-6 ${styles.contInfo}`}>
-              <h3 className="lowercase pb-3">Get Answers And Send Your Opinions:</h3>
+              <h3 className="lowercase pb-3">Get Answers And Send Your Opinion:</h3>
               <div className={`"${styles.contactContent} clearfix"`}>
                 <div className={`${styles.icon}`}>
                 <i class="fa-solid fa-location-dot"></i>

@@ -17,7 +17,7 @@ export default function About() {
 <br></br>
 <div className="container ">
   <div className="row">
-      <div className='col-md-6'>
+      <div className='col-md-5 mx-5'>
             <p>Pellentesque vel elit egestas, pretium est ac, convallis orci. Vivamus sem nisl, tristique vel
             ringilla vitae, efficitur at eros. Duis aliquet aliquet pharetra. Suspendisse bibendum erat quis gravida
             pulvinar. Phasellus vel eros porta, blandit dui ac, viverra felis.</p>
@@ -28,10 +28,8 @@ export default function About() {
             <p>Pellentesque vel elit egestas, pretium est ac, convallis orci. Vivamus sem nisl, tristique vel
             ringilla vitae, efficitur at eros. Duis aliquet aliquet pharetra. Suspendisse bibendum erat quis gravida
             pulvinar. Phasellus vel eros porta, blandit dui ac, viverra felis.</p>
-            <p>Nunc placerat iaculis pulvinar. Nullam auctor mauris sed urna posuere volutpat. Mauris ut dui sit
-            amet elit fermentum fermentum. Fusce tincidunt diam at bibendum porta.</p>
       </div>
-      <div className='col-md-6'>
+      <div className='col-md-5'>
                  <img className='w-100 h-100' src={aboutpic} alt="About Pic" />
       </div>
 
