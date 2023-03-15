@@ -8,6 +8,8 @@ import Navbar from '../Navbar/Navbar';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Recommendation from '../Recommendation/Recommendation';
+import Osignup from '../Owner/Osignup';
+import Ologin from '../Owner/Ologin';
 // import WorkSpace from '../ourWorkSpaces/WorkSpace';
 // import Services from '../Services/Services';
 //import './App.css';
@@ -16,6 +18,7 @@ function App() {
   return (
     <>
       <Navbar />
+    
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='Home' element={<Home />}></Route>
@@ -26,7 +29,9 @@ function App() {
           <Route path='Contact' element={<Contact />}></Route>
           <Route path='Login' element={<Login />}></Route>
           <Route path='Register' element={<Register />}></Route>
-         <Route path='ownerSignup' element={<ownerSignup/>}></Route>
+         <Route path='Osignup' element={<Osignup/>}></Route>
+         <Route path='Ologin' element={<Ologin/>}></Route>
+
           <Route path='*' element={<NotFound />}></Route>
 
         </Routes>

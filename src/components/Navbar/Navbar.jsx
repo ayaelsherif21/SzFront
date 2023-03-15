@@ -31,9 +31,6 @@ export default function Navbar() {
       <li className="nav-item">
         <Link className="nav-link  text-white" to="Contact">Contact Us</Link>
       </li>
-      <li className="nav-item mx-2">
-        <Link className="nav-link" to="ownerSignup">Owner</Link>
-      </li>
     </ul>
     <ul className='list-unstyled d-flex mb-lg-0'>
       <div className="social-Links d-flex align-items-center">
@@ -42,11 +39,17 @@ export default function Navbar() {
         <i className='fab fa-twitter'></i>
 
       </div>
-      <li className="nav-item mx-2">
+      {/* <li className="nav-item mx-2">
         <Link className="nav-link" to="Login">Login</Link>
       </li>
       <li className="nav-item mx-2">
         <Link className="nav-link" to="Register">Register</Link>
+      </li> */}
+      <li className="nav-item mx-2">
+        <Link className="nav-link" to="Osignup">Owner Signup</Link>
+      </li>
+      <li className="nav-item mx-2">
+        <Link className="nav-link" to="Ologin">Owner Login</Link>
       </li>
       <li className="nav-item mx-2">
         <Link className="nav-link" to="Login">Logout</Link>
