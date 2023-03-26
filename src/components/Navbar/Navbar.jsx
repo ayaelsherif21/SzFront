@@ -39,17 +39,20 @@ export default function Navbar() {
         <i className='fab fa-twitter'></i>
 
       </div>
-      {/* <li className="nav-item mx-2">
+      <li className="nav-item mx-2">
         <Link className="nav-link" to="Login">Login</Link>
       </li>
       <li className="nav-item mx-2">
         <Link className="nav-link" to="Register">Register</Link>
-      </li> */}
-      <li className="nav-item mx-2">
+      </li>
+      {/* <li className="nav-item mx-2">
         <Link className="nav-link" to="Osignup">Owner Signup</Link>
       </li>
       <li className="nav-item mx-2">
         <Link className="nav-link" to="Ologin">Owner Login</Link>
+      </li> */}
+      <li className="nav-item mx-2">
+        <Link className="nav-link" to="ResetPassword">Reset</Link>
       </li>
       <li className="nav-item mx-2">
         <Link className="nav-link" to="Login">Logout</Link>

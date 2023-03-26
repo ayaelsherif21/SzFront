@@ -5,12 +5,11 @@ import { useNavigate } from 'react-router';
 
 export default function Osignup() {
     let [user,setUser]=useState({
-        Name:"",
-        Email:"",
-        Password:"",
-        Repeat_Password:"",
-        Phone_Number:"",
-        Workspace_Zone:""
+      userName : "YoussefOwner",
+      password : "123456789",
+      passwordConfirmation : "123456789",
+      number : "01555176027",
+      email : "youssefadel22022@gmail.com"
 
       });
       let [errorMsg , setErrorMsg] = useState("");
@@ -35,7 +34,7 @@ export default function Osignup() {
        }
        else{
          let {data} = await axios.post(
-         "https://routeegypt.herokuapp.com/signup" ,
+         "https://spacezone-backend.cyclic.app/api/owner/signupOwner" ,
           user
          );
          if(data.message == "success"){
@@ -49,12 +48,14 @@ export default function Osignup() {
     }
       function validateForm(){ 
     const schema=Joi.object({
-      Name:Joi.string().alphanum().required().min(3).max(25),
-      Email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
-      Password:Joi.string().required().pattern(new RegExp('^[a-z][0-9]{3}$')),
-      Repeat_Password:Joi.string().required().pattern(new RegExp('^[a-z][0-9]{3}$')),
-      Phone_Number:Joi.number().required() ,
-      Workspace_Zone:Joi.string().required()
+      userName:Joi.string().alphanum().required().min(3).max(25),
+      email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+      password:Joi.string().required(),
+      // .pattern(new RegExp('^[a-z][0-9]{3}$')),
+      passwordConfirmation:Joi.string().required(),
+      // .pattern(new RegExp('^[a-z][0-9]{3}$'))
+      number:Joi.number().required() ,
+      // Workspace_Zone:Joi.string().required()
     });
      return schema.validate(user,{abortEarly:false});
     
@@ -86,14 +87,14 @@ export default function Osignup() {
                 onChange={getFormValue}
                 type="text"
                 className=" me-3 form-control"
-                placeholder="Enter Your First Name"
-                name="Name" />
-                <input
+                placeholder="Name"
+                name="userName" />
+                {/* <input
                 onChange={getFormValue}
                 type="text"
                 className="form-control"
-                placeholder="Enter Your Last Name"
-                name="Name" />
+                placeholder="Last Name"
+                name="Name" /> */}
             </div>
     
             {/*    email*/}
@@ -103,8 +104,8 @@ export default function Osignup() {
                   onChange={getFormValue}
                   type="text"
                   className="form-control"
-                  placeholder="Enter Your Email"
-                  name='Email'/>
+                  placeholder="Email"
+                  name='email'/>
             </div>
     
             {/*    Password*/}
@@ -115,8 +116,8 @@ export default function Osignup() {
                   type="text"
                   // type={isShown ? "text" : "password"}
                   className="form-control"
-                  placeholder="Enter Your Password"
-                  name='Password'
+                  placeholder="Password"
+                  name='password'
               />
             </div>
     
@@ -129,7 +130,7 @@ export default function Osignup() {
                   // type={isShownRepeated ? "text" : "password"}
                   className="form-control"
                   placeholder="Confirm Password"
-                  name='Repeat_Password'
+                  name='passwordConfirmation'
               />
             </div>
     
@@ -140,17 +141,17 @@ export default function Osignup() {
                onChange={getFormValue}
                   type="Number"
                   className="form-control"
-                  placeholder="Enter Your Phone Number"
-                  name='Phone_Number'/>
+                  placeholder="Phone Number"
+                  name='number'/>
             </div>
             <div className=" mb-3 ">
               {/* <label className='mb-2'>Phone Number</label> */}
-              <input
+              {/* <input
                onChange={getFormValue}
                   type="Number"
                   className="form-control"
-                  placeholder="Enter Your Workspace Zone"
-                  name='Workspace_Zone'/>
+                  placeholder="Workspace Zone"
+                  name='Workspace_Zone'/> */}
             </div>
     
             {/* <div className={"justify-content-between"}>

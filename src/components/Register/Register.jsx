@@ -4,11 +4,16 @@ import axios from 'axios';
 
 export default function Register() {
   let [user,setUser]=useState({
-    Name:"",
-    Email:"",
-    Password:"",
-    Repeat_Password:"",
-    Phone_Number:""
+    // Name:"",
+    // Email:"",
+    // Password:"",
+    // Repeat_Password:"",
+    // Phone_Number:""
+    userName : "",
+    email : "",
+    password : "",
+    passwordConfirmation : "",
+    number : ""
   });
   let [errorMsg , setErrorMsg] = useState("");
   let [errorList , setErrorList] = useState([]);
@@ -26,7 +31,7 @@ export default function Register() {
    }
    else{
      let {data} = await axios.post(
-     "https://routeegypt.herokuapp.com/signup" ,
+     "https://spacezone-backend.cyclic.app/api/user/signupUser" ,
       user
      );
      if(data.message == "success"){
@@ -40,11 +45,13 @@ export default function Register() {
 }
   function validateForm(){ 
 const schema=Joi.object({
-  Name:Joi.string().alphanum().required().min(3).max(25),
-  Email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
-  Password:Joi.string().required().pattern(new RegExp('^[a-z][0-9]{3}$')),
-  Repeat_Password:Joi.string().required().pattern(new RegExp('^[a-z][0-9]{3}$')),
-  Phone_Number:Joi.number().required() 
+  userName:Joi.string().alphanum().required().min(3).max(25),
+  email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+  password:Joi.string().required(),
+  // .pattern(new RegExp('^[a-z][0-9]{3}$'))
+  passwordConfirmation:Joi.string().required(),
+  // .pattern(new RegExp('^[a-z][0-9]{3}$'))
+  number:Joi.number().required() 
 });
  return schema.validate(user,{abortEarly:false});
 
@@ -71,61 +78,59 @@ const schema=Joi.object({
       <div className="regBox">
         {/*  Name*/}
         <div className="input-group mb-3 ">
-          <span className="input-group-text">Name</span>
           <input
             onChange={getFormValue}
             type="text"
             className="form-control"
-            placeholder="Enter your Full Name"
-            name="Name" />
+            placeholder="Full Name"
+            name="userName" />
         </div>
 
         {/*    email*/}
         <div className="input-group mb-3 ">
-          <span className="input-group-text">Email</span>
           <input
               onChange={getFormValue}
               type="text"
               className="form-control"
-              placeholder="Enter your email address"
-              name='Email'/>
+              placeholder="Email"
+              name='email'/>
         </div>
 
         {/*    Password*/}
         <div className="input-group mb-3">
-          <span className="input-group-text">Password</span>
+       
           <input
               onChange={getFormValue}
               type="text"
               // type={isShown ? "text" : "password"}
               className="form-control"
-              placeholder="Enter your password"
-              name='Password'
+              placeholder="Password"
+              name='password'
           />
         </div>
 
         {/*    Repeat password*/}
         <div className="input-group mb-3">
-          <span className="input-group-text">Repeat Password</span>
+        
           <input
            onChange={getFormValue}
               type="text"
               // type={isShownRepeated ? "text" : "password"}
               className="form-control"
-              placeholder="Repeat your password"
-              name='Repeat_Password'
+              placeholder="Confirm Password"
+              name='passwordConfirmation'
           />
         </div>
 
         {/*    Phone Number*/}
         <div className="input-group mb-3 ">
-          <span className="input-group-text">Phone Number</span>
+          
           <input
            onChange={getFormValue}
               type="Number"
               className="form-control"
-              placeholder="Enter your Phone Number"
-              name='Phone_Number'/>
+              placeholder="Phone Number"
+              name='number'/>
         </div>
 
         {/* <div className={"justify-content-between"}>

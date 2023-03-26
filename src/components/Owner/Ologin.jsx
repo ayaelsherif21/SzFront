@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 
 export default function Ologin() {
     let [user,setUser]=useState({
-        Email:"",
-        Password:"",
+        email:"",
+        password:"",
       });
       let [errorMsg , setErrorMsg] = useState("");
       let [errorList , setErrorList] = useState([]);
@@ -31,7 +31,7 @@ export default function Ologin() {
        }
        else{
          let {data} = await axios.post(
-         "https://routeegypt.herokuapp.com/signin" ,
+         "https://spacezone-backend.cyclic.app/api/owner/loginOwner" ,
           user
          );
          if(data.message == "success"){
@@ -45,8 +45,8 @@ export default function Ologin() {
     }
       function validateForm(){ 
     const schema=Joi.object({
-      Email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
-      Password:Joi.string().required().pattern(new RegExp('^[a-z][0-9]{3}$')),
+      email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+      password:Joi.string().required(),
     });
      return schema.validate(user,{abortEarly:false});
     
@@ -80,7 +80,7 @@ export default function Ologin() {
                   type="text"
                   className="form-control"
                   placeholder="Enter Your Email"
-                  name='Email'/>
+                  name='email'/>
             </div>
     
             {/*    Password*/}
@@ -91,8 +91,9 @@ export default function Ologin() {
                   // type={isShown ? "text" : "password"}
                   className="form-control"
                   placeholder="Enter Your Password"
-                  name='Password'
+                  name='password'
               />
+              
             </div>
     
     
