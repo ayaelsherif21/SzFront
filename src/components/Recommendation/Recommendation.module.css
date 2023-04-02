@@ -1,0 +1,75 @@
+/* .client{
+    background-color: #e7eff6;
+    background-size: cover;
+    height: 100vh;
+} */
+.client h3{
+    font-size: 80px;
+    font-weight: 900;
+    color: rgb(230, 230, 230);
+    }
+    .client h2{
+    font-size: 40px;
+    font-weight: 900;
+    color: #4b86b4;
+    }
+    .client h5{
+        font-size: 30px;
+    color: #282828;
+    }
+    .clientImg{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    .client p{
+        font-size: 15px;
+        line-height: 1.5em;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        color: #666;
+    }
+    .client h6{
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        color: #666;
+    }
+    .arrow{
+        color: #000;
+    }
+    .row p{
+        margin: 0 0 20px;
+        }
+        .bar{
+        clear: both;
+        margin: 6px 6px 6px 6px;
+        padding: 5px 5px 5px 5px; 
+        }
+        .progressHeading {
+        overflow: hidden;
+        margin-bottom: 5px;
+        }
+       .progressTitle {
+        float: left;
+        margin: 0;
+        padding: 0;
+        color: #444;
+        font-weight: 300;
+        }
+        .progressBar {
+        float: left;
+        height: 100%;
+        font-size: 13px;
+        line-height: 7px;
+      
+        text-align: center;
+        }
+       .progressValue {
+        text-align: right;
+        font-weight: 400;
+        }
+       .progressBar{
+        background-color: #4b86b4;
+        border-radius: 10px;
+        }
+    

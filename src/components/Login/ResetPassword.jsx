@@ -29,8 +29,8 @@ export default function ResetPassword() {
     setLoading(false);
    }
    else{
-     let {data} = await axios.post(
-     "https://spacezone-backend.cyclic.app/api/user/loginUser" ,
+     let {data} = await axios.patch(
+     "https://spacezone-backend.cyclic.app/api/user/resetPasswordUser/:Token" ,
       user
      );
      if(data.message == "success"){

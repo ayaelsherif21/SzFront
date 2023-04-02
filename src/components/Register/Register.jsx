@@ -1,6 +1,7 @@
 import React , {useState}from 'react'
 import Joi from 'joi';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 export default function Register() {
   let [user,setUser]=useState({
@@ -20,6 +21,11 @@ export default function Register() {
   let [loading , setLoading]=useState(false);
   // let isShownRepeated;
   // let isShown;
+  const navigate = useNavigate();
+  function goToLogin(){
+    let path='/Login';
+    navigate(path)
+  }
   async function submitFormData(e){
    e.preventDefault();
    setLoading(true);
@@ -35,7 +41,7 @@ export default function Register() {
       user
      );
      if(data.message == "success"){
-      alert("go to login");
+      goToLogin();
      }
    else{
     setErrorMsg(data.message);
@@ -45,8 +51,8 @@ export default function Register() {
 }
   function validateForm(){ 
 const schema=Joi.object({
-  userName:Joi.string().alphanum().required().min(3).max(25),
-  email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+  userName:Joi.string().required().min(3).max(25),
+  email:Joi.string().required().email({tlds:{allow: ["com", "net", "app"]}}),
   password:Joi.string().required(),
   // .pattern(new RegExp('^[a-z][0-9]{3}$'))
   passwordConfirmation:Joi.string().required(),

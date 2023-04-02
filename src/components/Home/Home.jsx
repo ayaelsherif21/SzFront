@@ -4,6 +4,8 @@ import homeBg from '../../images/1.jpg'
 import serpic from '../../images/7.jpg'
 import serpic1 from '../../images/9.jpg'
 import serpic2 from '../../images/10.jpg'
+
+
 export default function Home() {
   return (
     <>  
@@ -41,7 +43,6 @@ export default function Home() {
      <h2 className=" mb-0 position-absolute">Our Services</h2>
      <h3 className=" mb-0">S</h3>
    </div>
-   <br />
    <div className="team">
      <p className="text-center w-50 m-auto">Vestibulum ante ipsum primis in faucibus orci. Morbi tincidunt urna
        imperdiet
@@ -125,15 +126,6 @@ export default function Home() {
            <div className="members-layer position-absolute w-100 h-100 d-flex justify-content-center align-items-center
            text-center text-white rounded">
              <div>
-               {/* <div className="member-cap">
-                 <div className="member-name">
-                   <h5>Michael Broad</h5>
-                   <h6>Web Designer</h6>
-                 </div>
-                 <br />
-                 <p>Professional instructor ,
-                   Graduated from the Faculty of Computer Science</p>
-               </div> */}
              </div>
            </div>
          </div>
@@ -146,16 +138,6 @@ export default function Home() {
            <div className="members-layer position-absolute w-100 h-100 d-flex justify-content-center align-items-center
                text-center text-white rounded">
              <div>
-               {/* <div className="member-cap">
-                 <div className="member-name">
-                   <h5>Jeannette Crow</h5>
-                   <h6>Graphic Designer</h6>
-                 </div>
-                 <br />
-                 <p>Professional instructor ,
-                   Graduated from the Faculty of Applied Arts
-                 </p>
-               </div> */}
              </div>
            </div>
          </div>
@@ -168,15 +150,7 @@ export default function Home() {
            <div className="members-layer position-absolute w-100 h-100 d-flex justify-content-center align-items-center
                    text-center text-white rounded">
              <div>
-               {/* <div className="member-cap">
-                 <div className="member-name">
-                   <h5>Martin Lawrence</h5>
-                   <h6>Web Developer</h6>
-                 </div>
-                 <br />
-                 <p>Professional instructor ,
-                   Graduated from the Faculty of Computer Science</p>
-               </div> */}
+               
              </div>
            </div>
          </div>
@@ -184,6 +158,12 @@ export default function Home() {
      </div>
    </div>
    </div>
+   <div>
+ 
+ 
+
+   </div>
+   
 </>
   )
 }

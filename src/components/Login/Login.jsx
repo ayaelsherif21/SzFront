@@ -22,7 +22,7 @@ export default function Login() {
       }
       async function submitFormData(e){
        e.preventDefault();
-    //    setLoading(true);
+       setLoading(true);
        let validationResult=validateForm();
        console.log(validationResult);
        if(validationResult.error){
@@ -120,3 +120,5 @@ export default function Login() {
         </div>
       );
 }
+
+
