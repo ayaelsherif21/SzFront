@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import ProfilePic from "../Profile-Male-PNG.png";
+import ProfilePic from "../../../../images/owner-profile.png";
 import { Form, Button, Image } from "react-bootstrap";
-import "./UserDetails.css";
-export default function UserDetails() {
+import "./OwnerDetails.css";
+export default function OwnerDetails() {
   // Set up initial profile data
-  const [profileData, setProfileData] = useState({
+  const [OwnerProfileData, setOwnerProfileData] = useState({
     name: "John Doe",
     email: "john.doe@example.com",
     phone: "0123456789",
@@ -14,12 +14,12 @@ export default function UserDetails() {
   });
 
   // Set up state for edit mode
-  const [isEditMode, setIsEditMode] = useState(false);
+  const [isOwnerEditMode, setIsOwnerEditMode] = useState(false);
 
   // Handle form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setProfileData((prevProfileData) => ({
+    setOwnerProfileData((prevProfileData) => ({
       ...prevProfileData,
       [name]: value,
     }));
@@ -29,7 +29,7 @@ export default function UserDetails() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: Save profile data to server
-    setIsEditMode(false);
+    setIsOwnerEditMode(false);
   };
 
   return (
@@ -37,23 +37,27 @@ export default function UserDetails() {
       <h1 className="my-4">Profile Settings</h1>
       <div className="row">
         <div className="col-lg-4">
-          <Image src={profileData.profilePictureUrl} alt="Profile" thumbnail />
+          <Image
+            src={OwnerProfileData.profilePictureUrl}
+            alt="Profile"
+            thumbnail
+          />
         </div>
         <div className="col-lg-8">
-          <h2>{profileData.name}</h2>
-          <p>{profileData.email}</p>
-          <p>{profileData.phone}</p>
-          <p>{profileData.bio}</p>
+          <h2>{OwnerProfileData.name}</h2>
+          <p>{OwnerProfileData.email}</p>
+          <p>{OwnerProfileData.phone}</p>
+          <p>{OwnerProfileData.bio}</p>
         </div>
       </div>
-      {isEditMode ? (
+      {isOwnerEditMode ? (
         <Form onSubmit={handleSubmit} className="mt-4">
           <Form.Group controlId="formBasicName">
             <Form.Label>Name:</Form.Label>
             <Form.Control
               type="text"
               name="name"
-              value={profileData.name}
+              value={OwnerProfileData.name}
               onChange={handleInputChange}
             />
           </Form.Group>
@@ -63,7 +67,7 @@ export default function UserDetails() {
             <Form.Control
               type="number"
               name="phone"
-              value={profileData.phone}
+              value={OwnerProfileData.phone}
               onChange={handleInputChange}
             />
           </Form.Group>
@@ -72,7 +76,7 @@ export default function UserDetails() {
             <Form.Control
               type="email"
               name="email"
-              value={profileData.email}
+              value={OwnerProfileData.email}
               onChange={handleInputChange}
             />
           </Form.Group>
@@ -81,14 +85,14 @@ export default function UserDetails() {
             <Form.Control
               as="textarea"
               name="bio"
-              value={profileData.bio}
+              value={OwnerProfileData.bio}
               onChange={handleInputChange}
             />
           </Form.Group>
           <Button variant="primary" type="submit" className="mr-2 m-lg-3">
             Save
           </Button>
-          <Button variant="secondary" onClick={() => setIsEditMode(false)}>
+          <Button variant="secondary" onClick={() => setIsOwnerEditMode(false)}>
             Cancel
           </Button>
         </Form>
@@ -96,7 +100,7 @@ export default function UserDetails() {
         <Button
           variant="primary"
           className="mt-4"
-          onClick={() => setIsEditMode(true)}
+          onClick={() => setIsOwnerEditMode(true)}
         >
           Edit
         </Button>

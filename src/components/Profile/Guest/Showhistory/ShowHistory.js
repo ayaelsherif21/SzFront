@@ -1,6 +1,4 @@
 import React from "react";
-import { Row, Col, Card, Image } from "react-bootstrap";
-import BookingPic from "../Profile-Male-PNG.png";
 import HistoryCard from "./HistoryCard";
 const bookingHistory = [
   {
@@ -8,8 +6,10 @@ const bookingHistory = [
     title: "El Door El tany",
     date: "2022-01-01",
     description: "Booked hotel room in Paris",
-    price: "500$",
+    price: "500",
     duration: "3",
+    paymentMethod: "cash",
+
     // image: require("../Profile-Male-PNG.png"),
     image:
       "https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/326328413_567063178637548_8872386630205463949_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1NBUA7lzQKsAX_TnzWo&_nc_ht=scontent.fcai19-6.fna&oh=00_AfD5B7YWYz8xpDPZQ6DAq2h_ZRXi75k_IgfD_xpltjmSIw&oe=642476D0",

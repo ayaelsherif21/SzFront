@@ -33,11 +33,11 @@ function UserProfile() {
   }
 
   function showUDetails() {
-    setIsDetailActive((current) => !current);
+    setIsDetailActive((current) => true);
     setIsHistoryActive(false);
   }
   function showHDetails() {
-    setIsHistoryActive((current) => !current);
+    setIsHistoryActive((current) => true);
     setIsDetailActive(false);
   }
 
