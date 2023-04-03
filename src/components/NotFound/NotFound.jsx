@@ -1,16 +1,11 @@
-import React from 'react'
-import notFound from '../../images/not-found.jpg'
-import styles from './NotFound.module.css'
+import React from "react";
+import notFound from "../../images/not-found.jpg";
+import styles from "./NotFound.module.css";
 
 export default function NotFound() {
   return (
-
     <div className={`ntfound text-center ${styles.ntfound}`}>
-      <img src={notFound} class="img-fluid" alt="" />
-      </div>
-
-
-
-
-  )
+      <img src={notFound} class="img-fluid" alt="This is the not found page" />
+    </div>
+  );
 }
