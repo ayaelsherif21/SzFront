@@ -1,0 +1,12 @@
+.resetPassword{
+    background-color: #223e55;
+    width: 100%;
+    height: 100vh;
+}
+.resetBox{
+    background-color: white;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 

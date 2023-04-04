@@ -1,5 +1,10 @@
+
+body{
+    background-color: #e7eff6;
+}
 .about{
     margin-top: 60px;
+
 }
 .about h3{
 font-size: 80px;
