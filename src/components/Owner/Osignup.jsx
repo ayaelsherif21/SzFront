@@ -37,11 +37,11 @@ export default function Osignup() {
          "https://spacezone-backend.cyclic.app/api/owner/signupOwner" ,
           user
          );
-         if(data.message == "success"){
+         if(data.status == "success"){
          goToLogin();
          }
        else{
-        setErrorMsg(data.message);
+        setErrorMsg(data.status);
        }
        setLoading(false);
       }

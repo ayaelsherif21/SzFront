@@ -1,1 +1,48 @@
-.item{width: 200px;height: 200px;}.item a{text-decoration: none;}
+.item{
+    width: 200px;height: 200px;
+}
+.item a{text-decoration: none;
+}
+.wsName{
+    color: #223e55;
+    margin-top: 15px;
+}
+.Rooms{
+    color: #223e55;
+    background-color: #fafafa;
+    padding-top: 4px;
+    padding-bottom: 25px;
+}
+.cards{
+    border-radius: 25px; 
+    padding: 6px;
+}
+.cards:hover {
+    transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease; /* zoom in */
+    cursor: pointer;
+  }
+.cardImg{
+    border-radius: 20px;
+}
+.line{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    line-height: 15px;
+    color: gray;
+}
+
+.details p{
+    color: gray;
+}
+.icon{
+    color: #4b86b4;
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 15px;
+    margin-right: 10px;
+    text-align: center;
+}

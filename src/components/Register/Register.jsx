@@ -40,11 +40,11 @@ export default function Register() {
      "https://spacezone-backend.cyclic.app/api/user/signupUser" ,
       user
      );
-     if(data.message == "success"){
+     if(data.status == "success"){
       goToLogin();
      }
    else{
-    setErrorMsg(data.message);
+    setErrorMsg(data.status);
    }
    setLoading(false);
   }

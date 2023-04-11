@@ -1,13 +1,15 @@
-
 body {
-  background-color: aqua;
-  /* background-color: #131722; */
   color: #ffffff;
   margin: 0;
-  font-family: initial;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+@fontface {
+  font-family: 'Kanit', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
 }
 
 /* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}; */
+

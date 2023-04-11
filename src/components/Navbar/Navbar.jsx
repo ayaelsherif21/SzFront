@@ -22,7 +22,10 @@ export default function Navbar() {
   <Link className="nav-link" to="WorkSpace">Workspaces</Link>
 </li> */}
 <li className="nav-item">
-  <Link className="nav-link text-white" to="Recommendation">Reviews</Link>
+  <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
+</li>
+<li className="nav-item">
+  <Link className="nav-link text-white" to="WorkSpace">WorkSpace</Link>
 </li>
 <li className="nav-item">
   <Link className="nav-link  text-white" to="Contact">Contact Us</Link>

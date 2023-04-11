@@ -34,11 +34,11 @@ export default function Ologin() {
          "https://spacezone-backend.cyclic.app/api/owner/loginOwner" ,
           user
          );
-         if(data.message == "success"){
+         if(data.status == "success"){
             goToHome();
          }
        else{
-        setErrorMsg(data.message);
+        setErrorMsg(data.status);
        }
       setLoading(false);
       }

@@ -13,7 +13,7 @@ import client9 from '../../images/client-9.png'
 export default function Recommendation() {
   return (
     <>
-      
+     
     <div id="reviews" className={` text-center mt-5 ${styles.client}`}>
   <div className=" text-center position-relative d-flex justify-content-center align-items-center">
     <h2 className=" mb-0 position-absolute">Client Reviews</h2>

@@ -33,11 +33,11 @@ export default function ResetPassword() {
      "https://spacezone-backend.cyclic.app/api/user/resetPasswordUser/:Token" ,
       user
      );
-     if(data.message == "success"){
+     if(data.status == "success"){
         goToLogin();
      }
    else{
-    setErrorMsg(data.message);
+    setErrorMsg(data.status);
    }
   setLoading(false);
   }

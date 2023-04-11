@@ -12,10 +12,9 @@ import Osignup from '../Owner/Osignup';
 import Ologin from '../Owner/Ologin';
 import ResetPassword from '../Login/ResetPassword';
 import ForgetPassword from '../Login/ForgetPassword';
-// import WorkSpace from '../ourWorkSpaces/WorkSpace';
+import WorkSpace from '../ourWorkSpaces/WorkSpace';
 import './App.css';
 import Footer from '../Footer/Footer';
-//className="App"
 function App() {
   return (
     <>
@@ -25,7 +24,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='Home' element={<Home />}></Route>
           <Route path='About' element={<About />}></Route>
-          {/* <Route path='Workspace' element={<WorkSpace/>}></Route> */}
+          <Route path='Workspace' element={<WorkSpace/>}></Route>
           <Route path='Recommendation' element={<Recommendation/>}></Route>
           <Route path='Contact' element={<Contact />}></Route>
           <Route path='Login' element={<Login/>}></Route>

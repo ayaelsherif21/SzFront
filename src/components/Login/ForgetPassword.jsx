@@ -31,11 +31,11 @@ export default function ForgetPassword() {
      "https://spacezone-backend.cyclic.app/api/user/forgotPasswordUser" ,
       user
      );
-     if(data.message == "success"){
+     if(data.status == "success"){
         goToReset();
      }
    else{
-    setErrorMsg(data.message);
+    setErrorMsg(data.status);
    }
   setLoading(false);
   }

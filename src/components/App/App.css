@@ -1,8 +1,13 @@
 .App {
   text-align: center;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+@fontface {
+  font-family: 'Bungee Inline', cursive;
+  src: url('https://fonts.googleapis.com/css?family=Bungee+Inline')
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +40,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
