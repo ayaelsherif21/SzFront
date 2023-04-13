@@ -67,7 +67,7 @@ export default function WorkSpace() {
   <div className="col-lg-3">
     <div className={`card ${styles.cards}`}>
       <img src={R1} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
-      <div className="card-body text-monospace">
+      <div className="card-body">
         <h6 className="card-title">Shared Area</h6>
         <p className="card-text">15 Seats</p>
     </div>
@@ -78,11 +78,11 @@ export default function WorkSpace() {
   <div className="col-lg-3">
     <div className={`card ${styles.cards}`}>
       <img src={pic3} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
-      <div className="card-body text-monospace">
+      <div className="card-body">
         <h6 className="card-title">Silent Room</h6>
         <p className="card-text">5 Seats</p>
     </div>
-      <button className={`btn text-white m-auto `} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
+      <button className={`btn text-white m-auto`} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
     </div>
    
   </div>
