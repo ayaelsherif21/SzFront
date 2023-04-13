@@ -9,7 +9,6 @@ export default function Navbar() {
   <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span className={`navbar-toggler-icon ${styles.togglerIcon}`} />
   </button>
-<<<<<<< Updated upstream
   <a className="navbar-brand text-white" href="#">SPACE ZONE</a>
   <div className={`collapse navbar-collapse  ${styles.items}`} id="navbarTogglerDemo03">
   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -58,49 +57,6 @@ export default function Navbar() {
   <Link className="nav-link" to="Login">Logout</Link>
 </li>
 </ul>
-=======
-  <div className={`collapse navbar-collapse  ${styles.items}`} id="navbarSupportContent">
-    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-      <li className="nav-item active ">
-        <Link className="nav-link text-white" to="Home">Home <span className="sr-only">(current)</span></Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link text-white" to="About">About</Link>
-      </li>
-      {/* <li className="nav-item">
-        <Link className="nav-link text-white" to="Services">Services</Link>
-      </li> */}
-      {/* <li className="nav-item">
-        <Link className="nav-link" to="WorkSpace">Workspaces</Link>
-      </li> */}
-      <li className="nav-item">
-        <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link  text-white" to="Contact">Contact Us</Link>
-      </li>
-    </ul>
-    <ul className='list-unstyled d-flex mb-lg-0'>
-      <div className="social-Links d-flex align-items-center">
-        <i className='fab fa-facebook'></i>
-        <i className='fab fa-instagram mx-3'></i>
-        <i className='fab fa-twitter'></i>
-
-      </div>
-      <li className="nav-item mx-2">
-        <Link className="nav-link" to="Login">Login</Link>
-      </li>
-      <li className="nav-item mx-2">
-        <Link className="nav-link" to="Register">Register</Link>
-      </li>
-      <li className="nav-item mx-2">
-        <Link className="nav-link" to="Osignup">Owner</Link>
-      </li>
-      <li className="nav-item mx-2">
-        <Link className="nav-link" to="Login">Logout</Link>
-      </li>
-    </ul>
->>>>>>> Stashed changes
   </div>
 </div>
 </nav> 
