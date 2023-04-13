@@ -153,6 +153,15 @@ export default function Osignup() {
                   placeholder="Workspace Zone"
                   name='Workspace_Zone'/> */}
             </div>
+            <div className=" mb-3 ">
+              {/* <label className='mb-2'>Phone Number</label> */}
+              <input
+               onChange={getFormValue}
+                  type="Number"
+                  className="form-control"
+                  placeholder="Enter Your Workspace Zone"
+                  name='Phone_Number'/>
+            </div>
     
             {/* <div className={"justify-content-between"}>
               {/* <div className={"btn btn-primary m-lg-3"}>Sign Up</div> */}
