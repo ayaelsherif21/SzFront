@@ -13,8 +13,7 @@ export default function Footer() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            width: "100%",
-            height: "55vh",
+            width: "100%", // height: "55vh",
             color: "#f5f5f5",
             position: "relative",
             clear: "both",
@@ -82,24 +81,31 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
-                <div className={`${styles.widget}`}>
-                  <h5>Social Madia</h5>
-                  <div className={`${styles.tags}`}>
-                    <a href="#" className={`${styles.tag}`}>
-                      Facebook
-                    </a>
-                    <a href="#" className={`${styles.tag}`}>
-                      Youtube
-                    </a>
-                    <a href="#" className={`${styles.tag}`}>
-                      Twitter
-                    </a>
-                    <a href="#" className={`${styles.tag}`}>
-                      Instagram
-                    </a>
-                  </div>
-                </div>
+              <div className="col-md-3">
+                <a
+                  href="https://www.google.com/maps/d/viewer?mid=1eatZOalJ64dh9pbdZ5SvFvCEfTM&hl=en&ll=30.027303000000014%2C31.208596000000004&z=17"
+                  className=""
+                >
+                  <i className={"fa fa-map-marker-alt "}></i> O u r L o c a t i
+                  o n
+                </a>
+                {/*<div className={`${styles.widget}`}>*/}
+                {/*  <h5>Social Madia</h5>*/}
+                {/*  <div className={`${styles.tags}`}>*/}
+                {/*    <a href="#" className={`${styles.tag}`}>*/}
+                {/*      Facebook*/}
+                {/*    </a>*/}
+                {/*    <a href="#" className={`${styles.tag}`}>*/}
+                {/*      Youtube*/}
+                {/*    </a>*/}
+                {/*    <a href="#" className={`${styles.tag}`}>*/}
+                {/*      Twitter*/}
+                {/*    </a>*/}
+                {/*    <a href="#" className={`${styles.tag}`}>*/}
+                {/*      Instagram*/}
+                {/*    </a>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
               </div>
             </div>
           </div>

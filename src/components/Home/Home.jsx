@@ -5,6 +5,7 @@ import homeBg from "../../images/1.jpg";
 import serpic from "../../images/7.jpg";
 import serpic1 from "../../images/9.jpg";
 import serpic2 from "../../images/10.jpg";
+import Footer from "../Footer/Footer";
 
 export default function Home() {
   return (
@@ -46,7 +47,8 @@ export default function Home() {
             </form>
           </div>
         </div>
-        <Services></Services>
+        <Services />
+        {/*<Footer></Footer>*/}
       </div>
     </>
   );

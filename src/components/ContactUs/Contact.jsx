@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "./Contact.module.css";
+import Footer from "../Footer/Footer";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -120,6 +121,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
