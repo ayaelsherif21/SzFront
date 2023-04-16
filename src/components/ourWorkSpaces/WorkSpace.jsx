@@ -1,11 +1,11 @@
 import React from "react";
-import pic1 from "../../images/7.jpg";
+import pic1 from "../../images/deleteAccount.png";
 // import pic2 from '../../images/8.jpg'
 import pic3 from "../../images/9.jpg";
 import pic4 from "../../images/10.jpg";
 import styles from "./Workspace.module.css";
-import R1 from "../../images/creativo-3.jpg";
-import R2 from "../../images/coworking.jpg";
+import R1 from "../../images/deleteAccount.png";
+import R2 from "../../images/deleteAccount.png";
 // import R3 from '../../images/eco.jpg'
 // import R4 from '../../images/3.jpg'
 // import R5 from '../../images/4.jpg'
