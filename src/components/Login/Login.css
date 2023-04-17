@@ -1,0 +1,54 @@
+body{
+    /*background-image: url("../../../images/hero-image-01.jpg");*/
+
+}
+/*#A{*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*}*/
+.bigDiv {
+    justify-content: center;
+    display: flex;
+    /*background-repeat: no-repeat;*/
+}
+
+
+.reggBox {
+    margin-top: 20vh;
+
+    /*padding: 10vh;*/
+    width: 100%;
+
+    background-color: rgba(60, 65, 69, 0.3);
+    /*height: 200px;*/
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /*border: 3px solid green;*/
+    border-radius: 9%;
+    padding: 35px;
+    margin-left: 11vh;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+}
+body {
+    /*background-image: url("../../../../assets/regBackground.jpg");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signinButton{
+    background-color: #0DCAF0;
+    width: 15vh;
+    height: 5vh;
+    border-radius: 30px;
+    border-color: #0DCAF0;
+}
+
+.lgHead{
+    text-align: center;
+}

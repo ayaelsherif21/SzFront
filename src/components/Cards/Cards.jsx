@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import CardsUI from "./CardsUI";
-import img1 from "../../images/eco.jpg";
-import img2 from "../../images/creativo-3.jpg";
-import img3 from "../../images/workspace2.jpg";
+import img1 from "../../images/deleteAccount.png";
+import img2 from "../../images/deleteAccount.png";
+import img3 from "../../images/deleteAccount.png";
 
 class Cards extends Component {
   render() {
