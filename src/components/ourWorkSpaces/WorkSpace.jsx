@@ -49,8 +49,7 @@ export default function WorkSpace() {
         </div> */}
         </div>
     </div>
-      <button className={`btn text-white m-auto`} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
-    </div>
+    <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>    </div>
    
   </div>
   <div className="col-lg-3">
@@ -60,8 +59,7 @@ export default function WorkSpace() {
         <h6 className="card-title">Training/Courses Room</h6>
         <p className="card-text">35 Seats</p>
     </div>
-      <button className={`btn text-white m-auto`} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
-    </div>
+    <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>    </div>
    
   </div>
   <div className="col-lg-3">
@@ -71,7 +69,7 @@ export default function WorkSpace() {
         <h6 className="card-title">Shared Area</h6>
         <p className="card-text">15 Seats</p>
     </div>
-      <button className={`btn text-white m-auto`} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
+      <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>
     </div>
    
   </div>
@@ -82,7 +80,7 @@ export default function WorkSpace() {
         <h6 className="card-title">Silent Room</h6>
         <p className="card-text">5 Seats</p>
     </div>
-      <button className={`btn text-white m-auto`} style={{backgroundColor :"#63ace5", paddingBottom:"2px" , width:"90%" , borderRadius:"20px"}}>Book now</button>
+      <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>
     </div>
    
   </div>

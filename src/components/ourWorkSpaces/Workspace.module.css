@@ -14,7 +14,7 @@
     padding-bottom: 25px;
 }
 .cards{
-    border-radius: 25px; 
+    border-radius: 25px!important; 
     padding: 6px;
 }
 .cards:hover {
@@ -24,7 +24,7 @@
     cursor: pointer;
   }
 .cardImg{
-    border-radius: 20px;
+    border-radius: 20px!important;
 }
 .line{
     width: 90%;
@@ -45,4 +45,15 @@
     font-size: 15px;
     margin-right: 10px;
     text-align: center;
+}
+.btnCard{
+    background-color :#63ace5!important;
+    padding-bottom:6px !important;
+    width:90% !important;
+    border-radius:20px!important;
+    transition-duration: 0.2s!important;
+    font-weight:600!important;
+}
+.btnCard:hover{
+    background-color: #4b86b4!important;
 }

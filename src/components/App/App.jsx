@@ -15,6 +15,7 @@ import ForgetPassword from '../Login/ForgetPassword';
 import WorkSpace from '../ourWorkSpaces/WorkSpace';
 import './App.css';
 import Footer from '../Footer/Footer';
+import Cards from '../../components/Recommendation/Cards/Cards';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='About' element={<About />}></Route>
         <Route path='Workspace' element={<WorkSpace />}></Route>
         <Route path='Recommendation' element={<Recommendation />}></Route>
+        <Route path='Cards' element={<Cards />}></Route>
         <Route path='Contact' element={<Contact />}></Route>
         <Route path='Login' element={<Login />}></Route>
         <Route path='Register' element={<Register />}></Route>

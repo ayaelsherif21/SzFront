@@ -9,11 +9,13 @@ import client6 from '../../images/client-6.png'
 import client7 from '../../images/client-7.png'
 import client8 from '../../images/client-8.png'
 import client9 from '../../images/client-9.png'
+import Cards from '../../components/Recommendation/Cards/Cards'
 
 export default function Recommendation() {
   return (
     <>
-     
+     {/* cards */}
+     <Cards/>
     <div id="reviews" className={` text-center mt-5 ${styles.client}`}>
   <div className=" text-center position-relative d-flex justify-content-center align-items-center">
     <h2 className=" mb-0 position-absolute">Client Reviews</h2>
