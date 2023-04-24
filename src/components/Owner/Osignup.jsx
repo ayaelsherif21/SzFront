@@ -172,8 +172,9 @@ export default function Osignup() {
           {/* </div> */}
          
           <button className="btn px-5 float-end text-white text-bold" style={{backgroundColor :"#63ace5"
-              }}>Sing Up</button>
+              }}>Sing Up
           {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Osignup}
+          </button>
           <div className="clearfix"></div>
           </form>
           

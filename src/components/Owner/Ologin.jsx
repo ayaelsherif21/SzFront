@@ -21,7 +21,7 @@ export default function Ologin() {
       }
       async function submitFormData(e){
        e.preventDefault();
-    //    setLoading(true);
+       setLoading(true);
        let validationResult=validateForm();
        console.log(validationResult);
        if(validationResult.error){
@@ -106,8 +106,10 @@ export default function Ologin() {
           {/* </div> */}
          
           <button className="btn px-5 float-end text-white text-bold" style={{backgroundColor :"#63ace5"
-              }}>Login</button>
+              }}>Login
           {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Ologin}
+          </button>
+      
           <div className="clearfix"></div>
           </form>
           

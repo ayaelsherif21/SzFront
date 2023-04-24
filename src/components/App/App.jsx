@@ -16,9 +16,24 @@ import WorkSpace from '../ourWorkSpaces/WorkSpace';
 import './App.css';
 import Footer from '../Footer/Footer';
 import Cards from '../../components/Recommendation/Cards/Cards';
+import { useEffect, useState } from 'react';
+import jwtDecode from 'jwt-decode';
 
 
 function App() {
+  let [loginData, setLoginData]=useState(null);
+  function setUserData(){
+    let token = localStorage.getItem("token");
+    let decoded = jwtDecode(token);
+    setLoginData(decoded);
+    console.log(loginData)
+  }
+  useEffect(()=>{
+    if(localStorage.getItem("token"))
+    {
+      setUserData()
+    }
+  },[])
   return (
     <>
       <Navbar />
@@ -31,7 +46,7 @@ function App() {
         <Route path='Recommendation' element={<Recommendation />}></Route>
         <Route path='Cards' element={<Cards />}></Route>
         <Route path='Contact' element={<Contact />}></Route>
-        <Route path='Login' element={<Login />}></Route>
+        <Route path='Login' element={<Login setUserData ={setUserData}/>}></Route>
         <Route path='Register' element={<Register />}></Route>
         <Route path='ResetPassword' element={<ResetPassword />}></Route>
         <Route path='ForgetPassword' element={<ForgetPassword />}></Route>

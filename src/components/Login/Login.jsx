@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({setUserData}) {
   let [user, setUser] = useState({
     email: "",
     password: "",
@@ -37,6 +37,9 @@ export default function Login() {
       );
       console.log(data)
       if (data.status == "success") {
+        localStorage.setItem("token",data.token);
+        setUserData();
+        console.log(data);
         goToHome();
       }
       else {
@@ -111,8 +114,9 @@ export default function Login() {
 
             <button className="btn px-5 float-end text-white text-bold" style={{
               backgroundColor: "#63ace5"
-            }}>Login</button>
-            {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Login}
+            }}>Login
+              {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Login}
+            </button>
             <div className="clearfix"></div>
             <p className='reset-password text-end mt-2'>
               <Link to={'/ForgetPassword'}>Forgot Password?</Link>

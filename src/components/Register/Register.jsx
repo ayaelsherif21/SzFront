@@ -148,8 +148,9 @@ const schema=Joi.object({
       {/* </div> */}
      
       <button className="btn px-5 float-end text-white" style={{backgroundColor :"#63ace5"
-          }}>Sing Up</button>
-      {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Register}
+          }}>Sing Up
+       {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Register}
+      </button>
       <div className="clearfix"></div>
       </form>
       
