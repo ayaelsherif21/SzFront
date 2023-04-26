@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </div>
         <Services />
-        {/*<Footer></Footer>*/}
+        <Footer></Footer>
       </div>
     </>
   );
