@@ -1,15 +1,13 @@
 import React , {useState}from 'react'
-import Joi from 'joi';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import Joi from 'joi';
+const { joiPasswordExtendCore } = require('joi-password');
+const joiPassword = Joi.extend(joiPasswordExtendCore);
+
 
 export default function Register() {
   let [user,setUser]=useState({
-    // Name:"",
-    // Email:"",
-    // Password:"",
-    // Repeat_Password:"",
-    // Phone_Number:""
     userName : "",
     email : "",
     password : "",
@@ -37,14 +35,12 @@ export default function Register() {
    }
    else{
      let {data} = await axios.post(
-     "https://spacezone-backend.cyclic.app/api/user/signupUser" ,
-      user
-     );
+     "https://spacezone-backend.cyclic.app/api/user/signupUser" ,user);
      if(data.status == "success"){
       goToLogin();
      }
-   else{
-    setErrorMsg(data.status);
+     else{
+     setErrorMsg(data.status);
    }
    setLoading(false);
   }
@@ -52,12 +48,24 @@ export default function Register() {
   function validateForm(){ 
 const schema=Joi.object({
   userName:Joi.string().required().min(3).max(25),
-  email:Joi.string().required().email({tlds:{allow: ["com", "net", "app"]}}),
-  password:Joi.string().required(),
+  email:Joi.string().required().email({tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}),
+  password: joiPassword.string().minOfLowercase(1).minOfUppercase(1).minOfNumeric(8).noWhiteSpaces()
+  .required()
+  .messages({
+    'password.minOfUppercase': '{#label} should contain at least {#min} uppercase character',
+    'password.minOfLowercase': '{#label} should contain at least {#min} lowercase character',
+    'password.minOfNumeric': '{#label} should contain at least {#min} numeric character',
+}),
   // .pattern(new RegExp('^[a-z][0-9]{3}$'))
-  passwordConfirmation:Joi.string().required(),
-  // .pattern(new RegExp('^[a-z][0-9]{3}$'))
-  number:Joi.number().required() 
+  passwordConfirmation:joiPassword.string().minOfLowercase(1).minOfUppercase(1).minOfNumeric(8).noWhiteSpaces()
+  .required(),
+  // Joi.string().required().pattern(new RegExp(/[ -~]*[a-z][ -~]*/)) // at least 1 lower-case
+  // .regex(/[ -~]*[A-Z][ -~]*/) // at least 1 upper-case
+  // .regex(/[ -~]*(?=[ -~])[^0-9a-zA-Z][ -~]*/) // basically: [ -~] && [^0-9a-zA-Z], at least 1 special character
+  // .regex(/[ -~]*[0-9][ -~]*/) // at least 1 number
+  // .min(8), 
+
+  number:Joi.number().required().min(11).max(11).pattern(new RegExp('^01[0-2,5]{1}[0-9]{8}$')).messages({'string.pattern.base': `Phone number must have 11 digits.`})
 });
  return schema.validate(user,{abortEarly:false});
 
