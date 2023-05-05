@@ -8,7 +8,7 @@
         color: #f5f5f5
 } */
 body{
-    font-family: 'Montserrat', sans-serif!important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .butBg{
@@ -26,7 +26,7 @@ body{
 }
 .homeInp{
     width: 100%;
-    border-radius: 30px!important;
+    border-radius: 50px;
 }
 .urZone{
     font-weight:bold;
@@ -34,13 +34,8 @@ body{
 }
 
 .homebtn{
-    background-color: #63ace5!important;
-    border-radius: 50px!important;
-}
-.homebtn:hover{
-    background-color: #4b86b4!important;
-    width: 220px;
-   
+    background-color: #63ace5;
+    border-radius: 75px;
 }
 .Services{
     margin-top: 50px;

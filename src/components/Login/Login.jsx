@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
+import Joi from 'joi';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import Joi from 'joi';
-const { joiPasswordExtendCore } = require('joi-password');
-const joiPassword = Joi.extend(joiPasswordExtendCore);
 
 export default function Login({setUserData}) {
   let [user, setUser] = useState({
@@ -52,14 +50,8 @@ export default function Login({setUserData}) {
   }
   function validateForm() {
     const schema = Joi.object({
-      email:Joi.string().required().email({tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}),
-      password: joiPassword.string().minOfLowercase(1).minOfUppercase(1).minOfNumeric(8).noWhiteSpaces()
-  .required()
-  .messages({
-    'password.minOfUppercase': '{#label} should contain at least {#min} uppercase character',
-    'password.minOfLowercase': '{#label} should contain at least {#min} lowercase character',
-    'password.minOfNumeric': '{#label} should contain at least {#min} numeric character',
-}),
+      email: Joi.string().required().email({ tlds: { allow: ["com", "net"] } }),
+      password: Joi.string().required(),
     });
     return schema.validate(user, { abortEarly: false });
 

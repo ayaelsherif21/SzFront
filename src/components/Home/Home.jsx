@@ -29,7 +29,8 @@ export default function Home() {
             <label className='urZone' htmlFor="your_zone">ENTER YOUR ZONE</label>
             <input type="text" placeholder="Where do you want to work?" className={`form-control mt-2 ${styles.homeInp}`} name='your_zone'/>
           </div>
-          <button className={`btn text-white px-4 py-2 ${styles.homebtn}`}>Find Your Workspace</button>
+          <button className={`btn text-white px-4 py-2`} style={{backgroundColor :"#63ace5"
+          }}>Find Your Workspace</button>
           <div className='clearfix'></div>
         </form>
         </div>
