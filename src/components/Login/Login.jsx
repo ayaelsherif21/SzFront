@@ -166,6 +166,7 @@ export default function Login() {
       setErrorList(validationResult.error.details);
       setLoading(false);
     } else {
+      try{
       let { data } = await axios.post(
         "https://spacezone-backend.cyclic.app/api/user/loginUser",
         user
@@ -173,9 +174,11 @@ export default function Login() {
       if (data.status == "success") {
         alert("Logging in");
         // goToHome();
-      } else {
-        setErrorMsg(data.status);
       }
+    }catch(err){
+      alert(`${err.message}`);
+      setLoading(false);
+    }
       setLoading(false);
     }
   }
@@ -183,8 +186,8 @@ export default function Login() {
   function validateForm() {
     const schema = Joi.object({
       email: Joi.string()
-        .required()
-        .email({ tlds: { allow: ["com", "net"] } }),
+        .required(),
+        //.email({ tlds: { allow: ["com", "net"] } }),
       password: Joi.string().required(),
     });
     return schema.validate(user, { abortEarly: false });
