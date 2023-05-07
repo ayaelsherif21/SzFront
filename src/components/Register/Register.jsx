@@ -173,6 +173,7 @@ export default function Register() {
     password: "",
     passwordConfirmation: "",
     number: "",
+    // gender: ""
   });
   let [errorMsg, setErrorMsg] = useState("");
   let [errorList, setErrorList] = useState([]);

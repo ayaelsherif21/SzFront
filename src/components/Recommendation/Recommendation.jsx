@@ -11,12 +11,18 @@ import client8 from "../../images/client-8.png";
 import client9 from "../../images/client-9.png";
 import Footer from "../Footer/Footer";
 import Cards from "../Cards/Cards";
+import Filter from "./Filter/Filter";
 
 export default function Recommendation() {
   return (
     <>
       <div className="ttotta ">
-        <Cards />
+        <div className="col-2 p-4">
+          <Filter />
+        </div>
+        <div className="col-10">
+          <Cards />
+        </div>
       </div>
       <Footer />
     </>

@@ -20,6 +20,7 @@ body{
     /*padding-bottom:5rem;*/
 }
 .ttotta{
+    display: flex;
     margin-top: 7rem;
 }
 .col-md-4{

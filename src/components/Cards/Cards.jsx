@@ -1,11 +1,24 @@
-import React, { Component } from "react";
+import React, { useState,useEffect, Component } from "react";
+import axios  from "axios";
 import CardsUI from "./CardsUI";
-import img1 from "../../images/deleteAccount.png";
-import img2 from "../../images/deleteAccount.png";
-import img3 from "../../images/deleteAccount.png";
+import img1 from "../../images/1.jpg";
+import img2 from "../../images/1.jpg";
+import img3 from "../../images/1.jpg";
 
-class Cards extends Component {
-  render() {
+ function Cards(){
+
+
+
+    const [data, setData] = useState([]);
+
+    // useEffect(()=>{
+    //   axios
+    //       .get("")
+    //       .then((response) => setData(response.data))
+    //       .catch((error) => console.log(error));
+    // },[]);
+   
+
     return (
       <div className="container-fluid ttotta d-flex justify-content-center mt-5">
         <div className="row">
@@ -41,6 +54,5 @@ class Cards extends Component {
         </div>
       </div>
     );
-  }
 }
 export default Cards;

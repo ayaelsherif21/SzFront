@@ -1,11 +1,12 @@
 import React from "react";
-import pic1 from "../../images/deleteAccount.png";
+import pic1 from "../../images/1.jpg";
 // import pic2 from '../../images/8.jpg'
 import pic3 from "../../images/9.jpg";
 import pic4 from "../../images/10.jpg";
 import styles from "./Workspace.module.css";
-import R1 from "../../images/deleteAccount.png";
-import R2 from "../../images/deleteAccount.png";
+import R1 from "../../images/1.jpg";
+import R2 from "../../images/1.jpg";
+import Footer from "../Footer/Footer";
 // import R3 from '../../images/eco.jpg'
 // import R4 from '../../images/3.jpg'
 // import R5 from '../../images/4.jpg'
@@ -35,7 +36,7 @@ export default function WorkSpace() {
               <div className={`card ${styles.cardss}`}>
                 <img
                   src={pic4}
-                  className={`card-img-top ${styles.cardImg}`}
+                  className={`card-img ${styles.cardImg}`}
                   alt="Room1"
                 />
                 <div className="card-body">
@@ -68,7 +69,7 @@ export default function WorkSpace() {
               <div className={`card ${styles.cardss}`}>
                 <img
                   src={pic1}
-                  className={`card-img-top ${styles.cardImg}`}
+                  className={`card-img ${styles.cardImg}`}
                   alt="Room1"
                 />
                 <div className="card-body">
@@ -92,7 +93,7 @@ export default function WorkSpace() {
               <div className={`card ${styles.cardss}`}>
                 <img
                   src={R1}
-                  className={`card-img-top ${styles.cardImg}`}
+                  className={`card-img ${styles.cardImg}`}
                   alt="Room1"
                 />
                 <div className="card-body">
@@ -116,7 +117,7 @@ export default function WorkSpace() {
               <div className={`card ${styles.cardss}`}>
                 <img
                   src={pic3}
-                  className={`card-img-top ${styles.cardImg}`}
+                  className={`card-img ${styles.cardImg}`}
                   alt="Room1"
                 />
                 <div className="card-body">
@@ -183,6 +184,8 @@ export default function WorkSpace() {
           </div>
         </div>
       </div>
+
+      <Footer></Footer>
     </>
   );
 }
