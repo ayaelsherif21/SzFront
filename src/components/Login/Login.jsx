@@ -133,7 +133,7 @@
 import "./Login.css";
 import React, { useState } from "react";
 import Joi from "joi";
-import axios from "axios";
+import axios from '../../api/axios';
 import { useNavigate } from "react-router";
 import LoginBg from "../../images/70315747_2503614136348024_2059368429667745792_o.jpg";
 import { Link } from "react-router-dom";
@@ -155,7 +155,6 @@ export default function Login() {
     let path = "/Home";
     navigate(path);
   }
-
   async function submitFormData(e) {
     e.preventDefault();
     setLoading(true);
@@ -166,19 +165,20 @@ export default function Login() {
       setErrorList(validationResult.error.details);
       setLoading(false);
     } else {
-      try{
-      let { data } = await axios.post(
-        "https://spacezone-backend.cyclic.app/api/user/loginUser",
-        user
-      );
-      if (data.status == "success") {
+      let data = await axios.post(
+        "/api/user/loginUser",
+        user,
+        {
+          headers: {'Content-Type': 'application/json'},
+        }
+      ).then((e)=>{
         alert("Logging in");
-        // goToHome();
-      }
-    }catch(err){
-      alert(`${err.message}`);
-      setLoading(false);
-    }
+        window.sessionStorage.setItem('token', e.data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
+        console.log(sessionStorage.getItem("token"))  // this is how you get the token every time as it is stored in sessionStorage
+      }).catch((err)=>{
+        alert(err.message)
+      })
       setLoading(false);
     }
   }
