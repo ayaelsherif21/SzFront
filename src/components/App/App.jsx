@@ -17,6 +17,7 @@ import ForgetPassword from "../Login/ForgetPassword";
 import "./App.css";
 import WorkSpace from "../ourWorkSpaces/WorkSpace";
 import Cards from "../Cards/Cards";
+import MeetingRoom from "../ourWorkSpaces/Rooms/MeetingRoom/MeetingRoom";
 
 //className="App"
 function App() {
@@ -29,7 +30,8 @@ function App() {
           <Route path="Home" element={<Home />}></Route>
           <Route path="About" element={<About />}></Route>
           <Route path="Services" element={<Services />}></Route>
-          <Route path="Workspace" element={<WorkSpace />}></Route>
+          <Route path={"MeetingRoom"} element={<MeetingRoom/>}/>
+          <Route path="Workspace" element={<WorkSpace />}/>
           <Route path="Recommendation" element={<Recommendation />}></Route>
           <Route path="Cards" element={<Cards />}></Route>
           <Route path="Contact" element={<Contact />}></Route>

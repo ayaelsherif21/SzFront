@@ -13,6 +13,10 @@
     padding-top: 4px;
     padding-bottom: 25px;
 }
+.cardHolder{
+    display:contents;
+    width: auto;
+}
 .cardss{
     border-radius: 25px; 
     padding: 6px;
