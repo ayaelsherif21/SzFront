@@ -1,22 +1,33 @@
 import React from "react";
 import styles from "../Recommendation/Recommendation.module.css";
-import client1 from "../../images/client-1.png";
-import client2 from "../../images/client-2.png";
-import client3 from "../../images/client-3.png";
-import client4 from "../../images/client-4.png";
-import client5 from "../../images/client-5.png";
-import client6 from "../../images/client-6.png";
-import client7 from "../../images/client-7.png";
-import client8 from "../../images/client-8.png";
-import client9 from "../../images/client-9.png";
+// import client1 from "../../images/client-1.png";
+// import client2 from "../../images/client-2.png";
+// import client3 from "../../images/client-3.png";
+// import client4 from "../../images/client-4.png";
+// import client5 from "../../images/client-5.png";
+// import client6 from "../../images/client-6.png";
+// import client7 from "../../images/client-7.png";
+// import client8 from "../../images/client-8.png";
+// import client9 from "../../images/client-9.png";
 import Footer from "../Footer/Footer";
-import Cards from "../../components/Recommendation/Cards/Cards"
-import Cards from "../Cards/Cards";
+import Cards from "../Recommendation/Cards/Cards"
+
 import Filter from "./Filter/Filter";
 
 export default function Recommendation() {
   return (
     <>
+    <div className="container " >
+      <div className=" row ttotta " >
+        <div className="col-2" style={{fontSize:"12px"}}>
+          <Filter />
+        </div>
+        <div className="col-10">
+          <Cards />
+        </div>
+      </div>
+      </div>
+      <Footer />
      {/* cards
      <Cards/>
      <div className="col-2 p-4">
@@ -144,15 +155,7 @@ export default function Recommendation() {
             <span className="carousel-control-next-icon " aria-hidden="true" />
             <span className="visually-hidden">Next</span>
           </button> */}
-      <div className="ttotta ">
-        <div className="col-2 p-4">
-          <Filter />
-        </div>
-        <div className="col-10">
-          <Cards />
-        </div>
-      </div>
-      <Footer />
+          
     </>
   );
 }

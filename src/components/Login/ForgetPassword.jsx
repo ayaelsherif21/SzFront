@@ -2,6 +2,7 @@ import axios from "axios";
 import Joi from "joi";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+
 export default function ForgetPassword() {
   let [user, setUser] = useState({
     email: "",
@@ -41,8 +42,9 @@ export default function ForgetPassword() {
 }
   function validateForm(){ 
 const schema=Joi.object({
-  email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+  email:Joi.string().required().email(),
 });
+// {tlds:{allow: ["com", "net"]}}
  return schema.validate(user,{abortEarly:false});
 
   function goToReset() {
@@ -135,7 +137,7 @@ const schema=Joi.object({
             <div className="forgetBox">
               <div className="input-group mb-3 ">
                 <input
-                  onChange={getFormValue}
+                  // onChange={getFormValue}
                   type="text"
                   className="form-control"
                   placeholder="Email"

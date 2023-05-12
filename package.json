@@ -14,12 +14,12 @@
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "resuite": "^0.0.2",
-    "rsuite": "^5.33.0",
+    "rsuite": "^5.33.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

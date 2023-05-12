@@ -20,9 +20,9 @@ export default function Navbar({loginData}) {
             <li className="nav-item">
               <Link className="nav-link text-white" to="About">About</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link text-white" to="Recommendation">
                 Surf
@@ -37,6 +37,7 @@ export default function Navbar({loginData}) {
             <li className="nav-item">
               <Link className="nav-link  text-white" to="Contact">Contact Us</Link>
             </li>
+          
           </ul> : ""}
 
           <ul className='list-unstyled d-flex mb-lg-0 ms-auto align-items-center'>
@@ -47,6 +48,15 @@ export default function Navbar({loginData}) {
               <i className='fab fa-facebook'></i>
               <i className='fab fa-instagram mx-3'></i>
               <i className='fab fa-twitter'></i>
+              <li className="nav-item mx-2">
+              <Link className="nav-link fa fa-user" to="UserProfile"></Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link
+                className="nav-link fa fa-users-gear"
+                to="OwnerProfile"
+              ></Link>
+            </li>
 
             </div>
            {!loginData?
@@ -57,21 +67,14 @@ export default function Navbar({loginData}) {
             <li className="nav-item mx-2">
               <Link className="nav-link" to="Register">Register</Link>
             </li>
-            <li className="nav-item mx-2">
-              <Link className="nav-link fa fa-user" to="UserProfile"></Link>
-            </li>
-            <li className="nav-item mx-2">
-              <Link
-                className="nav-link fa fa-users-gear"
-                to="OwnerProfile"
-              ></Link>
-            </li>
+           
            </>
            : 
            
            <li className="nav-item mx-2">
            <Link className="nav-link" to="Login">Logout</Link>
-         </li>}
+         </li>
+         }
 
             
           </ul>

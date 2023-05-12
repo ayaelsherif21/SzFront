@@ -2,12 +2,12 @@ import React from "react";
 import {useOutletContext} from "react-router-dom";
 import R2 from "../../../../images/10.jpg";
 import R3 from "../../../../images/3.jpg";
-import R4 from "../../../../images/4.webp";
+import R4 from "../../../../images/4.jpg";
 import R5 from "../../../../images/5.jpg";
 import styles from "../../Workspace.module.css";
 import {useState} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const images = [
     R2,

@@ -16,10 +16,11 @@ import ResetPassword from "../Login/ResetPassword";
 import ForgetPassword from "../Login/ForgetPassword";
 import "./App.css";
 import WorkSpace from "../ourWorkSpaces/WorkSpace";
-import Cards from "../Cards/Cards";
+import Cards from "../Recommendation/Cards/Cards";
 import MeetingRoom from "../ourWorkSpaces/Rooms/MeetingRoom/MeetingRoom";
 import { useEffect, useState } from "react";
 import Room from "../ourWorkSpaces/Room";
+import jwtDecode from "jwt-decode";
 
 //className="App"
 function App() {

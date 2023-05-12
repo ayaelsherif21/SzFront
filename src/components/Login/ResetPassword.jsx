@@ -135,7 +135,7 @@ const schema=Joi.object({
               {/*    Password*/}
               <div className="input-group mb-3">
                 <input
-                  onChange={getFormValue}
+                  // onChange={getFormValue}
                   type="text"
                   className="form-control"
                   placeholder="New Password"
@@ -144,7 +144,7 @@ const schema=Joi.object({
               </div>
               <div className="input-group mb-3">
                 <input
-                  onChange={getFormValue}
+                  // onChange={getFormValue}
                   type="text"
                   className="form-control"
                   placeholder="Confirm Password"
