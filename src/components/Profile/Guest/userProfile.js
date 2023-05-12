@@ -4,7 +4,7 @@ import deleteAccount from "../../../images/deleteAccount.png";
 import { Link, Navigate } from "react-router-dom";
 import UserDetails from "./UserDetails/UserDetails";
 import ShowHistory from "./Showhistory/ShowHistory";
-
+import axios from "../../../api/axios";
 // function PGNavigator() {
 
 // }

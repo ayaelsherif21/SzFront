@@ -172,7 +172,9 @@ export default function Login() {
           headers: {'Content-Type': 'application/json'},
         }
       ).then((e)=>{
-        alert("Logging in");
+        alert(`Logging in Welcome ${e.data.data.user.userName}`);
+        const {user} = e.data.data;
+        console.log(user);
         window.sessionStorage.setItem('token', e.data.token);
         axios.defaults.headers.common["Authorization"] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
         console.log(sessionStorage.getItem("token"))  // this is how you get the token every time as it is stored in sessionStorage

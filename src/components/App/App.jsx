@@ -39,7 +39,9 @@ function App() {
           <Route path="Register" element={<Register />}></Route>
           <Route path="/ResetPassword" element={<ResetPassword />}></Route>
           <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
-          <Route path="UserProfile" element={<UserProfile />}></Route>
+          <Route path="UserProfile/:id" element={<UserProfile />}>
+
+          </Route>
           <Route path="OwnerProfile" element={<OwnerProfile />}></Route>
           <Route path="Osignup" element={<Osignup />}></Route>
           <Route path="Ologin" element={<Ologin />}></Route>
