@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import axios from '../../api/axios';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import Joi from 'joi';
-const { joiPasswordExtendCore } = require('joi-password');
-const joiPassword = Joi.extend(joiPasswordExtendCore);
 
-export default function Login({setUserData}) {
+
+export default function Login({ setUserData }) {
   let [user, setUser] = useState({
     email: "",
     password: "",
@@ -33,36 +32,31 @@ export default function Login({setUserData}) {
       setLoading(false);
     }
     else {
-      let { data } = await axios.post(
-        "https://spacezone-backend.cyclic.app/api/user/loginUser",
-        user
-      );
-      console.log(data)
-      if (data.status == "success") {
-        localStorage.setItem("token",data.token);
-        setUserData();
-        console.log(data);
-        goToHome();
-      }
-      else {
-        setErrorMsg(data.status);
-      }
+      let data = await axios.post(
+        "/api/user/loginUser",
+        user,
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      ).then((e) => {
+        alert(`Logging in Welcome ${e.data.data.user.userName}`);
+        window.sessionStorage.setItem('token', e.data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
+        console.log(sessionStorage.getItem("token"))  // this is how you get the token every time as it is stored in sessionStorage
+        goToHome()
+      }).catch((err) => {
+        alert(err.message)
+        setLoading(false);
+      })
       setLoading(false);
     }
   }
   function validateForm() {
     const schema = Joi.object({
-      email:Joi.string().required().email({tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}),
-      password: joiPassword.string().minOfLowercase(1).minOfUppercase(1).minOfNumeric(8).noWhiteSpaces()
-  .required()
-  .messages({
-    'password.minOfUppercase': '{#label} should contain at least {#min} uppercase character',
-    'password.minOfLowercase': '{#label} should contain at least {#min} lowercase character',
-    'password.minOfNumeric': '{#label} should contain at least {#min} numeric character',
-}),
+      email: Joi.string().required(),
+      password: Joi.string().required(),
     });
     return schema.validate(user, { abortEarly: false });
-
   }
   function getFormValue(e) {
     let myUser = { ...user };

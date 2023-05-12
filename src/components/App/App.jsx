@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import logo from '../../logo.svg';
+// import logo from '../../logo.svg';
 import About from '../About/About';
 import Contact from '../ContactUs/Contact';
 import Home from '../Home/Home';
@@ -18,6 +18,9 @@ import Footer from '../Footer/Footer';
 import Cards from '../../components/Recommendation/Cards/Cards';
 import { useEffect, useState } from 'react';
 import jwtDecode from 'jwt-decode';
+import Booking from '../Booking/Booking';
+import Room from '../ourWorkSpaces/Room';
+import Oprofile from '../Owner/Oprofile';
 
 
 function App() {
@@ -43,6 +46,7 @@ function App() {
         <Route path="Home" element={<Home />}></Route>
         <Route path='About' element={<About />}></Route>
         <Route path='Workspace' element={<WorkSpace />}></Route>
+        <Route path='/Room/:id' element={<Room />}></Route>
         <Route path='Recommendation' element={<Recommendation />}></Route>
         <Route path='Cards' element={<Cards />}></Route>
         <Route path='Contact' element={<Contact />}></Route>
@@ -52,6 +56,8 @@ function App() {
         <Route path='ForgetPassword' element={<ForgetPassword />}></Route>
         <Route path='Osignup' element={<Osignup />}></Route>
         <Route path='Ologin' element={<Ologin />}></Route>
+        <Route path='Oprofile' element={<Oprofile />}></Route>
+        <Route path='Booking' element={<Booking />}></Route>
         <Route path='*' element={<NotFound />}></Route>
 
       </Routes>

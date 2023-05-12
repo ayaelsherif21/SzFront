@@ -26,6 +26,9 @@
 .cardImg{
     border-radius: 20px!important;
 }
+.cardImg:hover{
+   background-color: "#f5f5f5"
+}
 .line{
     width: 90%;
     margin: auto;
@@ -47,6 +50,9 @@
     text-align: center;
 }
 .btnCard{
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
     background-color :#63ace5!important;
     padding-bottom:6px !important;
     width:90% !important;
@@ -57,3 +63,39 @@
 .btnCard:hover{
     background-color: #4b86b4!important;
 }
+
+.bar{
+    clear: both;
+    margin: 6px 6px 6px 6px;
+    padding: 5px 5px 5px 5px; 
+    }
+
+.progressHeading {
+    overflow: hidden;
+    margin-bottom: 5px;
+    }
+
+   .progressTitle {
+    float: left;
+    margin: 0;
+    padding: 0;
+    color: #444;
+    font-weight: 300;
+    }
+     .progressValue {
+    text-align: right;
+    font-weight: 400;
+    }
+    .progress .progBar {
+    float: left;
+    height: 100%;
+    font-size: 13px;
+    line-height: 7px;
+    color: #fff;
+    text-align: center;
+    }
+
+    .progress .progBar{
+   color: #d6242a!important;
+    border-radius: 10px;
+    }

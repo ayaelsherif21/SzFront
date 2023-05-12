@@ -45,7 +45,7 @@ export default function Register() {
    setLoading(false);
   }
 }
-  function validateForm(){ 
+function validateForm(){ 
 const schema=Joi.object({
   userName:Joi.string().required().min(3).max(25),
   email:Joi.string().required().email({tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}),

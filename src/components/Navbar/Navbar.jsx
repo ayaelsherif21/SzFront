@@ -22,6 +22,9 @@ export default function Navbar({loginData}) {
             <li className="nav-item">
               <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="Booking">Booking</Link>
+            </li>
            {/* <li className="nav-item">
             <Link className="nav-link text-white" to="WorkSpace">WorkSpace</Link>
            </li> */}
