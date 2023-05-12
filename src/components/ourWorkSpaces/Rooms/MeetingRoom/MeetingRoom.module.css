@@ -1,0 +1,22 @@
+.glider-container {
+    width: 100%;
+    height: 500px;
+    background-image: url('src/images/2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.coco{
+
+}
+.glider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+}
+.gliders{
+    height: 100px   ;
+}

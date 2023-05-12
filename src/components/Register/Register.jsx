@@ -14,15 +14,15 @@ export default function Register() {
     passwordConfirmation : "",
     number : ""
   });
-  let [errorMsg , setErrorMsg] = useState("");
-  let [errorList , setErrorList] = useState([]);
-  let [loading , setLoading]=useState(false);
+  let [errorMsg, setErrorMsg] = useState("");
+  let [errorList, setErrorList] = useState([]);
+  let [loading, setLoading] = useState(false);
   // let isShownRepeated;
   // let isShown;
   const navigate = useNavigate();
-  function goToLogin(){
-    let path='/Login';
-    navigate(path)
+  function goToLogin() {
+    let path = "/Login";
+    navigate(path);
   }
   async function submitFormData(e){
    e.preventDefault();
@@ -38,6 +38,7 @@ export default function Register() {
      "https://spacezone-backend.cyclic.app/api/user/signupUser" ,user);
      if(data.status == "success"){
       goToLogin();
+      alert("You have been registered, Welcome!");
      }
      else{
      setErrorMsg(data.status);
@@ -48,7 +49,8 @@ export default function Register() {
 function validateForm(){ 
 const schema=Joi.object({
   userName:Joi.string().required().min(3).max(25),
-  email:Joi.string().required().email({tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}),
+  email:Joi.string().required().email(),
+  // {tlds:{allow: ["com", "net", "app" ,"sci","cu","edu","eg"]}}
   password: joiPassword.string().minOfLowercase(1).minOfUppercase(1).minOfNumeric(8).noWhiteSpaces()
   .required()
   .messages({
@@ -70,88 +72,113 @@ const schema=Joi.object({
  return schema.validate(user,{abortEarly:false});
 
   }
-  function getFormValue(e){
-     let myUser={...user};
-     myUser[e.target.name]=e.target.value;
-     setUser(myUser);
-     console.log(myUser);
+  function getFormValue(e) {
+    let myUser = { ...user };
+    myUser[e.target.name] = e.target.value;
+    setUser(myUser);
+    console.log(myUser);
   }
   return (
-    <div className='w-100 h-100vh' style={{backgroundColor :"#e7eff6"
-  }}>
-    <div className={"container w-50 my-5 m-auto p-5 mt-9"} >
-      <div>
-      <div className={"Header my-3"}>
-        <h1 style={{color :"#2a4d69"
-  }}>Welcome to the Family</h1>
-        {errorMsg ? <div className='alert alert-denger p-1'>{errorMsg}</div> : ""}
-        {errorList.map((error,index)=><div key={index} className='alert alert-danger p-2'>{error.message}</div>)}
-      </div>
-      
-<form onSubmit={submitFormData}>
-      <div className="regBox">
-        {/*  Name*/}
-        <div className="input-group mb-3 ">
-          <input
-            onChange={getFormValue}
-            type="text"
-            className="form-control"
-            placeholder="Full Name"
-            name="userName" />
-        </div>
+    <div className="w-100 h-100vh" style={{ backgroundColor: "#e7eff6" }}>
+      <div className={"container w-50 my-5 m-auto p-5 mt-9"}>
+        <div>
+          <div className={"Header my-3"}>
+            <h1 style={{ color: "#2a4d69" }}>Welcome to the Family</h1>
+            {errorMsg ? (
+              <div className="alert alert-denger p-1">{errorMsg}</div>
+            ) : (
+              ""
+            )}
+            {errorList.map((error, index) => (
+              <div key={index} className="alert alert-danger p-2">
+                {error.message}
+              </div>
+            ))}
+          </div>
 
-        {/*    email*/}
-        <div className="input-group mb-3 ">
-          <input
-              onChange={getFormValue}
-              type="text"
-              className="form-control"
-              placeholder="Email"
-              name='email'/>
-        </div>
+          <form onSubmit={submitFormData}>
+            <div className="regBox">
+              {/*  Name*/}
+              <div className="input-group mb-3 ">
+                <input
+                  onChange={getFormValue}
+                  type="text"
+                  className="form-control"
+                  placeholder="Full Name"
+                  name="userName"
+                />
+              </div>
 
-        {/*    Password*/}
-        <div className="input-group mb-3">
-       
-          <input
-              onChange={getFormValue}
-              type="text"
-              // type={isShown ? "text" : "password"}
-              className="form-control"
-              placeholder="Password"
-              name='password'
-          />
-        </div>
+              {/*    email*/}
+              <div className="input-group mb-3 ">
+                <input
+                  onChange={getFormValue}
+                  type="text"
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                />
+              </div>
 
-        {/*    Repeat password*/}
-        <div className="input-group mb-3">
-        
-          <input
-           onChange={getFormValue}
-              type="text"
-              // type={isShownRepeated ? "text" : "password"}
-              className="form-control"
-              placeholder="Confirm Password"
-              name='passwordConfirmation'
-          />
-        </div>
+              {/*    Password*/}
+              <div className="input-group mb-3">
+                <input
+                  onChange={getFormValue}
+                  type="password"
+                  // type={isShown ? "text" : "password"}
+                  className="form-control"
+                  placeholder="Password"
+                  name="password"
+                />
+              </div>
 
-        {/*    Phone Number*/}
-        <div className="input-group mb-3 ">
-          
-          <input
-           onChange={getFormValue}
-              type="Number"
-              className="form-control"
-              placeholder="Phone Number"
-              name='number'/>
-        </div>
+              {/*    Repeat password*/}
+              <div className="input-group mb-3">
+                <input
+                  onChange={getFormValue}
+                  type="password"
+                  // type={isShownRepeated ? "text" : "password"}
+                  className="form-control"
+                  placeholder="Confirm Password"
+                  name="passwordConfirmation"
+                />
+              </div>
 
-        {/* <div className={"justify-content-between"}>
+              {/*    Phone Number*/}
+              <div className="input-group mb-3 ">
+                {/*<label htmlFor="tel">Phone Number </label>*/}
+                <input
+                  onChange={getFormValue}
+                  type="tel"
+                  maxLength={11}
+                  className="form-control"
+                  placeholder="Phone Number"
+                  name="number"
+                />
+              </div>
+
+              {/* <div className={"justify-content-between"}>
           {/* <div className={"btn btn-primary m-lg-3"}>Sign Up</div> */}
-          {/* <button type="button" className="btn btn-secondary m-lg-3">Sing Up</button> */}
-          {/* <button type="button" className="btn btn-secondary m-lg-3">Become a partner</button>
-          <button type="button" className="btn btn-secondary m-lg-3">Sign in</button> */} 
+              {/* <button type="button" className="btn btn-secondary m-lg-3">Sing Up</button> */}
+              {/* <button type="button" className="btn btn-secondary m-lg-3">Become a partner</button>
+          <button type="button" className="btn btn-secondary m-lg-3">Sign in</button> */}
+            </div>
+            {/* </div> */}
+
+            <button
+              className="btn px-5 float-end text-white"
+              style={{ backgroundColor: "#63ace5" }}
+            >
+              Sing Up
+              {loading ? (
+                <i className="fa fa-spinner fa-spin text-white"></i>
+              ) : (
+                Register
+              )}
+            </button>
+
+            <div className="clearfix"></div>
+          </form>
         </div>
       {/* </div> */}
      
@@ -160,12 +187,9 @@ const schema=Joi.object({
        {loading ? <i className='fa fa-spinner fa-spin text-white'></i> : Register}
       </button>
       <div className="clearfix"></div>
-      </form>
+      
       
       </div>
     </div>
-    </div>
   );
 }
-
-// export default Register;

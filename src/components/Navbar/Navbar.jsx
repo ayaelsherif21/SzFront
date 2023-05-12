@@ -1,6 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './Navbar.module.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Navbar.module.css";
+import Logo from "../../images/SpaceZone.svg";
 
 export default function Navbar({loginData}) {
   console.log(loginData)
@@ -21,6 +22,11 @@ export default function Navbar({loginData}) {
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="Recommendation">
+                Surf
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="Booking">Booking</Link>
@@ -51,8 +57,19 @@ export default function Navbar({loginData}) {
             <li className="nav-item mx-2">
               <Link className="nav-link" to="Register">Register</Link>
             </li>
+            <li className="nav-item mx-2">
+              <Link className="nav-link fa fa-user" to="UserProfile"></Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link
+                className="nav-link fa fa-users-gear"
+                to="OwnerProfile"
+              ></Link>
+            </li>
            </>
-           : <li className="nav-item mx-2">
+           : 
+           
+           <li className="nav-item mx-2">
            <Link className="nav-link" to="Login">Logout</Link>
          </li>}
 
@@ -65,5 +82,7 @@ export default function Navbar({loginData}) {
 
 
 
-  )
+  
+  
+  );
 }

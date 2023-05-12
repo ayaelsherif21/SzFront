@@ -13,7 +13,7 @@ body{
     font-weight: 600px;
 }
 
-.butBg{
+.butBg {
     text-align: center;
     /* font-family:  Verdana, Geneva, Tahoma, sans-serif; */
     color: #fff;
@@ -23,15 +23,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
-.homeInp{
+
+.homeInp {
     width: 100%;
     border-radius: 30px!important;
 }
-.urZone{
-    font-weight:bold;
+
+.urZone {
+    font-weight: bold;
     background-color: blue;
 }
 
@@ -44,22 +44,25 @@ body{
     width: 220px;
    
 }
-.Services{
+
+.Services {
     margin-top: 50px;
 }
-.Services h3{
+
+.Services h3 {
     font-size: 80px;
     font-weight: 700;
     color: rgb(230, 230, 230);
-    }
-    .Services h2{
+}
+
+.Services h2 {
     font-size: 40px;
     font-weight: 800;
     color: #4b86b4;
-    }
-    .Services p{
-        font-size: 18px;
-        color: #999;
-        margin-bottom: 30px;
-    }
-   
+}
+
+.Services p {
+    font-size: 18px;
+    color: #999;
+    margin-bottom: 30px;
+}

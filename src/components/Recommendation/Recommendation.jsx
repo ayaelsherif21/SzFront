@@ -1,21 +1,27 @@
-import React from 'react'
-import styles from '../Recommendation/Recommendation.module.css'
-import client1 from '../../images/client-1.png'
-import client2 from '../../images/client-2.png'
-import client3 from '../../images/client-3.png'
-import client4 from '../../images/client-4.png'
-import client5 from '../../images/client-5.png'
-import client6 from '../../images/client-6.png'
-import client7 from '../../images/client-7.png'
-import client8 from '../../images/client-8.png'
-import client9 from '../../images/client-9.png'
-import Cards from '../../components/Recommendation/Cards/Cards'
+import React from "react";
+import styles from "../Recommendation/Recommendation.module.css";
+import client1 from "../../images/client-1.png";
+import client2 from "../../images/client-2.png";
+import client3 from "../../images/client-3.png";
+import client4 from "../../images/client-4.png";
+import client5 from "../../images/client-5.png";
+import client6 from "../../images/client-6.png";
+import client7 from "../../images/client-7.png";
+import client8 from "../../images/client-8.png";
+import client9 from "../../images/client-9.png";
+import Footer from "../Footer/Footer";
+import Cards from "../../components/Recommendation/Cards/Cards"
+import Cards from "../Cards/Cards";
+import Filter from "./Filter/Filter";
 
 export default function Recommendation() {
   return (
     <>
-     {/* cards */}
+     {/* cards
      <Cards/>
+     <div className="col-2 p-4">
+     <Filter />
+   </div>
     <div id="reviews" className={` text-center mt-5 ${styles.client}`}>
   <div className=" text-center position-relative d-flex justify-content-center align-items-center">
     <h2 className=" mb-0 position-absolute">Client Reviews</h2>
@@ -137,19 +143,16 @@ export default function Recommendation() {
           <button className="carousel-control-next " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span className="carousel-control-next-icon " aria-hidden="true" />
             <span className="visually-hidden">Next</span>
-          </button>
+          </button> */}
+      <div className="ttotta ">
+        <div className="col-2 p-4">
+          <Filter />
+        </div>
+        <div className="col-10">
+          <Cards />
         </div>
       </div>
-
-
-    </div>
-  </div>
-</div>
-
-        
-    
-    
-    
+      <Footer />
     </>
-  )
+  );
 }
