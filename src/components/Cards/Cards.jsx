@@ -1,58 +1,45 @@
-import React, { useState,useEffect, Component } from "react";
-import axios  from "axios";
+import React, {useState, useEffect, Component} from "react";
+import axios from "../../api/axios";
 import CardsUI from "./CardsUI";
 import img1 from "../../images/1.jpg";
 import img2 from "../../images/1.jpg";
 import img3 from "../../images/1.jpg";
 
- function Cards(){
-
-
-
-    const [data, setData] = useState([]);
-
-    // useEffect(()=>{
-    //   axios
-    //       .get("")
-    //       .then((response) => setData(response.data))
-    //       .catch((error) => console.log(error));
-    // },[]);
-   
-
+function Cards() {
+    const [cardData, setCardData] = useState([]);
+    useEffect(() => {
+        axios.get("api/places/getAllPlaces").then((response) => {
+            setCardData(response.data.data.places);
+            console.log(response.data.data.places);
+        });
+    }, []);
+    if (!cardData) {
+        return <div>Loading...</div>;
+    }
     return (
-      <div className="container-fluid ttotta d-flex justify-content-center mt-5">
-        <div className="row">
-          <div className="col-md-4">
-            <CardsUI
-              imgsrc={img1}
-              title="workspace1"
-              date="date"
-              price="price"
-              duration="duration"
-            />
-          </div>
+        <div className="container-fluid ttotta d-flex justify-content-center mt-5">
+            <div className="row">
+                <div className="col-md-4" style={{display:"flex"}}>
 
-          <div className="col-md-4">
-            <CardsUI
-              imgsrc={img2}
-              title="workspace2"
-              date="date"
-              price="price"
-              duration="duration"
-            />
-          </div>
+                    {cardData.map((pace) => (
+                        <div key={pace.id}>
+                            <div className={"carrd"}>
 
-          <div className="col-md-4">
-            <CardsUI
-              imgsrc={img3}
-              title="workspace3"
-              date="date"
-              price="price"
-              duration="duration"
-            />
-          </div>
+                                <CardsUI
+                                    imgsrc={pace.placePhotos}
+                                    name={pace.placeName}
+                                    location={pace.zone}
+                                    capacity={pace.numberOfSeats}
+                                    duration={pace.number}
+
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
     );
 }
+
 export default Cards;

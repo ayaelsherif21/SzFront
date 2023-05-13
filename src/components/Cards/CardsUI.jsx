@@ -9,10 +9,10 @@ function CardsUI(props) {
       </div>
       <div className="card-body text-dark">
         <h4 className="card-title">{props.title}</h4>
-        <p className="card-text text-secondry">{props.text}</p>
-        <p className="card-text text-secondry">{props.date}</p>
-        <p className="card-text text-secondry">{props.description}</p>
+        <p className="card-text text-secondry">{props.name}</p>
+        <p className="card-text text-secondry">{props.location}</p>
         <p className="card-text text-secondry">{props.price}</p>
+        <p className="card-text text-secondry">{props.capacity}</p>
         <p className="card-text text-secondry">{props.duration}</p>
 
         <a href="Workspace" className="btn btn-outline-success">
