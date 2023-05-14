@@ -1,0 +1,129 @@
+body{
+    height: 100vh;
+}
+.bigContainer{
+    display: flex;
+    margin-top: 4.2rem;
+    background-color: #fff; /* fallback color */
+  background-image: url('../../../images/hero-image-01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+     
+
+}
+
+
+.alerts{
+    position: absolute;
+    margin:  auto;
+    display: none;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    /*justify-content: center;*/
+    text-align: center;
+}
+
+.alertBox{
+    vertical-align: center;
+    background-color: white;
+    border-radius: 5%;
+    width: 20%;
+    margin: auto;
+    padding: 2rem 0;
+}
+.alertButtons{
+    justify-content: space-around;
+    display: flex;
+}
+.leftContainer{
+
+    /* background-color: #61dafb;     */
+    height: flex;
+    margin-top: 60px;
+    margin-bottom: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translate(20%, 0%);
+    background-color: rgba(255,255,255, 0.5);
+
+
+   
+}
+/* .PGbuttons{ */
+    /*display: block;*/
+    /*margin: 0px 10px 1rem 10px;*/
+    /*width: 100%;*/
+
+/* } */
+.PGButtonHolder{
+    text-align: center;
+    margin: 0 2rem;
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+.middleContainer{
+    background-color: rgba(255,255,255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    height: 30%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    transform: translate(10%, 0%);
+    margin-top: 80px;
+   
+
+    
+
+}
+
+/* .rightContainer{
+    background-color: white;
+    border-left: 2px solid rgb(215, 220, 221);
+     height:auto;
+     font-family: "Times New Roman", Times, serif;
+     width: 4px;
+
+} */
+
+/* .upcoming{
+    margin:10px auto; 
+} */
+
+.PGButtons { 
+    background-color: white;
+    
+    border-radius: 100%;
+
+ }
+/* .profilePicture img{
+    margin: 5rem auto auto; */
+    /*padding-top: 3rem;*/
+/* } */
+
+.userTabs{
+    justify-content: center;
+    display: grid;
+}
+/* .profilePicture img{ */
+    /*background-image: url("./UserProfile-Male-PNG.png");*/
+
+    /* flex: 1;
+    width: 70%;
+    resizeMode: 'contain' */
+    /*width: 20%;*/
+/* } */
+.PGData{
+    text-align: center;
+}
+
+.contactButton{
+    margin-bottom: 3rem;
+}
