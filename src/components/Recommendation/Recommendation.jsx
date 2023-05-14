@@ -18,8 +18,14 @@ export default function Recommendation() {
   return (
     <>
     <div className="container " >
+    <div id="reviews" className={` text-center ${styles.client}`}>
+    <div className="mt-5  text-center position-relative d-flex justify-content-center align-items-center">
+    <h2 className=" mb-0 position-absolute">Workspaces</h2>
+    <h3 className=" mb-0">W</h3>
+  </div>
+  </div>
       <div className=" row ttotta " >
-        <div className="col-2" style={{fontSize:"12px"}}>
+        <div className="col-2" style={{fontSize:"12px"}} >
           <Filter />
         </div>
         <div className="col-10">

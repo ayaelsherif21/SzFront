@@ -13,7 +13,7 @@ export default function Filter() {
   }
   return (
     <>
-      <h2 className="head mt-5">Filters</h2>
+      <h2 className="head">Filters</h2>
       <div className="filterBody mt-2">
         <div className="price">
           <h6 className="pirceHead ">Price</h6>

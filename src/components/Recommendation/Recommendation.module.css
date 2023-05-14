@@ -7,11 +7,14 @@
     font-size: 80px;
     font-weight: 900;
     color: rgb(230, 230, 230);
+    margin-top: 5px;
     }
     .client h2{
     font-size: 40px;
     font-weight: 900;
     color: #4b86b4;
+    margin-top: 5px;
+
     }
     .client h5{
         font-size: 30px;

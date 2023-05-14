@@ -1,0 +1,489 @@
+body{
+	text-decoration: none;
+}
+.breadcrumbSection {
+	padding-top: 70px;
+	padding-bottom: 30px;
+ 
+}
+.breadcrumbText {
+	text-align: center;
+    
+}
+.breadcrumbText h2 {
+	font-size: 44px;
+    color: #2a4d69;
+	margin-bottom: 12px;
+}
+.btOption a {
+	display: inline-block;
+	font-size: 18px;
+    color: #2a4d69;
+	margin-right: 10px;
+	position: relative;
+	font-weight: 500;
+}
+ .bt-option a:after {
+	position: absolute;
+	right: -13px;
+	top: 1px;
+	content: "";
+	font-size: 18px;
+	font-family: "FontAwesome";
+	color: #aaaab3;
+}
+.btOption span {
+	display: inline-block;
+	font-size: 18px;
+	color: #aaaab3;
+}
+
+.roomDetailsSection {
+	padding-top: 0;
+	padding-bottom: 80px;
+}
+.roomDetailsItem{
+	margin-bottom: 50px;
+}
+.roomDetailsImg{
+	width: 100%;
+	margin-bottom: 30px;
+}
+.rdText .rdTitle {
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+.rdText .rdTitle h3 {
+    color: #2a4d69;
+	float: left;
+}
+ .rdtRight {
+	float: right;
+	text-align: right;
+}
+.rdtRight .rating {
+	display: inline-block;
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+.rdtRight .rating i {
+	color: #f5b917;
+}
+.rdtRight a {
+	display: inline-block;
+	color: #ffffff;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	background: #4b86b4;
+	text-decoration: none;
+	padding: 14px 28px 13px;
+	border-radius: 10px;
+}
+/* .rdtRight a:hover{
+	width: 90%;
+} */
+.rdText h2 {
+	color: #4b86b4;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+.rdText h2 span {
+	font-family: "Cabin", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #19191a;
+}
+.rdText table {
+	margin-bottom: 32px;
+}
+.rdText table tbody tr td {
+	font-size: 16px;
+	color: #19191a;
+	line-height: 36px;
+}
+.ro {
+	width: 120px;
+	color: #707079;
+}
+.rdText p {
+	color: #707079;
+}
+.rdText p.f-para {
+	margin-bottom: 22px;
+}
+/*----------------------------------*/
+.roomBooking {
+	padding: 10px 10px 10px 10px;
+	padding-bottom: 20px;
+    border-color: #2a4d69!important;
+    border-width: 10px;
+	border-radius: 20px;
+    color: #2a4d69;
+}
+.roomBooking h3 {
+	padding: 10px 20px 20px 20px;
+    color: #2a4d69;
+}
+ .checkDate {
+	position: relative;
+	margin-bottom: 15px;
+}
+ .checkDate label {
+	font-size: 14px;
+	color: #707079;
+	display: block;
+	margin-bottom: 10px;
+}
+.checkDate input {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #ebebeb;
+	border-radius: 2px;
+	font-size: 16px;
+	color: #19191a;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding-left: 20px;
+}
+.checkDate i {
+	color: #dfa974;
+	position: absolute;
+	right: 18px;
+	bottom: 17px;
+}
+.selectOption {
+	margin-bottom: 15px;
+}
+.selectOption label {
+	font-size: 14px;
+	color: #707079;
+	display: block;
+	margin-bottom: 10px;
+}
+.selectOption .nice-select {
+	border-radius: 2px;
+	border: 1px solid #ebebeb;
+	height: 50px;
+	line-height: 50px;
+	outline: none;
+	padding-left: 20px;
+	width: 100%;
+	float: none;
+}
+.selectOption .nice-select:after {
+	border-bottom: 2px solid #dfa974;
+	border-right: 2px solid #dfa974;
+	height: 10px;
+	margin-top: 0;
+	right: 20px;
+	width: 10px;
+	top: 36%;
+}
+.selectOption .nice-select span {
+	font-size: 16px;
+	color: #19191a;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.selectOption .nice-select .list {
+	margin-top: 0;
+	width: 100%;
+}
+.roomBooking form button {
+	display: block;
+	font-size: 14px;
+	text-transform: uppercase;
+	border: 1px solid #4b86b4;
+	border-radius: 2px;
+	color: #2a4d69;
+	font-weight: 500;
+	background: transparent;
+	width: 100%;
+	height: 46px;
+	margin-top: 30px;
+}
+.roomBooking form button:hover{
+    background-color: 	#e7eff6;
+}
+
+/*--------------------------------------*/
+.reviews {
+	padding-top: 55px;
+	border-top: 1px solid #e5e5e5;
+	margin-bottom: 50px;
+}
+.reviews h4 {
+	color: #19191a;
+	letter-spacing: 1px;
+	margin-bottom: 45px;
+}
+.reviewItem {
+	margin-bottom: 32px;
+}
+.reviewItem .ri-pic {
+	float: left;
+	margin-right: 30px;
+}
+.revPic img {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+}
+.revText {
+	overflow: hidden;
+	position: relative;
+	padding-left: 30px;
+}
+.revText:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background: #e9e9e9;
+	content: "";
+}
+ .revText span {
+	font-size: 12px;
+	color: #dfa974;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.revText .rating {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.revText .rating i {
+	color: #f5b917;
+}
+ .revText h5 {
+	color: #19191a;
+	margin-top: 4px;
+	margin-bottom: 8px;
+}
+ .revText p {
+	color: #707079;
+	margin-bottom: 0;
+}
+
+.reviewAdd h4 {
+	color: #19191a;
+	letter-spacing: 1px;
+	margin-bottom: 45px;
+}
+.raForm input {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #e5e5e5;
+	font-size: 16px;
+	color: #aaaab3;
+	padding-left: 20px;
+	margin-bottom: 25px;
+}
+.reviewAdd .raForm input::-webkit-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm input::-moz-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm input:-ms-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm input::-ms-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm input::placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm h5 {
+	font-size: 20px;
+	color: #19191a;
+	margin-bottom: 24px;
+	float: left;
+	margin-right: 10px;
+}
+.reviewAdd .raForm .rating {
+	padding-top: 3px;
+	display: inline-block;
+}
+.reviewAdd .raForm .rating i {
+	color: #f5b917;
+	font-size: 16px;
+}
+.reviewAdd .raForm textarea {
+	width: 100%;
+	height: 132px;
+	border: 1px solid #e5e5e5;
+	font-size: 16px;
+	color: #aaaab3;
+	padding-left: 20px;
+	padding-top: 12px;
+	margin-bottom: 24px;
+	resize: none;
+}
+.reviewAdd .raForm textarea::-webkit-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm textarea::-moz-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm textarea:-ms-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm textarea::-ms-input-placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm textarea::placeholder {
+	color: #aaaab3;
+}
+.reviewAdd .raForm button {
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ffffff;
+	letter-spacing: 2px;
+	background: #4b86b4;
+	border: none;
+	padding: 14px 34px 13px;
+	display: inline-block;
+}
+.raForm button:hover{
+    background-color: #63ace5;
+}
+/* .section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#booking {
+	font-family: 'Hind', sans-serif;
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#booking::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.booking-form {
+	max-width: 586px;
+	width: 100%;
+	margin: auto;
+}
+
+.booking-form .form-header {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.booking-form .form-header h1 {
+	font-size: 42px;
+	color: #fff;
+	margin-top: 0;
+	margin-bottom: 0px;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+
+.booking-form>form {
+	background-color: #1e1e1e;
+	padding: 40px;
+	-webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+	background-color: #2d2d2d;
+	height: 50px;
+	padding: 0px 20px;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0px;
+	color: #fff;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.booking-form .form-control::placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 6px;
+	bottom: 6px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: #fff;
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 5px;
+	display: inline-block;
+	letter-spacing: 0.4px;
+}
+
+.booking-form .submit-btn {
+	color: #fff;
+	background-color: #6c8f18;
+	font-weight: 400;
+	height: 50px;
+	border: none;
+	width: 100%;
+	display: block;
+	letter-spacing: 0.4px;
+} */

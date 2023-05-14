@@ -11,6 +11,7 @@ body{
     font-family: 'Montserrat', sans-serif!important;
     font-size: 1.5rem;
     font-weight: 600px;
+    text-decoration: none;
 }
 
 .butBg {
@@ -36,11 +37,11 @@ body{
 }
 
 .homebtn{
-    background-color: #63ace5!important;
+    background-color: #4b86b4!important;
     border-radius: 50px!important;
 }
 .homebtn:hover{
-    background-color: #4b86b4!important;
+    background-color: #63ace5!important;
     width: 220px;
    
 }

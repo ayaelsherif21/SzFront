@@ -21,6 +21,9 @@ import MeetingRoom from "../ourWorkSpaces/Rooms/MeetingRoom/MeetingRoom";
 import { useEffect, useState } from "react";
 import Room from "../ourWorkSpaces/Room";
 import jwtDecode from "jwt-decode";
+import Booking from "../Booking/Booking";
+import Payment from "../Booking/Payment";
+import BB from "../Booking/BB";
 
 //className="App"
 function App() {
@@ -52,6 +55,9 @@ function App() {
           <Route path={"MeetingRoom"} element={<MeetingRoom/>}/>
           <Route path="Workspace" element={<WorkSpace />}/>
           <Route path='/Room/:id' element={<Room />}></Route>
+          <Route path="Booking" element={<Booking />}></Route>
+          <Route path="BB" element={<BB/>}></Route>
+          <Route path="Payment" element={<Payment/>}></Route>
           <Route path="Recommendation" element={<Recommendation />}></Route>
           <Route path="Cards" element={<Cards />}></Route>
           <Route path="Contact" element={<Contact />}></Route>

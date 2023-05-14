@@ -26,8 +26,8 @@ function CardsUI(props) {
           {props.duration}
         </p>
 
-        <Link href='#' to={"/WorkSpace"} className='btn btn-outline-success' 
-        style={{borderRadius: "15px"}}>go to your workspace</Link>
+        <Link href='#' to={"/WorkSpace"} className={`btn mt-2 ${styles.btnWs}`} 
+        style={{borderRadius: "20px",   textDecoration:"none" , backgroundColor:"#4b86b4" ,color:'white' , padding:"10px 15px 10px 15px"}}>go to your workspace</Link>
 
       </div>
     </div>

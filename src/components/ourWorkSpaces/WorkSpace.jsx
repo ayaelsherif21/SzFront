@@ -15,25 +15,25 @@ export default function WorkSpace() {
     {
         id: 1,
         title: "Meeting Room",
-        image: pic2,
+        image: pic4,
         numSeats: 8
     },
     {
         id: 2,
-        title: "Training/Courses Room",
-        image: pic4,
+        title: "Training Room",
+        image: pic1,
         numSeats: 35
     },
     {
         id: 3,
         title: "Shared Area",
-        image: pic3,
+        image: R1,
         numSeats: 15
     },
     {
         id: 4,
         title: "Silent Room",
-        image: pic2,
+        image: pic3,
         numSeats: 5
     }
 ];
@@ -58,15 +58,17 @@ export default function WorkSpace() {
 <div className={`${styles.Rooms}`}>
 <div className="container">
 <h4 className='my-3'>Rooms</h4>
- <div className="row row-cols-1 cardHolder row-cols-md-2 g-4">
+ <div className="row row-cols-1  row-cols-md-2 g-4">
+ {cardData.map((card) => (
+                            // <div className="col-le-1 cardHolder">
   <div className="col-lg-3">
-    <div className={`card ${styles.cards}`}>
-      <img src={pic4} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
+    <div key={card.id} className={`card ${styles.cards}`}>
+      <img src={card.image} className={`card-img-top ${styles.cardImg}`}  alt={card.title} />
       <div className="card-body">
       <div className="row">
         <div className="col-lg-8">
-        <h6 className="card-title">Meeting Room</h6>
-        <p className="card-text">8 Seats</p>
+        <h6 className="card-title">{card.title}</h6>
+        <p className="card-text">{card.numSeats} Seats</p>
         </div>
         {/* <div className="col-lg-4 m-0">
           <p>from</p>
@@ -75,10 +77,19 @@ export default function WorkSpace() {
         </div> */}
         </div>
     </div>
-    <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>    </div>
-   
-  </div>
-  <div className="col-lg-3">
+    <a href={"/Booking"}className={`btn text-white m-auto ${styles.btnCard}`}>
+      <span >Book now</span></a> 
+      </div>
+    </div>
+    // </div>
+      ))}
+       </div>
+      
+       {/* <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+  </span> */}
+ 
+  {/* <div className="col-lg-3">
     <div className={`card ${styles.cards}`}>
       <img src={pic1} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
       <div className="card-body">
@@ -109,11 +120,11 @@ export default function WorkSpace() {
       <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>
     </div>
    
-  </div>
+  </div> */}
  
 </div>
 </div>
-</div>
+
 
 <div className="container">
 <div className={`${styles.details} my-2`}>

@@ -158,7 +158,7 @@ import React, { useState } from "react";
 import Joi from "joi";
 import axios from '../../api/axios';
 import { useNavigate } from "react-router";
-import LoginBg from "../../images/70315747_2503614136348024_2059368429667745792_o.jpg";
+import LoginBg from "../../images/11.jpg";
 import { Link } from "react-router-dom";
 
 export default function Login() {
