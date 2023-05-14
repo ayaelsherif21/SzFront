@@ -1,0 +1,56 @@
+/* .profileSettings {
+    /* max-width: 800px; */ 
+    /* margin: 0 auto;
+    padding: 20px; 
+    margin-top: 20px; */
+/* } */ 
+
+/* .profileDetails {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+} */
+
+.ProfilePic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin: 10px 10px 20px;
+
+} 
+/* .ProfilePic{
+    display: grid;
+    
+    justify-content: center;
+    flex: 1;
+    width: 70%;
+    resizeMode: 'contain';
+    margin-top: 10px 
+} */
+
+.profileDetails div {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.profile-details h3 {
+    margin: 0;
+}
+
+.font{
+    font-weight:bolder;
+    font-family: "Times New Roman", Times, serif;
+}
+
+@media (max-width: 668px) {
+    .profile-details {
+        flex-direction: column;
+    }
+
+    .profile-details img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

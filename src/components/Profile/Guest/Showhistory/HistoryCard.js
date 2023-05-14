@@ -1,30 +1,55 @@
-// this one when we can get data from database
 
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import "./ShowHistory.css";
 
-const HistoryCard = ({ bookings }) => {
+
+function formatDateRange(startDate, endDate) {
+  if (!startDate || !endDate) {
+    return '';
+  }
+  const start = startDate.toLocaleDateString();
+  const end = endDate.toLocaleDateString();
+  const diff = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+  if (diff === 0) {
+    return `${start}`;
+  } else if (diff === 1) {
+    return `${start} - ${end} (${diff} day)`;
+  } else {
+    return `${start} - ${end} (${diff} days)`;
+  }
+}
+function HistoryCard (props) {
+  console.log(props.startDate, props.endDate);
+  const duration = formatDateRange(props.startDate, props.endDate);
+  
   return (
-    <Container>
-      <Row>
-        {bookings.map((booking, index) => (
-          <Col md={4} key={index} className="mt-5">
-            <Image
-              style={{ height: 100, width: 100 }}
-              src={booking.image}
-              alt={booking.title}
-              fluid
-            />
-            <p>{booking.title}</p>
-            <p>{booking.date}</p>
-            <p>{booking.description}</p>
-            <p>cost: {booking.price}</p>
-            <p>duration : {booking.duration} hours</p>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="card text-left shadow" >
+      <div className="overflow">
+        <img src={props.imgsrc} alt="image1" className="card-img-top" />
+      </div>
+      <div className="card-body text-dark">
+        <p className="card-room"><strong>{props.room}</strong>  in {props.workspaceName}</p>
+        <div className="card-footer">
+          <div className="card-text text-secondary">{duration}</div>
+          <div className="price"> {props.price} EGP </div>
+        </div>
+
+      </div>
+    </div>
   );
 };
 
+
+
 export default HistoryCard;
+
+
+
+
+
+{/* <p className="card-text text-secondry">{props.text}</p>
+        <p className="card-text text-secondry">{props.date}</p>
+        <p className="card-text text-secondry">{props.description}</p>
+        <p className="card-text text-secondry">{props.price}</p>
+        <p className="card-text text-secondry">{props.duration}</p> */}

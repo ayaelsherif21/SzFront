@@ -1,3 +1,60 @@
-.caca{
+/* .caca{
     display: flex;
+} */
+body{
+    background:radial-gradient(#e5e5e5,#ffff,#e5e5e5);
 }
+.card{
+    /* width: 30rem; */
+    width: 600px;
+  height: 300px;
+  margin-left: 1px;
+    
+}
+.card:hover{
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.253)!important;
+}
+.card-body{
+    padding: 1rem 0!important;
+}
+.card-text{
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+}
+.price{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4b86b4;
+
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.container-fluid{
+    /*margin-top:5rem;*/
+    /*padding-bottom:5rem;*/
+}
+.ttotta{
+    margin-top: 7rem;
+}
+.row{
+    padding-bottom: 5rem;
+}
+.overflow{
+    overflow: hidden;
+}
+.card-img-top{
+
+    transform: scale(1);
+    transition:transform 0.5s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card-img-top:hover{
+    transform: scale(1.8);
+}
+
