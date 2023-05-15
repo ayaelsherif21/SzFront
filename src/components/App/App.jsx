@@ -39,7 +39,7 @@ function App() {
           <Route path="Register" element={<Register />}></Route>
           <Route path="/ResetPassword" element={<ResetPassword />}></Route>
           <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
-          <Route path="UserProfile/:id" element={<UserProfile />}>
+          <Route path="UserProfile/" element={<UserProfile />}>
 
           </Route>
           <Route path="OwnerProfile" element={<OwnerProfile />}></Route>

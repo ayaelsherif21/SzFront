@@ -24,14 +24,12 @@ function Cards() {
                     {cardData.map((pace) => (
                         <div key={pace.id}>
                             <div className={"carrd"}>
-
                                 <CardsUI
                                     imgsrc={pace.placePhotos}
                                     name={pace.placeName}
                                     location={pace.zone}
                                     capacity={pace.numberOfSeats}
                                     duration={pace.number}
-
                                 />
                             </div>
                         </div>
