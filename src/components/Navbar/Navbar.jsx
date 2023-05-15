@@ -1,10 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css";
-import Logo from "../../images/SpaceZone.svg";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styles from './Navbar.module.css'
 
-export default function Navbar({loginData}) {
-  console.log(loginData)
+export default function Navbar() {
   return (
     <nav className={`navbar navbar-expand-lg fixed-top navbar-light text-white ${styles.navBg}`}>
       <div className="container-fluid">
@@ -13,73 +11,59 @@ export default function Navbar({loginData}) {
         </button>
         <a className="navbar-brand text-white" href="#">SPACE ZONE</a>
         <div className={`collapse navbar-collapse  ${styles.items}`} id="navbarTogglerDemo03">
-         {loginData? <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item active">
               <Link className="nav-link text-white" to="Home">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="About">About</Link>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link className="nav-link text-white" to="Recommendation">Recommendation</Link>
-            </li> */}
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="Recommendation">
-                Surf
-              </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="Booking">Rooms</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="BB">Booking</Link>
-            </li>
-           {/* <li className="nav-item">
-            <Link className="nav-link text-white" to="WorkSpace">WorkSpace</Link>
-           </li> */}
+            {/* <li className="nav-item">
+  <Link className="nav-link text-white" to="WorkSpace">WorkSpace</Link>
+</li> */}
             <li className="nav-item">
               <Link className="nav-link  text-white" to="Contact">Contact Us</Link>
             </li>
-          
-          </ul> : ""}
-
-          <ul className='list-unstyled d-flex mb-lg-0 ms-auto align-items-center'>
-           {/* {loginData? ( 
-           <h6 className="mx-3 my-0">Hello {loginData.userName + " "}</h6>) 
-           : ("")} */}
+          </ul>
+          <ul className='list-unstyled d-flex mb-lg-0'>
             <div className="social-Links d-flex align-items-center">
               <i className='fab fa-facebook'></i>
               <i className='fab fa-instagram mx-3'></i>
               <i className='fab fa-twitter'></i>
-              <li className="nav-item mx-2">
-              <Link className="nav-link fa fa-user" to="UserProfile"></Link>
-            </li>
-            <li className="nav-item mx-2">
-              <Link
-                className="nav-link fa fa-users-gear"
-                to="OwnerProfile"
-              ></Link>
-            </li>
 
             </div>
-           {!loginData?
-           <>
-            <li className="nav-item mx-2">
-              <Link className="nav-link" to="Login">Login</Link>
-            </li>
-            <li className="nav-item mx-2">
-              <Link className="nav-link" to="Register">Register</Link>
-            </li>
            
-           </>
-           : 
-           
-           <li className="nav-item mx-2">
-           <Link className="nav-link" to="Login">Logout</Link>
-         </li>
-         }
-
+            <li>
+              <div className={`${styles.dropdown}`}>
+            <button className={` px-2 ${styles.dropbtn}`}>Login
+              <i className="fa fa-caret-down px-1 " />
+            </button>
+            <div className={`${styles.dropdownContent}`}>
+              <a href="Login">as a guest</a>
+              <a href="Ologin">as a owner</a>
             
+            </div>
+          </div>
+          </li>
+          <li>
+              <div className={`${styles.dropdown}`}>
+            <button className={`px-2 ${styles.dropbtn}`}>Sign up
+              <i className="fa fa-caret-down px-1" />
+            </button>
+            <div className={`${styles.dropdownContent}`}>
+              <a href="Register">as a guest</a>
+              <a href="Osignup">as a owner</a>
+            
+            </div>
+          </div>
+          </li>
+            
+            <li className="nav-item mx-2">
+              <Link className="nav-link" to="Login">Logout</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -88,7 +72,5 @@ export default function Navbar({loginData}) {
 
 
 
-  
-  
-  );
+  )
 }

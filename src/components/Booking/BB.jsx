@@ -93,7 +93,7 @@ export default function BB() {
          
             <div className={`${styles.formGroup}`}>
                   <label className={`${styles.formLabel} pe-2`}>Enter your phone</label>
-                  <input className={`w-75 ${styles.formControl}`} type="tel" required placeholder="Ex: 01200000000"
+                  <input className={`w-75 ${styles.formControl}`} type="tel" required placeholder="Ex: 01xxxxxxxxx"
                    value={phone}  onChange={ev => setphone(ev.target.value)}/>
                 </div>
          

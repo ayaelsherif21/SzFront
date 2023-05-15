@@ -90,86 +90,51 @@ const schema=Joi.object({
     setUser(myUser);
     console.log(myUser);
   }
-}
+  }
 
   return (
-    <div
-      className="w-100"
-      style={{
-        backgroundColor: "#2a4d69",
-        height: "100vh",
-        position: "fixed",
-        marginTop: "55px",
-      }}
-    >
-      <div
-        className={"container w-50 my-5 m-auto p-5 mt-20"}
-        style={{
-          backgroundColor: "#fff",
-          borderRadius: "25px",
-        }}
-      >
-        <div>
-          <div className={"Header my-3"}>
-            <h3
-              style={{
-                color: "#2a4d69",
-              }}
-            >
-              Reset Password
-            </h3>
-            {errorMsg ? (
-              <div className="alert alert-denger p-1">{errorMsg}</div>
-            ) : (
-              ""
-            )}
-            {errorList.map((error, index) => (
-              <div key={index} className="alert alert-danger p-2">
-                {error.message}
-              </div>
-            ))}
-          </div>
-
-          <form onSubmit={submitFormData}>
-            <div className="resetBox">
-              {/*    Password*/}
-              <div className="input-group mb-3">
-                <input
-                  // onChange={getFormValue}
-                  type="text"
-                  className="form-control"
-                  placeholder="New Password"
-                  name="password"
-                />
-              </div>
-              <div className="input-group mb-3">
-                <input
-                  // onChange={getFormValue}
-                  type="text"
-                  className="form-control"
-                  placeholder="Confirm Password"
-                  name="passwordConfirmation"
-                />
-              </div>
-
-              <button
-                className="btn px-5 float-end text-white text-bold"
-                style={{
-                  backgroundColor: "#63ace5",
-                }}
-              >
-                Submit
-              </button>
-              {loading ? (
-                <i className="fa fa-spinner fa-spin text-white"></i>
-              ) : (
-                ResetPassword
-              )}
-              <div className="clearfix"></div>
-            </div>
-          </form>
-        </div>
+    <>
+       <div className="container">
+      <div className="row">
+        <div className="col-lg-12 mt-5">
+  <form className="formRegister" action onSubmit={submitFormData}>
+  <p className="heading">Reset Password</p>
+    {errorMsg ? (
+      <div className="alert alert-denger p-1">{errorMsg}</div>
+    ) : (
+      ""
+    )}
+    {errorList.map((error, index) => (
+      <div key={index} className="alert alert-danger p-2">
+        {error.message}
       </div>
+    ))}
+  {errorMsg ? (<div className="alert alert-denger p-1 display-inline-block">{errorMsg}</div>) : ("")}
+  {errorList.map((error, index) => (<div key={index} className="alert alert-danger p-2 ">{error.message}</div>))}
+  <div className="inputContainer">
+    <svg viewBox="0 0 16 16" fill="#2e2e2e" height={16} width={16} xmlns="http://www.w3.org/2000/svg" className="inputIcon">
+      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+    </svg>
+    <input placeholder="Password" id="password" className="inputField py-4" type="password" 
+     //onChange={getFormValue}
+     name="password" />
+  </div>
+  <div className="inputContainer">
+    <svg viewBox="0 0 16 16" fill="#2e2e2e" height={16} width={16} xmlns="http://www.w3.org/2000/svg" className="inputIcon">
+      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+    </svg>
+    <input placeholder="Confirm Password" id="password" className="inputField" type="password" 
+    // onChange={getFormValue}
+     name="passwordConfirmation" />
+  </div>
+  <button id="button">Submit
+  {loading ? (<i className="fa fa-spinner fa-spin text-white ps-2"></i>) : (ResetPassword)}</button>
+</form>
+</div>
+</div>
     </div>
+    
+    </>
+
   );
 }
