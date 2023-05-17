@@ -1,11 +1,11 @@
 import "./Login.css";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Joi from "joi";
 import axios from '../../api/axios';
 import { useNavigate } from "react-router";
 import LoginBg from "../../images/11.jpg";
 import { Link } from "react-router-dom";
-
+import jwtDecode from "jwt-decode";
 export default function Login() {
   let [user, setUser] = useState({
     email: "",
@@ -14,13 +14,25 @@ export default function Login() {
   let [errorMsg, setErrorMsg] = useState("");
   let [errorList, setErrorList] = useState([]);
   let [loading, setLoading] = useState(false);
+  const [userId, setUserId]= useState(null);
+
+  // let isShownRepeated;
+  // let isShown;
 
   const navigate = useNavigate();
 
   function goToHome() {
     let path = "/Home";
-    navigate(path);
+    navigate(`UserProfile`);
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setUserId(decodedToken.userId);
+    }
+  }, []);
   async function submitFormData(e) {
     e.preventDefault();
     setLoading(true);
@@ -42,9 +54,15 @@ export default function Login() {
         alert(`Logging in Welcome ${e.data.data.user.userName}`);
         window.sessionStorage.setItem('token', e.data.token);
         axios.defaults.headers.common["Authorization"] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
-        console.log(sessionStorage.getItem("token"))  // this is how you get the token every time as it is stored in sessionStorage
+        const decodedToken = jwtDecode(e.data.token);
+        setUserId(decodedToken.userId);
+        console.log(sessionStorage.getItem("token"))
+        // this is how you get the token every time as it is stored in sessionStorage
+        console.log(e.data.data._id)
+        console.log(decodedToken);
         goToHome()
-      }).catch((err) => {
+
+      }).catch((err)=>{
         alert(err.message)
         setLoading(false);
       })

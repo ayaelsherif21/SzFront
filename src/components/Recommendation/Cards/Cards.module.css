@@ -39,3 +39,6 @@ body{
 .btnWs:hover{
     width: max-content;
 }
+.carrd{
+    margin: 2rem;
+}

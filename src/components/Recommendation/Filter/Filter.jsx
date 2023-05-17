@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Slider, RangeSlider } from "rsuite";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import RangeSlider from "rsuit/RangeSlider";
 import "rsuite/dist/rsuite.css";
 
@@ -51,11 +52,11 @@ export default function Filter() {
             <i className={"fa fa-star"} /> &up
           </label>
         </div>
-        <div className="features mt-4">
-          <h6 className="featuesHead">Features</h6>
+        <div className="Rooms mt-4">
+          <h6 className="RoomsHead">Rooms</h6>
           <label htmlFor="">
             <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-wifi"} /> Wifi
+            <i className="fa-solid fa-people-group"></i> Meeting Room
           </label>
           <br />
           <label htmlFor="">
@@ -70,7 +71,7 @@ export default function Filter() {
           <br />
           <label htmlFor="">
             <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-people-group"} /> Meeting Rooms
+            <i className="fa-solid fa-users"></i> Shared Area
           </label>
           <br />
           <label htmlFor="">
@@ -81,6 +82,24 @@ export default function Filter() {
           <label htmlFor="">
             <input className={"m-lg-1"} type="checkbox" />
             <i className={"fa fa-person-chalkboard"} /> Training/Course Rooms
+          </label>
+          <br />
+        </div>
+        <div className="features mt-4">
+          <h6 className="featuesHead">Features</h6>
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-wifi"} /> Wifi
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-person-through-window"} /> Balcony
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-gamepad"} /> Arcade
           </label>
           <br />
         </div>

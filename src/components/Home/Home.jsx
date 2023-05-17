@@ -8,6 +8,7 @@ import serpic2 from "../../images/10.jpg";
 import Footer from "../Footer/Footer";
 
 export default function Home() {
+
   return (
     <>
       <div
