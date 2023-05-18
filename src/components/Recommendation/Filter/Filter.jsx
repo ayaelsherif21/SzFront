@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Slider, RangeSlider } from "rsuite";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import RangeSlider from "rsuit/RangeSlider";
 import "rsuite/dist/rsuite.css";
 

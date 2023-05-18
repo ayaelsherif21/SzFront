@@ -131,6 +131,7 @@ export default function Contact() {
                                         type="submit"
                                         className={`btn btn-defult text-white`}
                                         id="contact-submit"
+                                        // onclick={submit()}
                                     >
                                         <i className="fas fa-paper-plane px-2"/>
                                         Send Message
@@ -142,7 +143,7 @@ export default function Contact() {
                     </div>
                 </div>
               </div>
-              <div className={`"${styles.contactContent} clearfix"`}>
+              {/* <div className={`"${styles.contactContent} clearfix"`}>
                 <div className={`${styles.icon}`}>
                 <i class="fa-solid fa-phone"></i>
                 </div>
@@ -179,8 +180,11 @@ export default function Contact() {
                     <i className="fas fa-paper-plane px-2" />Send Message</button>
                 </div>
               </div>
-                 </div>
-            <Footer/>
+                 </div> */}
+                 {/* <div className="row">
+                 <Footer/>
+                 </div> */}
+            
         </>
     );
 }

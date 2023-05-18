@@ -24,6 +24,7 @@ import jwtDecode from "jwt-decode";
 import Booking from "../Booking/Booking";
 import Payment from "../Booking/Payment";
 import BB from "../Booking/BB";
+import SearchBar from "../Home/SearchBar/SearchBar";
 
 //className="App"
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="Home" element={<Home />}></Route>
+          <Route path="SearchBar" element={<SearchBar />}></Route>
           <Route path="About" element={<About />}></Route>
           <Route path="Services" element={<Services />}></Route>
           <Route path={"MeetingRoom"} element={<MeetingRoom/>}/>

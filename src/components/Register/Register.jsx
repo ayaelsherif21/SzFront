@@ -88,6 +88,7 @@ const schema=Joi.object({
     style={{
       backgroundImage: "url(" + RegBg + ")",
       width: "100%",
+      height:"100vh",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -102,7 +103,6 @@ const schema=Joi.object({
         <div className="col-lg-12">
   <form className="formRegister " action onSubmit={submitFormData}>
   <p className="title">Register </p>
-  <h1 style={{ color: "#2a4d69" , fontSize:"13px"}}>Welcome to the Family</h1>
     {errorMsg ? (
       <div className="alert alert-denger p-1">{errorMsg}</div>
     ) : (
@@ -113,7 +113,6 @@ const schema=Joi.object({
         {error.message}
       </div>
     ))}
-  <p className="message">Signup now and get full access to our website. </p>
   {errorMsg ? (<div className="alert alert-denger p-1 display-inline-block">{errorMsg}</div>) : ("")}
   {errorList.map((error, index) => (<div key={index} className="alert alert-danger p-2 ">{error.message}</div>))}
   <p className='text-dark middelText'>as a guest</p>
@@ -134,7 +133,9 @@ const schema=Joi.object({
     </svg>
     <input placeholder="Email" id="email" className="inputField" type="text" onChange={getFormValue} name="email"/>
   </div>
-  <div className="inputContainer">
+<div className="row">
+<div className="col-lg-6"> 
+<div className="inputContainer">
     <svg viewBox="0 0 16 16" fill="#2e2e2e" height={16} width={16} xmlns="http://www.w3.org/2000/svg" className="inputIcon">
       <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
     </svg>
@@ -142,6 +143,9 @@ const schema=Joi.object({
      onChange={getFormValue}
      name="password" />
   </div>
+  </div>
+  <div className="col-lg-6"> 
+
   <div className="inputContainer">
     <svg viewBox="0 0 16 16" fill="#2e2e2e" height={16} width={16} xmlns="http://www.w3.org/2000/svg" className="inputIcon">
       <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
@@ -150,6 +154,8 @@ const schema=Joi.object({
      onChange={getFormValue}
      name="passwordConfirmation" />
   </div>
+  </div>
+</div>
   <div className="inputContainer">
    <svg xmlns="http://www.w3.org/2000/svg" className="mt-1 text-black icon icon-tabler icon-tabler-user-circle inputIcon" width="24" height="24" viewBox="0 0 35 35" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
