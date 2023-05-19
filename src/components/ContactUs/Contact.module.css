@@ -1,4 +1,4 @@
-.contact {
+.contact{
     background-color: #e7eff6;
     margin-top: 50px;
     /*WE WILL CHECK AND MAYBE WE WILL CHANGE THAT LATER DELETION*/
@@ -6,76 +6,59 @@
 
     background-image: url('../../images/dotted-map.png');
 }
-
-.contact h3 {
+.contact h3{
     font-size: 80px;
-] font-weight: 700;
-] color: rgb(230, 230, 230);
-
+    font-weight: 900;
+    color: rgb(230, 230, 230);
+    
 }
-
-.contact h2 {
-] font-size: 40 px;
-    font-weight: 700;
-] color: #4b86b4;
-
+.contact h2{
+    font-size: 45px;
+    font-weight: 900;
+    color: #4b86b4;
+    
 }
-
-.contact p {
-] font-size: 16 px;
-] color: rgb(153, 153, 153);
+.contact p{
+    font-size: 18px;
+    color: rgb(153, 153, 153);
     margin-bottom: 40px;
-}
-
-.contInfo {
+ }
+.contInfo{
     margin: 0 0 30px 0;
 }
-
-.contInfo h3 {
-] font-size: 20 px;
-] line-height: 32 px;
+.contInfo h3{
+    font-size: 25px;
+    line-height: 32px;
     font-family: "Poppins", sans-serif;
     color: #282828;
     font-weight: 600;
 }
-
-.contactContent {
+.contactContent{
     clear: both;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-
-    font-size: 11px;
-
-
+    
 }
-
-.icon {
+.icon{
     color: #4b86b4;
     position: relative;
     display: block;
     float: left;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 40px;
     font-weight: normal;
     margin-right: 20px;
     text-align: center;
 }
-
-.contactText {
-    font-size: 11px;
-}
-
-.contactText h4:hover {
+.contactText h4:hover{
     color: #4b86b4
 }
-
-.box {
+.box{
     width: 98.24561403508772%;
     margin-bottom: 20px;
     position: relative;
 }
-
-.box input {
+.box input{
     width: 100%;
     line-height: 1;
     padding: 14px 18px;
@@ -84,8 +67,7 @@
     border: 2px solid #eee;
     background-color: #fff;
 }
-
-.boxBtn {
+.boxBtn{
     background-color: #4b86b4;
     color: #fff;
     border-radius: 3px;
@@ -100,14 +82,8 @@
     vertical-align: middle;
     cursor: pointer;
     font-size: 14px;
-
+    
 }
-
-.boxBtn i:hover {
+.boxBtn i:hover{
     color: #000000
 }
-
-/* .btn1{
-    background-color: #d6242a;
-    color: #000;
-} */

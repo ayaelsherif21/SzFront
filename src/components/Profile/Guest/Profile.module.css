@@ -1,14 +1,15 @@
-body{
+/* body{
     height: 100vh;
-}
+} */
 .bigContainer{
     display: flex;
-    margin-top: 4.2rem;
+    /* margin-top: 3.2rem; */
     background-color: #fff; /* fallback color */
   background-image: url('../../../images/hero-image-01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
+  
      
 
 }
@@ -40,8 +41,8 @@ body{
 .leftContainer{
 
     /* background-color: #61dafb;     */
-    height: flex;
-    margin-top: 60px;
+    height: 30%;
+    margin-top: 100px;
     margin-bottom: 400px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -72,16 +73,12 @@ body{
     background-color: rgba(255,255,255, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    height: 30%;
+    height: 90vh;
     /* display: flex;
     justify-content: center;
     align-items: center; */
     transform: translate(10%, 0%);
-    margin-top: 80px;
-   
-
-    
-
+    /* margin-top: 60px!important; */
 }
 
 /* .rightContainer{
@@ -124,6 +121,6 @@ body{
     text-align: center;
 }
 
-.contactButton{
+/* .contactButton{
     margin-bottom: 3rem;
-}
+} */

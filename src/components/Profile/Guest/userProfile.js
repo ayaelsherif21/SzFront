@@ -72,8 +72,8 @@ function UserProfile() {
         </div>
       </div>
       {/*    left Container*  for the long detailed guest info*/}
-      <div className={`${styles.leftContainer} col-md-2`}>
-        <div className={`${styles.PGButtonHolder}  mt-5 m-auto`}>
+      <div className={`${styles.leftContainer} col-md-2 `}>
+        <div className={`${styles.PGButtonHolder}   m-4 `}>
           {/* {elements.map(function (element, index) {
                         return <button id={element.value} className={"PGbuttons m-lg-1   btn btn-primary "}
                                        key={index} onClick={PGNavigator}>{element.name}</button>
@@ -81,50 +81,46 @@ function UserProfile() {
 
           <button
             className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" ,marginTop:"40px"}}
-            onClick={showUDetails}
-          >
+            onClick={showUDetails}>
             Account Info
           </button>
           <button
             className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}
-            onClick={showHDetails}
-          >
+            onClick={showHDetails}>
             Show History
           </button>
-          <Link to={"/Contact"} className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}
->
+          <Link to={"/Contact"} className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}>
             Contact Us
           </Link>
-          <button className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}
->
+          <button className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}>
             Log out
           </button>
           <button
             className="btn btn-primary  m-lg-1" style={{ backgroundColor: "#4b86b4" }}
-            onClick={showDeleteBox}
-          >
+            onClick={showDeleteBox}>
             Delete Account
           </button>
         </div>
       </div>
-      <div className={`${styles.middleContainer} col-md-4 m-auto`}>
-        <div>
-        <div className={`${styles.historyCards} mt-3`}>
-          <div
-            className="UDetails"
-            style={{ display: isDetailActive ? "block" : "none" }}
-          >
-            <UserDetails></UserDetails>
-          </div>
-          <div
-            className="UHistory"
-            style={{ display: isHistoryActive ? "block" : "none" }}
-          >
-            <ShowHistory></ShowHistory>
-          </div>
+      <div className={`${styles.middleContainer} col-md-4 m-auto mt-6`}>
+        
+          <div className={`${styles.historyCards} mt-3`}>
+            <div
+              className="UDetails"
+              style={{ display: isDetailActive ? "block" : "none" }}
+            >
+              <UserDetails></UserDetails>
+            </div>
+            
+            <div
+              className="UHistory"
+              style={{ display: isHistoryActive ? "block" : "none" }}
+            >
+              <ShowHistory></ShowHistory>
+            </div>
+            </div>
         </div>
-      </div>
-      </div>
+      
       {/*
         Right Container* for the history and so on
         This box should show every content of the buttons in the left box

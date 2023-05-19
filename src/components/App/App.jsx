@@ -21,10 +21,12 @@ import MeetingRoom from "../ourWorkSpaces/Rooms/MeetingRoom/MeetingRoom";
 
 //className="App"
 function App() {
+  
   return (
     <>
       <Navbar />
-      <div>
+      
+          <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="Home" element={<Home />}></Route>

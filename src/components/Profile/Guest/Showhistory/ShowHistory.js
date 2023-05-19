@@ -135,6 +135,7 @@ const ShowHistory = () => {
               duration="duration"
             />
         </div>
+        
     </div>
     </div>
 

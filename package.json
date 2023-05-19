@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
+    "react-native-web": "^0.19.4",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "resuite": "^0.0.2",

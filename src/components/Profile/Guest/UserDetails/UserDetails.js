@@ -20,7 +20,7 @@ const [user, setuser] = useState({ userName: '', email: '',
  number:'' ,password:'',passwordConfirmation:'',
   profilePictureUrl:ProfilePic, gender:'male'});
   // Set up state for edit mode
-  const [isEditMode, setIsEditMode] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const [image, setImage] = useState('');
   const[fileUrl,setFileUrl]=useState(null)
@@ -125,7 +125,7 @@ const [user, setuser] = useState({ userName: '', email: '',
           
         {/* </div> 
        </div> */}
-      {/* {isEditMode ? ( */}
+      {isEditMode ? (
         <Form onSubmit={handleSubmit} >
           <Form.Group controlId="formBasicName">
             <Form.Label className={`${styles.font} m-auto mt-2 `}>Name:</Form.Label>
@@ -162,7 +162,8 @@ const [user, setuser] = useState({ userName: '', email: '',
 
             />
           </Form.Group>
-
+          <div className="row">
+          <div className="col-lg-6">
           <Form.Group controlId="formBasicPassword">
             <Form.Label className={`${styles.font} `}>New Password:</Form.Label>
              <Form.Control
@@ -174,7 +175,8 @@ const [user, setuser] = useState({ userName: '', email: '',
 
             />
           </Form.Group>
-
+          </div>
+          <div className="col-lg-6">
           <Form.Group controlId="formBasicConfirmPassword">
             <Form.Label className={`${styles.font} `}>Confirm Password:</Form.Label>
              <Form.Control
@@ -186,34 +188,41 @@ const [user, setuser] = useState({ userName: '', email: '',
 
             />
           </Form.Group>
-          
-          <Form.Group controlId="formBasicMale">
+          <div className="button me-2 float-end my-3">
+          <Button variant="primary" type="submit"  onClick={() => setIsEditMode(false)} className="me-2">
+            Save
+          </Button>
+          <Button variant="secondary" onClick={() => setIsEditMode(false)}>
+            Cancel
+          </Button>
+          </div>
+          </div>
+          </div>
+          {/* <div className="row">
+            <div className="col-lg-6">
+            <Form.Group controlId="formBasicMale">
             <Form.Label className={`mt-4 ${styles.font} `}>Male:</Form.Label>
             <input type="radio" name="gender" value="male" checked={user.gender === 'male'} onChange={handleInputChange} />
           </Form.Group>
-
-          <Form.Group controlId="formBasicFemale">
+            </div>
+            <div className="col-lg-6">
+            <Form.Group controlId="formBasicFemale">
           <Form.Label className={`${styles.font} `}>Female:</Form.Label>
           <input type="radio" name="gender" value="female" checked={user.gender === 'female'} onChange={handleInputChange} />
           </Form.Group>
-          
-          
-          <Button variant="primary" type="submit" >
-            Save
-          </Button>
-          {/* <Button variant="secondary" onClick={() => setIsEditMode(false)}>
-            Cancel
-          </Button> */}
+            </div>
+          </div> */}
         </Form>
-     {/* ) : (
+        
+      ) : (
       <Button
         variant="primary"
-        className="mt-4"
+        className="mt-2"
         onClick={() => setIsEditMode(true)}
       >
         Edit
       </Button>
-    )} */}
+    )} 
     </div>
   );
 }
