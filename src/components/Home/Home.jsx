@@ -1,4 +1,5 @@
-import React , { useState } from "react";
+import React , { useEffect, useState } from "react";
+import axios from '../../api/axios';
 import styles from "./Home.module.css";
 import Services from "../Services/Services";
 import homeBg from "../../images/1.jpg";
@@ -12,7 +13,13 @@ import { SearchResultsList } from "./SearchBar/SearchResultsList";
 export default function Home() {
   const [results, setResults] = useState([]);
 
-
+  async function getAllPlaces(){
+    let {data} = await axios.get("api/places/getAllPlaces")
+    console.log(data)
+  }
+  useEffect(()=>{
+    getAllPlaces()
+  },[])
   return (
     <>
       <div
@@ -56,7 +63,7 @@ export default function Home() {
         </div>
         <Services />
         <div className={`${styles.addWS}`}>
-          <div className="container">
+          <div className={`container ${styles.addWS}`}>
            <div className={`row py-4`}>
              <div className={`col-lg-6 col-lg-offset-1 py-4 text-center ${styles.TextBox}`}>
             <h3 className="lowercase">If you want to add your place</h3>

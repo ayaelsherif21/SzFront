@@ -1,0 +1,259 @@
+.checkControl {
+	background-color: #fff;
+	/* color: #cecece; */
+	height: 40px;
+	padding: 0px 15px;
+	border: none;
+	color: #707070;
+	font-size: 12px;
+	font-weight: 400;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 40px;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	float: left;
+}
+input[type="checkbox"]:disabled + .checkControl  {
+  /* Add your CSS styles for the active select dropdown */
+  border: 2px solid blue;
+  background-color: lightblue;
+  /* Add any other styles you want for the active select dropdown */
+}
+.checkControl{
+	-webkit-input-placeholder : gainsboro;
+}
+
+ .checkControl:-ms-input-placeholder {
+	color: #000;
+}
+
+ .checkControl::placeholder {
+	color: #e5e5e5;
+}
+
+.checkControl:focus {
+	background: #f8f8f8;
+}
+
+.selectArr {
+	position: absolute;
+	right: 3px;
+	bottom: 5px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: #000;
+	font-size: 14px;
+	border-radius: 15px;
+}
+
+.selectArr:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	border-radius: 15px;
+
+}
+
+.week{
+	/* background-color:#e5e5e5; */
+	margin: auto;
+	font-weight: 600;
+	font-style: initial;
+
+}
+.Weekly{
+	margin-bottom: 20px;
+	background-color: #e5e5e5;
+}
+/*************/
+
+/* .switchHolder {
+	display: flex;
+	padding: 9px 0px 9px 0px ;
+	border-radius: 10px;
+	box-shadow: -8px -8px 15px rgba(255, 255, 255, .7),
+		  10px 10px 10px rgba(0, 0, 0, .2),
+		  inset 8px 8px 15px rgba(255, 255, 255, .7),
+		  inset 10px 10px 10px rgba(0, 0, 0, .2);
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .switchLabel {
+	padding: 0 20px 0 10px
+  }
+  
+  .switchLabel i {
+	margin-right: 5px;
+  }
+  
+  .switchToggle {
+	padding: 0 10px 0 1;
+	height: 20px;
+  }
+  
+  .switchToggle input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	z-index: -2;
+  }
+  
+  .switchToggle input[type="checkbox"]+label {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 20px;
+	border-radius: 20px;
+	margin: 0;
+	cursor: pointer;
+	box-shadow: inset -8px -8px 15px rgba(255, 255, 255, .6),
+		  inset 10px 10px 10px rgba(0, 0, 0, .25);
+  }
+  
+  .switchToggle input[type="checkbox"]+label::before {
+	position: absolute;
+	content: 'OFF';
+	font-size: 11px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 25px;
+	top: 3px;
+	left: 6px;
+	width: 30px;
+	height: 15px;
+	border-radius: 20px;
+	background-color: #eeeeee;
+	box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
+		  3px 3px 5px rgba(0, 0, 0, .25);
+	transition: .3s ease-in-out;
+  }
+  
+  .switchToggle input[type="checkbox"]:checked+label::before {
+	left: 50%;
+	content: 'ON';
+	color: #fff;
+	background-color: #00b33c;
+	box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
+		  3px 3px 5px #00b33c;
+  } */
+
+  .checkbox {
+	display: none;
+  }
+  
+  .slider {
+	width: 35px;
+	height: 15px;
+	background-color: lightgray;
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	border: 3px solid transparent;
+	transition: .3s;
+	box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+	cursor: pointer;
+  }
+  
+  .slider::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	transform: translateX(-18px);
+	border-radius: 20px;
+	transition: .3s;
+	box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  }
+  
+  .checkbox:checked ~ .slider::before {
+	transform: translateX(18px);
+	box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  }
+  
+  .checkbox:checked ~ .slider {
+	background-color:  rgb(0, 218, 80);
+  }
+  
+  .checkbox:active ~ .slider::before {
+	transform: translate(0);
+  }
+
+  /******allllll dayyyyyyyyy**********/
+
+  .switchday {
+	position: relative;
+	display: inline-block;
+	width: 90px;
+	height: 25px;
+   }
+   
+   .switchday input {
+	display: none;
+   }
+   
+   .sliderday {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #707070;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 20px;
+   }
+   
+   .sliderday:before {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 15px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50%;
+   }
+   
+   input:checked + .sliderday {
+	background-color: seagreen;
+   }
+   
+   input:focus + .sliderday {
+	box-shadow: 0 0 1px seagreen;
+   }
+   
+   input:checked + .sliderday:before {
+	-webkit-transform: translateX(15px);
+	-ms-transform: translateX(15px);
+	transform: translateX(67px);
+   }
+   
+   /*------ ADDED CSS ---------*/
+   .sliderday:after {
+	content: 'ALL DAY';
+	color: white;
+	display: block;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	font-size: 10px;
+	text-align: center;
+   }
+   
+   input:checked + .sliderday:after {
+	content: 'ALL DAY';
+   }
+   
+   /*--------- END --------*/
