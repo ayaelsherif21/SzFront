@@ -117,7 +117,7 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className={`${styles.box}`}>
-                                    <input
+                                    <textarea
                                         onChange={handleInputChange}
                                         value={formData.message}
                                         type="message"

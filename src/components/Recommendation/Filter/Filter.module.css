@@ -1,0 +1,14 @@
+.head{
+    width: 100%;
+    height: 100%;
+    background-color: 	#0a75ad;
+    color: aliceblue;
+    font-size: 12px;
+}
+.filterBody{
+    padding: 20px;
+    margin-top: 65px;
+}
+.stars{
+    color: #f5b917;
+}

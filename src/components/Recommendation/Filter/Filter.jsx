@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Slider, RangeSlider } from "rsuite";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styles from "./Filter.module.css"
 // import RangeSlider from "rsuit/RangeSlider";
 import "rsuite/dist/rsuite.css";
 
@@ -14,8 +14,9 @@ export default function Filter() {
   }
   return (
     <>
-      <h2 className="head">Filters</h2>
-      <div className="filterBody mt-2">
+    <div className={`${styles.head}`}>
+      <div className={` ${styles.filterBody }`}>
+      <h2 className={`${styles.filterr}`}>Filters</h2>
         <div className="price">
           <h6 className="pirceHead ">Price</h6>
           <div className="pSlider mt-2">
@@ -25,65 +26,41 @@ export default function Filter() {
         <div className="rates mt-4">
           <h6 className="ratesHead">Rates</h6>
           <label>
+          
+            <div className={`ml-2 ${styles.stars} `}>
             <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-star"} />
+            <i className={`fa fa-star`} />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} /> &up
+            </div>
           </label>
           <br />
           <label>
+          <div className={`ml-2 ${styles.stars} `}>
             <input className={"m-lg-1"} type="checkbox" />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} /> &up
+            </div>
           </label>
           <br />
 
           <label>
+          <div className={`ml-2 ${styles.stars} `}>
             <input className={"m-lg-1"} type="checkbox" />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} /> &up
+            </div>
           </label>
           <br />
 
           <label>
+          <div className={`ml-2 ${styles.stars} `}>
             <input className={"m-lg-1"} type="checkbox" />
             <i className={"fa fa-star"} /> &up
+            </div>
           </label>
-        </div>
-        <div className="Rooms mt-4">
-          <h6 className="RoomsHead">Rooms</h6>
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className="fa-solid fa-people-group"></i> Meeting Room
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-person-through-window"} /> Balcony
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-volume-mute"} /> Silent Rooms
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className="fa-solid fa-users"></i> Shared Area
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-gamepad"} /> Arcade Rooms
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-person-chalkboard"} /> Training/Course Rooms
-          </label>
-          <br />
         </div>
         <div className="features mt-4">
           <h6 className="featuesHead">Features</h6>
@@ -99,7 +76,22 @@ export default function Filter() {
           <br />
           <label htmlFor="">
             <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-gamepad"} /> Arcade
+            <i className={"fa fa-volume-mute"} /> Silent Rooms
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-people-group"} /> Meeting Rooms
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-gamepad"} /> Arcade Rooms
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-person-chalkboard"} /> Training/Course Rooms
           </label>
           <br />
         </div>
@@ -125,6 +117,8 @@ export default function Filter() {
           <br />
         </div>
       </div>
+      </div>
+
     </>
   );
 }

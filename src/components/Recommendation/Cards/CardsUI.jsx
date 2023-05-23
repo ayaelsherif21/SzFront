@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 
 function CardsUI(props) {
   return (
-    <div className={`card text-center shadow ${styles.card}`}>
+  
+ <div className="container">
+  <div className="row d-flex">
+    < div className="col-lg-4">
+         <div className={`card text-center shadow ${styles.card}`}>
       <div className={`${styles.overflow}`}>
         <img src={props.imgsrc} alt="image1" className={`card-img-top ${styles.cardImg}`} />
       </div>
@@ -31,7 +35,53 @@ function CardsUI(props) {
 
       </div>
     </div>
+    </div>
+  </div>
+</div> 
   )
 }
 
-export default CardsUI
+export default CardsUI;
+
+
+
+
+/*<div className="slider">
+//        <div className={`${styles.wrapper}`}>
+//   <i id="left" className="fa-solid fa-angle-left" />
+//   <ul className={`carousel ${styles.carousel}`}>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-1.jpg" alt="img" draggable="false" /></div>
+//       <h2>Blanche Pearson</h2>
+//       <span>Sales Manager</span>
+//     </li>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-2.jpg" alt="img" draggable="false" /></div>
+//       <h2>Joenas Brauers</h2>
+//       <span>Web Developer</span>
+//     </li>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-3.jpg" alt="img" draggable="false" /></div>
+//       <h2>Lariach French</h2>
+//       <span>Online Teacher</span>
+//     </li>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-4.jpg" alt="img" draggable="false" /></div>
+//       <h2>James Khosravi</h2>
+//       <span>Freelancer</span>
+//     </li>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-5.jpg" alt="img" draggable="false" /></div>
+//       <h2>Kristina Zasiadko</h2>
+//       <span>Bank Manager</span>
+//     </li>
+//     <li className={`${styles.card}`}>
+//       <div className={`${styles.img}`}><img src="images/img-6.jpg" alt="img" draggable="false" /></div>
+//       <h2>Donald Horton</h2>
+//       <span>App Designer</span>
+//     </li>
+//   </ul>
+//   <i id="right" className="fa-solid fa-angle-right" />
+// </div>
+
+//     </div>*/

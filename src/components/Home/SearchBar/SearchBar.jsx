@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import "./SearchBar.css";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar({ setResults }) {
   const [input, setInput] = useState("");
@@ -33,9 +33,10 @@ export default function SearchBar({ setResults }) {
   };
 
   return (
-    <div className="input-wrapper">
-      <FaSearch id="search-icon" />
+    <div className={`input-wrapper ${styles.inputWrapper}`}>
+      <FaSearch id="search-icon" className={`${styles.searchIcon}`}/>
       <input
+      className={`${styles.searchInp}`}
       // className="inputField "
         placeholder="Where do you want to work?"
         value={input}

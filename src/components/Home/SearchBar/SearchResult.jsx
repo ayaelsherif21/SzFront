@@ -1,9 +1,9 @@
-import "./SearchResult.css";
+import style from "./SearchResult.module.css";
 
 export const SearchResult = ({ result }) => {
   return (
     <div
-      className="search-result"
+      className={`${style.searchResult}`}
       onClick={(e) => alert(`You selected ${result}!`)}
     >
       {result}
