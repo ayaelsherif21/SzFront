@@ -28,7 +28,7 @@ export default function Filter() {
           <label>
           
             <div className={`ml-2 ${styles.stars} `}>
-            <input className={"m-lg-1"} type="checkbox" />
+            <input className={"m-lg-1"} type="checkbox"/>
             <i className={`fa fa-star`} />
             <i className={"fa fa-star"} />
             <i className={"fa fa-star"} />

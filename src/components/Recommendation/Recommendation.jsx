@@ -1,167 +1,92 @@
-import React from "react";
-import styles from "../Recommendation/Recommendation.module.css";
-// import client1 from "../../images/client-1.png";
-// import client2 from "../../images/client-2.png";
-// import client3 from "../../images/client-3.png";
-// import client4 from "../../images/client-4.png";
-// import client5 from "../../images/client-5.png";
-// import client6 from "../../images/client-6.png";
-// import client7 from "../../images/client-7.png";
-// import client8 from "../../images/client-8.png";
-// import client9 from "../../images/client-9.png";
-import Footer from "../Footer/Footer";
-import Cards from "../Recommendation/Cards/Cards"
-
-import Filter from "./Filter/Filter";
-
+import React, { useEffect, useState} from 'react'
+import styles from "./Recommendation.module.css";
+import Filter from './Filter/Filter'
+import axios from "../../api/axios";
+import { Grid } from 'rsuite';
+import {MdOutlineChair} from "react-icons/md"
+import {BsTelephone} from "react-icons/bs"
+import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 export default function Recommendation() {
+    const [places, setPlaces] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get("api/places/getAllPlaces"); // Replace with the actual API endpoint
+          setPlaces(response.data.data.places); // Assuming the response data is an array of places
+        } catch (error) {
+          console.log('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
   return (
     <>
-    <div className="container " >
-    <div id="reviews" className={` text-center ${styles.client}`}>
-    <div className="mt-5  text-center position-relative d-flex justify-content-center align-items-center">
-    <h2 className=" mb-0 position-absolute">Workspaces</h2>
-    <h3 className=" mb-0">W</h3>
-  </div>
-  </div>
-      <div className=" row ttotta " >
-        <div className="col-2" style={{fontSize:"12px"}} >
-          <Filter />
-        </div>
-        <div className="col-10">
-          <Cards />
-        </div>
-      </div>
-      </div>
-      <Footer />
-     {/* cards
-     <Cards/>
-     <div className="col-2 p-4">
-     <Filter />
-   </div>
-    <div id="reviews" className={` text-center mt-5 ${styles.client}`}>
-  <div className=" text-center position-relative d-flex justify-content-center align-items-center">
-    <h2 className=" mb-0 position-absolute">Client Reviews</h2>
-    <h3 className=" mb-0">C</h3>
-  </div>
-  <p className="p-2">Donec purus est, tincidunt eu sodales quis, vehicula quis enim. Morbi dapibus, tellus a
-    gravida faucibus,
-    elit ipsum sollicitudin risus, id ultricies arcu neque eget velit.</p>
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-12">
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="client-review p-5">
-                <img src={client1} className={`${styles.clientImg}`} />
-                <h5>Martin Jack</h5>
-                <h6>From Hooli</h6>
-                <i className="fas fa-quote-left " />
-                <p> Aenean sit amet est orci. Aenean at nisi eget nulla lobortis commodo. Nam
-                  eget lorem in
-                  ex aliquam dapibus. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client2} className={`${styles.clientImg}`} />
-                <h5>David Dowsy</h5>
-                <h6>From Globex</h6>
-                <i className="fas fa-quote-left" />
-                <p> Suspendisse non velit lacus. Mauris efficitur lorem a justo semper, ut
-                  suscipit ligula malesuada. Donec dui nulla. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client3} className={`${styles.clientImg}`} />
-                <h5>Doglas Kosta</h5>
-                <h6>From Soylent</h6>
-                <i className="fas fa-quote-left" />
-                <p> Vestibulum lectus massa, volutpat ut tristique nec, volutpat in turpis. In
-                  vehicula tempus odio. Nullam enim ligula. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client4} className={`${styles.clientImg}`} />
-                <h5>Anthony Lee</h5>
-                <h6>From Initech</h6>
-                <i className="fas fa-quote-left" />
-                <p> Nunc accumsan finibus sollicitudin. Integer malesuada purus sapien, sit amet
-                  volutpat sem fringilla ut. Proin viverra scelerisque mollis. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client5} className={`${styles.clientImg}`} />
-                <h5>Jane Doris</h5>
-                <h6>From Acme</h6>
-                <i className="fas fa-quote-left" />
-                <p> Fusce euismod eget nulla a tempus. Pellentesque in varius metus. Fusce
-                  iaculis cursus ante, vel vestibulum dui sagittis vitae. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client6} className={`${styles.clientImg}`} />
-                <h5>Jonathon Doe</h5>
-                <h6>From Umbrella</h6>
-                <i className="fas fa-quote-left" />
-                <p> Cras et est eu tellus fringilla congue. Nunc efficitur libero ut nunc
-                  volutpat porttitor. Aliquam in justo at neque. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client7} className={`${styles.clientImg}`} />
-                <h5>Shane Catson</h5>
-                <h6>From Massive</h6>
-                <i className="fas fa-quote-left" />
-                <p> Vivamus pellentesque dignissim neque, quis viverra diam venenatis sit amet.
-                  Donec dignissim turpis quis libero posuere auctor. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client8} className={`${styles.clientImg}`} />
-                <h5>Hugh Tace</h5>
-                <h6>From Capital</h6>
-                <i className="fas fa-quote-left" />
-                <p> Aenean varius accumsan eros, id molestie leo vestibulum a. Ut semper dictum
-                  feugiat. Integer tincidunt interdum eros ut accumsan. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="client-review p-5">
-                <img src={client9} className={`${styles.clientImg}`} />
-                <h5>Chris Wort</h5>
-                <h6>From Sylhost</h6>
-                <i className="fas fa-quote-left" />
-                <p> Morbi viverra ultrices magna vel egestas. Suspendisse rutrum, lacus nec
-                  sodales gravida, augue ante sollicitudin sem. </p>
-                <i className="fas fa-quote-right" />
-              </div>
-            </div>
+
+        <div className=" row">
+          <div className="col-md-2" style={{ fontSize: "12px" }}>
+            <Filter />
           </div>
-          <button className="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon " aria-hidden="true" />
-            <span className="visually-hidden bg-dark ">Previous</span>
-          </button>
-          <button className="carousel-control-next " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span className="carousel-control-next-icon " aria-hidden="true" />
-            <span className="visually-hidden">Next</span>
-          </button> */}
-          
+          <div className="col-md-10">
+          {/* <div className="container "> */}
+        <div className={`text-center ${styles.client}`}>
+          <div className="text-center position-relative d-flex justify-content-center align-items-center">
+            <h2 className=" mb-0 position-absolute">Workspaces</h2>
+            <h3 className=" mb-0">W</h3>
+          </div>
+        </div>
+        <Grid className="row m-auto mt-1">
+        {places.map((pace) => (
+        <div className="col-lg-4">
+        <div key={pace._id} className={`my-3 mx-4 shadow ${styles.cardofws}`}>
+       <div className={`${styles.cardImgg}`}>
+       <img src={pace.placePhotos} alt="image1" className={`w-100 ${styles.imgWs}`}/>
+  </div>
+  <div className={`${styles.zoneWs}`}>
+    <span className={`${styles.innerText}`}>{pace.zone}</span>
+  </div>
+  <div className={`${styles.contentofCard}`}>
+    <div className="tapp ">
+    <span className={`${styles.cardTitle}`}>{pace.placeName}</span>
+    <span className={`float-end ${styles.priceWs}`}>{pace.hourPrice} <span className={`float-end`} style={{fontSize:"9px" , color:"gray"}}>EGP/HOUR</span></span>
+
+    <hr></hr>
+    </div>
+    <div className="seatnum "> 
+    <span className={` px-2 ${styles.cardSubtitle}`}>4 Rooms and Shared Area </span>
+    <div className="d-flex seats">
+    <span className={` px-2 ${styles.cardSubtitle}`}> <MdOutlineChair fontSize={16}/> {pace.numberOfSeats} seat </span>
+    <span className={` px-1 ${styles.cardSubtitle}`}> <BsTelephone fontSize={12}/>  {pace.number}</span>
+    </div>
+    <div className="phnum d-flex">
+    <Link className='w-100' to={"/WorkSpace"}>
+    <button type='submit' className={`shadow float-left ${styles.btnnWs}`}>
+  <span className={`${styles.label}`}>More Details </span>
+  <span className={`${styles.icon}`}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={15} height={15}><path fill="none" d="M0 0h24v24H0z" /><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg>
+  </span>
+</button>
+</Link>
+    </div>
+   
+
+    </div>
+    
+       </div>
+</div>
+</div>
+
+   ))}
+   </Grid>
+          {/* </div> */}
+        </div>
+      </div>
+   
+<Footer />
+    
+    
     </>
-  );
+  )
 }

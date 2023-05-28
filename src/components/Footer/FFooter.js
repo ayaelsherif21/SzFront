@@ -28,24 +28,24 @@ export default function FFooter() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-3 ">
                 <div className={`${styles.widget}`}>
                   <h5>Contact Info</h5>
                   <div className={`${styles.textwidget}`}>
-                    <p>
+                    <h6>
                       1650 Lombard Street,
-                      <br />
                       San Francisco, CA 94123
-                    </p>
-                    <p>
+                    </h6>
+                    <h6>
                       +1 (415) 876-3250
-                      <br />
+                      </h6>
+                      <h6>
                       spacezone@gmail.com
-                    </p>
+                    </h6>
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 ">
                 <div className={`${styles.widget}`}>
                   <h5>Useful Links</h5>
                   <div className={`${styles.textwidget}`}>

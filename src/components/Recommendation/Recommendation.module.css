@@ -1,78 +1,186 @@
-/* .client{
-    background-color: #e7eff6;
-    background-size: cover;
-    height: 100vh;
-} */
+.client{
+  margin-top: 4rem;
+}
 .client h3{
-    font-size: 80px;
-    font-weight: 900;
-    color: rgb(230, 230, 230);
-    margin-top: 5px;
-    }
-    .client h2{
-    font-size: 40px;
-    font-weight: 900;
-    color: #4b86b4;
-    margin-top: 5px;
+  font-size: 80px;
+  font-weight: 600;
+  color: rgb(230, 230, 230);
+  }
+  .client h2{
+  font-size: 40px;
+  font-weight: 900;
+  color: #4b86b4;
+  }
 
-    }
-    .client h5{
-        font-size: 30px;
-    color: #282828;
-    }
-    .clientImg{
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-    }
-    .client p{
-        font-size: 15px;
-        line-height: 1.5em;
-        text-align: center;
-        font-family: "Open Sans", sans-serif;
-        color: #666;
-    }
-    .client h6{
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        color: #666;
-    }
-    .arrow{
-        color: #000;
-    }
-    .row p{
-        margin: 0 0 20px;
-        }
-        .bar{
-        clear: both;
-        margin: 6px 6px 6px 6px;
-        padding: 5px 5px 5px 5px; 
-        }
-        .progressHeading {
-        overflow: hidden;
-        margin-bottom: 5px;
-        }
-       .progressTitle {
-        float: left;
-        margin: 0;
-        padding: 0;
-        color: #444;
-        font-weight: 300;
-        }
-        .progressBar {
-        float: left;
-        height: 100%;
-        font-size: 13px;
-        line-height: 7px;
-      
-        text-align: center;
-        }
-       .progressValue {
-        text-align: right;
-        font-weight: 400;
-        }
-       .progressBar{
-        background-color: #4b86b4;
-        border-radius: 10px;
-        }
-    
+.cardofws {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  color: #2e2d31;
+  /* background: #131313; */
+  overflow: hidden;
+  border-radius: 20px;
+  flex-direction: row;
+  overflow: hidden;
+
+}
+.cardImgg{
+  overflow: hidden;
+}
+.imgWs{
+  position: relative; 
+  transform: scale(1);
+  transition: transform 0.4s ease;
+  border-radius: 10px!important;
+
+}
+.imgWs:hover{
+  transform: scale(1.7);
+}
+.zoneWs{
+ position: absolute; 
+ background-color: rgb(122, 121, 41);
+ padding: 0 10px ;
+  color: white;
+  top: 163px;
+  right: 0px; 
+  border-radius: 13px 0px;
+}
+.innerText{
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: right;
+
+
+}
+
+/* .temporaryText {
+    width: 100px;
+    height: 100px;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 6px 12px;
+  color: #c94141;
+} */
+
+.cardTitle {
+  font-weight: bold;
+}
+.contentofCard{
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.priceWs{
+  color: rgb(122, 121, 41);
+  font-size: 15px;
+  font-weight: bold;
+}
+.cardContent {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+    /* edit the width to fit card */
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-top-left-radius: 20px;
+    /* edit here to change the height of the content box */
+  transform: translateY(100px);
+  transition: transform .25s;
+}
+
+/* .cardContent::before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px #f2f2f2;
+} */
+
+.cardTitle {
+  color: #131313;
+  line-height: 15px;
+}
+
+.cardSubtitle {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.cardofws:hover .cardContent {
+  transform: translateY(0);
+}
+
+.cardofws:hover .cardDescription {
+  opacity: 1;
+  transition-delay: .25s;
+}
+
+.btnnWs {
+  margin-top: 10px;
+  width: 70%;
+  position: relative;
+  font-size: 11px;
+  /* letter-spacing: 3px; */
+  height: 3em;
+  /* padding: 0 3em; */
+  border: none;
+  background-color: #4b86b4;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+  border-radius: 20px;
+float: left; 
+}
+ 
+ .btnnWs::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  background: 	#63ace5;
+  background: linear-gradient(90deg, rgba(99,172,229,1) 20%, rgba(42,77,105,1) 100%);
+  transition: 0.2s;
+ }
+ 
+  .label {
+  position: relative;
+ }
+ 
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3em;
+  width: 3em;
+  position: absolute;
+  top: 3em;
+  right: 0;
+  opacity: 0;
+  transition: 0.4s;
+ }
+ 
+ .btnnWs:hover::before {
+  height: 100%;
+ }
+ 
+ .btnnWs:hover .icon {
+  top: 0;
+  opacity: 1;
+ }

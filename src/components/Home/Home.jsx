@@ -62,7 +62,7 @@ export default function Home() {
         
         </div>
         <Services />
-        <div className={`${styles.addWS}`}>
+        {/* <div className={`${styles.addWS}`}>
           <div className={`container ${styles.addWS}`}>
            <div className={`row py-4`}>
              <div className={`col-lg-6 col-lg-offset-1 py-4 text-center ${styles.TextBox}`}>
@@ -76,7 +76,7 @@ export default function Home() {
 
      
 
-        </div>
+        </div> */}
         <Footer></Footer>
       </div>
     </>
