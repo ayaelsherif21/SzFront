@@ -68,9 +68,9 @@ function App() {
           <Route path="/ResetPassword" element={<ResetPassword />}></Route>
           <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
           {/* <Route path="UserProfile/:id" element={<UserProfile />}></Route> */}
-          {/* <Route path="OProfile" element={<OProfile />}></Route> */}
+          <Route path="OProfile" element={<OProfile />}></Route>
 
-          {/* <Route path="OwnerProfile" element={<OwnerProfile />}></Route> */}
+          <Route path="OwnerProfile" element={<OwnerProfile />}></Route>
           <Route path="Osignup" element={<Osignup />}></Route>
           <Route path="Ologin" element={<Ologin />}></Route>
           <Route path="*" element={<NotFound />}></Route>

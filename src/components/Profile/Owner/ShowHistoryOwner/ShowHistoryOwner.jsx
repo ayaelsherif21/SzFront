@@ -4,6 +4,7 @@ import HistoryCardOwner from "./HistoryCardOwner";
 const ShowHistoryOwner = () => {
   let bookingsHistoryForOwner = [
     {
+      
       id: 1,
       name: "Guest Name",
       date: "2023-01-01",
@@ -14,7 +15,17 @@ const ShowHistoryOwner = () => {
     },
   ];
   return (
+    <div className={`mt-5 shadow historyCard`}
+    style={{
+     width: "350px",
+     height: "150px",
+     background:"e5e5e5",
+     borderRadius: "40px 0 40px 0",
+     marginTop:"10rem",
+
+   }}>
     <HistoryCardOwner bookings={bookingsHistoryForOwner}></HistoryCardOwner>
+  </div>
   );
 };
 
