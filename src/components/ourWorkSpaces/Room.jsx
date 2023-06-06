@@ -4,10 +4,10 @@ import styles from './Room.module.css'
 import style from './Workspace.module.css'
 
 import axios from 'axios';
-import WorkSpace from './WorkSpace';
+// import WorkSpace from './WorkSpace';
 import Room1 from '../../images/7.jpg'
-import Room2 from '../../images/9.jpg'
-import Room3 from '../../images/10.jpg'
+// import Room2 from '../../images/9.jpg'
+// import Room3 from '../../images/10.jpg'
 export default function Room() {
     const {id} = useParams();
     const [Room , setRoom] = useState(null);
