@@ -48,42 +48,8 @@ const schema=Joi.object({
   passwordConfirmation:Joi.string().required()
 });
  return schema.validate(user,{abortEarly:false});
-
-  function goToLogin() {
-    let path = "/Login";
-    navigate(path);
   }
 
-  async function submitFormData(e) {
-    e.preventDefault();
-    setLoading(true);
-    let validationResult = validateForm();
-    console.log(validationResult);
-    if (validationResult.error) {
-      alert("Validation Error");
-      setErrorList(validationResult.error.details);
-      setLoading(false);
-    } else {
-      let { data } = await axios.patch(
-        "https://spacezone-backend.cyclic.app/api/user/resetPasswordUser/:Token",
-        user
-      );
-      if (data.message == "success") {
-        goToLogin();
-      } else {
-        setErrorMsg(data.message);
-      }
-      setLoading(false);
-    }
-  }
-
-  function validateForm() {
-    const schema = Joi.object({
-      password: Joi.string().required(),
-      passwordConfirmation: Joi.string().required(),
-    });
-    return schema.validate(user, { abortEarly: false });
-  }
 
   function getFormValue(e) {
     let myUser = { ...user };
@@ -91,7 +57,7 @@ const schema=Joi.object({
     setUser(myUser);
     console.log(myUser);
   }
-  }
+  
 
   return (
     <>
@@ -117,7 +83,7 @@ const schema=Joi.object({
       <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
     </svg>
     <input placeholder="Password" id="show-password" className={`${styles.inputField}`} type="password" 
-    //  onChange={getFormValue}
+     onChange={getFormValue}
      name="password" />
   </div>
   <div className={`${styles.inputContainer}`}>
@@ -125,7 +91,7 @@ const schema=Joi.object({
       <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
     </svg>
     <input placeholder="Confirm Password" id="show-password" className={`${styles.inputField}`} type="password" 
-    //  onChange={getFormValue}
+     onChange={getFormValue}
      name="confirm-password" />
   </div>
   <button id="button">Submit
