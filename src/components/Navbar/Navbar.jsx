@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import styles from "./Navbar.module.css";
 import Logo from "../../images/SpaceZone.svg";
 import axios from "../../api/axios";
+import Cookies from "js-cookie";
 
 export default function Navbar() {
     const [userData, setUserData] = useState([]);
@@ -14,10 +15,18 @@ export default function Navbar() {
         });
     }, []);
 
+
+
     function Logout() {
-
-    }
-
+        axios
+          .post("api/user/logout")
+          .then((e) => {
+            console.log(e.status);
+          })
+          .catch();
+      }
+    
+      console.log(Cookies.expires);
     return (
         <nav
             className={`navbar navbar-expand-lg fixed-top navbar-light text-white ${styles.navBg}`}
@@ -65,11 +74,6 @@ export default function Navbar() {
                                 Services
                             </Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link text-white" to="WorkSpace">
-                                Workspaces
-                            </Link>
-                        </li> */}
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="Recommendation">
                             Workspaces
