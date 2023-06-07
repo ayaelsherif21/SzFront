@@ -9,6 +9,9 @@ import homeBg from "../../images/1.jpg";
 import Footer from "../Footer/Footer";
 import SearchBar from "./SearchBar/SearchBar";
 import { SearchResultsList } from "./SearchBar/SearchResultsList";
+import About from "../About/About";
+import Contact from "../ContactUs/Contact";
+import PartnerComponent from "../BecomePartner/BecomePartner";
 
 export default function Home() {
   const [results, setResults] = useState([]);
@@ -31,7 +34,6 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           width: "100%",
           height: "100vh",
-          color: "#f5f5f5",
         }}
       >
         <div className={`buttonBg ${styles.butBg}`}>
@@ -61,7 +63,6 @@ export default function Home() {
           </div>
         
         </div>
-        <Services />
         {/* <div className={`${styles.addWS}`}>
           <div className={`container ${styles.addWS}`}>
            <div className={`row py-4`}>
@@ -77,6 +78,11 @@ export default function Home() {
      
 
         </div> */}
+         {/* <Services /> */}
+        <About />
+        <PartnerComponent />
+        <Services />
+        <Contact />
         <Footer></Footer>
       </div>
     </>

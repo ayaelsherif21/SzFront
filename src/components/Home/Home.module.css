@@ -52,7 +52,7 @@ body{
 .Services h3 {
     font-size: 80px;
     font-weight: 700;
-    color: rgb(230, 230, 230);
+    /* color: rgb(230, 230, 230); */
 }
 
 .Services h2 {
@@ -67,14 +67,14 @@ body{
     margin-bottom: 30px;
 }
 /************************/
-
+/* 
     .addWS {
     position: relative;
     background: #e2e2e2;
     height: 20%;
     text-align: center;
-    /* top: 50%; */
-    }
+    top: 50%;
+    } */
     /* .btnWork{
     background-color: royalblue;
     padding-top: 30px;
@@ -82,7 +82,7 @@ body{
     color: #fff;
     } */
    
-    .TextBox{
+    /* .TextBox{
     line-height: 50px;
     font-weight: 400;
     padding-top: 15px;
@@ -108,4 +108,4 @@ body{
     .addWS a:hover{
         background-color: #63ace5;
     }
-    
+     */
