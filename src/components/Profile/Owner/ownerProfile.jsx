@@ -7,7 +7,6 @@ import OwnerDetails from "./OwnerDetails/OwnerDetails";
 import WorkspaceForm from "./WorkspaceForm/WorkspaceForm";
 import Amenities from "./Amenities/Amenities";
 import axios from 'axios';
-// import LeftSideBar from "../../Navbar/LeftSideBar";
 import {
   FaTh,
   FaBars,
@@ -29,72 +28,90 @@ import {TbFileReport} from "react-icons/tb";
 
 
 import { NavLink } from 'react-router-dom';
+import Spaces from "./Spaces/Spaces";
 
 export default function OwnerProfile({children}) {
-  let data = ["Owner Name", "OWNER_EMAIL@EMAIL.COM"];
+  let oName = window.sessionStorage.getItem("ownerName");
+  let oEmail = window.sessionStorage.getItem("ownerEmail");
+  let oId = window.sessionStorage.getItem("ownerId");
+  let data = [oName, oEmail];
   const[isOpen ,setIsOpen] = useState(true);
   const [isOwnerDetailActive, setIsOwnerDetailActive] = useState(true);
   const [isOwnerHistoryActive, setIsOwnerHistoryActive] = useState(false);
   const [isWorkspaceFormActive, setWorkspaceFormActive] = useState(false);
+  const [isShowSpacesActive, setIsShowSpacesActive] = useState(false);
 
   const toggle = () => setIsOpen (!isOpen);
-  const menuItem=[
-      {
-          function: () => {
-              // setIsOwnerDetailActive((current) => !current);
-              setIsOwnerHistoryActive(false);
-              setWorkspaceFormActive(false);
-              setIsOwnerDetailActive(true);
-            },
-          name:"Expand Owner Details",
-          icon:<FaUserCircle/>
+  const menuItem = [
+    {
+      function: () => {
+        // setIsOwnerDetailActive((current) => !current);
+        setIsOwnerHistoryActive(false);
+        setIsShowSpacesActive(false);
+        setWorkspaceFormActive(false);
+        setIsOwnerDetailActive(true);
       },
-      {
-        function:() => {
-          // setIsOwnerHistoryActive((current) => !current);
-          setIsOwnerDetailActive(false);
-          setIsOwnerHistoryActive(false);
-          setWorkspaceFormActive(true);
-        },
-          name:"My Spaces",
-          icon:<FaTh fontSize={"15px"}/>
-      },
-      {
-        function:"",
-          name:"Add Spaces",
-          icon:<CgPlayListAdd/>
-      },
-      {
-        function:() => {
-          // setIsOwnerHistoryActive((current) => !current);
-          setIsOwnerDetailActive(false);
-          setWorkspaceFormActive(false);
-          setIsOwnerHistoryActive(true);
-        },
-          name:"Show History",
-          icon:<MdHistory/>
-      },
-      {
-        function:"/Contact",
-          name:"Contact Us",
-          icon:<MdOutlineConnectWithoutContact/>
-      },
-      {
-        function:"",
-          name:"Reports",
-          icon:<TbFileReport/>
-      },
-      {
-        function:"",
-        name:"Log out",
-        icon:<RiLogoutCircleLine />
+      name: "Expand Owner Details",
+      icon: <FaUserCircle />,
     },
     {
-      function:"showDeleteBox",
-      name:"Delete Account",
-      icon:<TiDelete/>
-  }
+      function: () => {
+        setIsOwnerDetailActive(false);
+        setIsOwnerHistoryActive(false);
+        setWorkspaceFormActive(true);
+        // setIsShowSpacesActive(true);
+      },
+      name: "My Spaces",
+      icon: <FaTh fontSize={"15px"} />,
+    },
+    // {
+    //   function: () => {
+    //     // setIsOwnerHistoryActive((current) => !current);
+    //     setIsOwnerDetailActive(false);
+    //     setIsOwnerHistoryActive(false);
+    //     setWorkspaceFormActive(true);
+    //   },
+    //   // name: "My Spaces",
+    //   // icon: <FaTh fontSize={"15px"} />,
+    // },
+    {
+      function: "",
+      name: "Add Spaces",
+      icon: <CgPlayListAdd />,
+    },
+    {
+      function: () => {
+        // setIsOwnerHistoryActive((current) => !current);
+        setIsOwnerDetailActive(false);
+        setWorkspaceFormActive(false);
+        // setIsShowSpacesActive(false);
+        setIsOwnerHistoryActive(true);
+      },
+      name: "Show History",
+      icon: <MdHistory />,
+    },
+    {
+      function: "/Contact",
+      name: "Contact Us",
+      icon: <MdOutlineConnectWithoutContact />,
+    },
+    {
+      function: "",
+      name: "Reports",
+      icon: <TbFileReport />,
+    },
+    {
+      function: "/Home",
+      name: "Log out",
+      icon: <RiLogoutCircleLine />,
+    },
+    {
+      function: "showDeleteBox",
+      name: "Delete Account",
+      icon: <TiDelete />,
+    },
   ];
+
 
   function hideDeleteBox() {
     const element = document.getElementById("deleteBox");
@@ -187,7 +204,11 @@ export default function OwnerProfile({children}) {
                           <NavLink  className={`${styles.leftBtns}`} activeclassName={`${styles.active}`}>
                            <div className={`${styles.icon}`}>{item.icon}</div>
                            <button
-                           style={{display: isOpen ? "block" : "none" , textDecoration:"none"}}
+                           style={{display: isOpen ? "block" : "none" ,
+                            textDecoration:"none",
+                            border: "0",
+                            backgroundColor: "transparent",
+                          }}
                             className={`${styles.btnss}`} id="button"
                             onClick={item.function}
                           >
@@ -210,6 +231,12 @@ export default function OwnerProfile({children}) {
           >
             <OwnerDetails />
           </div>
+          <div
+              className="OSpace"
+              style={{ display: isShowSpacesActive ? "block" : "none" }}
+            >
+              <Spaces id={oId}></Spaces>
+            </div>
           <div
             className="OHistory"
             style={{ display: isOwnerHistoryActive ? "block" : "none" }}

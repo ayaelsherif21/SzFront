@@ -11,13 +11,20 @@ import styles from  "./OwnerDetails.module.css";
 export default function OwnerDetails() {
 //   const { joiPasswordExtendCore } = require('joi')
 // const joiPassword = Joi.extend(joiPasswordExtendCore);
-  
+const [profileData, setProfileData] = useState({
+  name: window.sessionStorage.getItem("ownerName"),
+  email: window.sessionStorage.getItem("ownerEmail"),
+  phone: window.sessionStorage.getItem("ownerNumber"),
+  bio: "I love React!",
+  profilePictureUrl: ProfilePic,
+});
   const [user, setuser] = useState({ userName: '', email: '',
  number:'' ,password:'',passwordConfirmation:'',
   profilePictureUrl:ProfilePic});
   const [image, setImage] = useState('');
   let [errorMsg, setErrorMsg] = useState("");
   let [errorList, setErrorList] = useState([]);
+  const [isEditMode, setIsEditMode] = useState(false);
   const [isOwnerEditMode, setIsOwnerEditMode] = useState(true);
 
   // Handle form input changes
