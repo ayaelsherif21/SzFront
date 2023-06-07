@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from "../../api/axios";
 import Footer from '../Footer/Footer'
 import styles from '../Booking/Booking.module.css'
 import Pic from '../../images/10.jpg'
@@ -11,23 +12,59 @@ var currentDateTime = new Date();
 var year = currentDateTime.getFullYear();
 var month = (currentDateTime.getMonth() + 1);
 var date = (currentDateTime.getDate() + 1);
-
-if(date < 10) {
-  date = '0' + date;
-}
-if(month < 10) {
-  month = '0' + month;
-}
-
 var dateTomorrow = year + "-" + month + "-" + date;
 var checkinElem = document.querySelector("#checkin-date");
 var checkoutElem = document.querySelector("#checkout-date");
+
+const [spaceId, setSpaceId] = useState("");
+const [data,setData] = useState([]);
+const [title,setTitle] = useState([]);
+let roomID, roomIndex;
+// if(date < 10) {
+//   date = '0' + date;
+// }
+// if(month < 10) {
+//   month = '0' + month;
+// }
+
+
 
 // checkinElem.setAttribute("min", dateTomorrow);
 
 // checkinElem.onchange = function () {
 //     checkoutElem.setAttribute("min", this.value);
 // }
+const [loading, setLoading] = useState(false);
+// }
+const pathSegments = window.location.pathname.split('/');
+let zoneId;
+useEffect(() => {
+
+
+    if (pathSegments[pathSegments.length - 2] === "SharedArea") {
+        // title="SharedArea";
+        setTitle("SharedArea")
+        zoneId=pathSegments[pathSegments.length - 1];
+    } else if (pathSegments[pathSegments.length - 2] === "SilentArea") {
+        // title= "SilentArea";
+        setTitle("SilentArea");
+        zoneId=pathSegments[pathSegments.length - 1];
+        console.log(title)
+
+    } else {
+        roomID=pathSegments[pathSegments.length - 1];
+        zoneId=pathSegments[pathSegments.length - 1];
+
+        roomIndex=pathSegments[pathSegments.length - 2];
+    }
+
+    axios.get(`api/places/${zoneId}`)
+        .then((response) => {
+            setData(response.data.data);
+            console.log(response.data.data);
+        });
+
+}, []);
     return (
        <>
  <div>
@@ -57,7 +94,7 @@ var checkoutElem = document.querySelector("#checkout-date");
             <img className={`${styles.roomDetailsImg}`} src={Pic} alt />
             <div className={`${styles.rdText}`}>
               <div className={`${styles.rdTitle}`}>
-                <h3>Meeting Room</h3>
+                <h3>{roomIndex ? data.rooms[roomIndex].roomType: title }</h3>
                 <div className={`${styles.rdtRight}`}>
                   <div className="rating">
                     <i className="icon_star" />
@@ -69,12 +106,12 @@ var checkoutElem = document.querySelector("#checkout-date");
                   <a href="/BB" >Booking Now</a>
                 </div>
               </div>
-              <h2>30$<span>/Perhour</span></h2>
+              <h2>{data.hourPrice} EGP<span>/ hour</span></h2>
               <table>
                 <tbody>
                 <tr>
                     <td className={`${styles.ro}`}>Seats:</td>
-                    <td>20</td>
+                    <td>{data.numberOfSeats}</td>
                   </tr>
                   <tr>
                     <td className={`${styles.ro}`}>Size:</td>
@@ -92,7 +129,7 @@ var checkoutElem = document.querySelector("#checkout-date");
               </table>
             </div>
           </div>
-          <div className={`${styles.reviews}`}>
+          {/* <div className={`${styles.reviews}`}>
             <h4>Reviews</h4>
             <div className={`${styles.reviewItem}`}>
               <div className={`${styles.revPic}`}>
@@ -159,7 +196,7 @@ var checkoutElem = document.querySelector("#checkout-date");
                 </div>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
         <div className="col-lg-4">
           <div className={`shadow ${styles.roomBooking}`}>

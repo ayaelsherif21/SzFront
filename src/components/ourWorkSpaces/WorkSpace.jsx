@@ -1,42 +1,45 @@
-import React from 'react'
-import pic1 from '../../images/7.jpg'
-// import pic2 from '../../images/8.jpg'
-import pic3 from '../../images/9.jpg'
-import pic4 from '../../images/10.jpg'
-import styles from './Workspace.module.css'
-import R1 from '../../images/creativo-3.jpg'
-import R2 from '../../images/coworking.jpg'
-import Footer from '../Footer/Footer'
-// import R3 from '../../images/eco.jpg'
-// import R4 from '../../images/3.jpg'
-// import R5 from '../../images/4.jpg'
+import React, { useEffect, useState } from "react";
+import styles from "./Workspace.module.css";
+import pic4 from "../../images/coworking.jpg";
+import Footer from "../Footer/Footer";
+import Reviews from "./Reviews/Reviews";
+import axios from "../../api/axios";
+
 export default function WorkSpace() {
-  const cardData = [
-    {
-        id: 1,
-        title: "Meeting Room",
-        image: pic4,
-        numSeats: 8
-    },
-    {
-        id: 2,
-        title: "Training Room",
-        image: pic1,
-        numSeats: 35
-    },
-    {
-        id: 3,
-        title: "Shared Area",
-        image: R1,
-        numSeats: 15
-    },
-    {
-        id: 4,
-        title: "Silent Room",
-        image: pic3,
-        numSeats: 5
-    }
-];
+  const pathSegments = window.location.pathname.split("/");
+  const spaceId = pathSegments[pathSegments.length - 1];
+  const [rooms, setRrooms] = useState([]);
+  const [rules, setRules] = useState([]);
+  const [picture, setPicture] = useState([]);
+  const [address, setAddress] = useState([]);
+  const [dailyRoutine, setDailyRoutine] = useState([]);
+  const [spaceName, setSpaceName] = useState([]);
+  const [bio, setBio] = useState([]);
+  const [sArea, setSArea] = useState([]);
+
+  useEffect(() => {
+    axios.get(`api/places/${spaceId}`).then((response) => {
+      setRrooms(response.data.data.rooms);
+      setRules(response.data.data.rules);
+      setAddress(response.data.data.address);
+      setDailyRoutine(response.data.data.openingHours);
+      setSpaceName(response.data.data.placeName);
+      setBio(response.data.data.bio);
+      setSArea(response.data.data);
+
+      // console.log("workspace")
+      // console.log(response.data.data);
+      // console.log(response.data.data.rooms);
+      setPicture(response.data.data.placePhotos);
+      // console.log(rr);
+      console.log(response.data.data);
+      console.log(response.data.data);
+    });
+  });
+  const R2 = picture[1];
+
+  function visitGoogleMaps() {}
+
   return (
    <>
      <div
@@ -53,22 +56,29 @@ export default function WorkSpace() {
       >
 </div>
 <div className={`container ${styles.wsName}`}>
-<h2>Majal Coworking space</h2> 
+<h2>{spaceName}</h2> 
+<p>{bio}</p>
 </div>
 <div className={`${styles.Rooms}`}>
 <div className="container">
 <h4 className='my-3'>Rooms</h4>
  <div className="row row-cols-1  row-cols-md-2 g-4">
- {cardData.map((card) => (
-                            // <div className="col-le-1 cardHolder">
+ {rooms.map((card,
+              index // <div className="col-le-1 cardHolder">
+              ) => (
   <div className="col-lg-3">
-    <div key={card.id} className={`card ${styles.cards}`}>
-      <img src={card.image} className={`card-img-top ${styles.cardImg}`}  alt={card.title} />
-      <div className="card-body">
+    <div key={index} className={`card ${styles.cards}`}>
+    <img
+                      // src={card.image}
+                      src={pic4}
+                      className={`card-img-top ${styles.cardImg}`}
+                      alt={card.roomType}/>   
+                         <div className="card-body">
       <div className="row">
         <div className="col-lg-8">
-        <h6 className="card-title">{card.title}</h6>
-        <p className="card-text">{card.numSeats} Seats</p>
+        <h6 className="card-title">{card.roomType}</h6>
+                          <p className="card-text">{card.seats} Seats</p>
+                          <p className={"card-text"}>{card.price} EGP/ Hour</p>
         </div>
         {/* <div className="col-lg-4 m-0">
           <p>from</p>
@@ -77,50 +87,73 @@ export default function WorkSpace() {
         </div> */}
         </div>
     </div>
-    <a href={"/Booking"}className={`btn text-white m-auto ${styles.btnCard}`}>
+    <a  href={`/Booking/${sArea._id}/${index}/${card._id}}`}
+    className={`btn text-white m-auto ${styles.btnCard}`}>
       <span >Book now</span></a> 
       </div>
     </div>
     // </div>
       ))}
+          <div className="col-lg-3">
+              <div className={`card ${styles.cards}`}>
+                <img
+                  // src={card.image}
+                  src={pic4}
+                  className={`card-img-top ${styles.cardImg}`}
+                  alt="Shared Area"
+                />
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-8">
+                      <h6 id={"shared"} className="card-title">
+                        Shared Area
+                      </h6>
+                      <p className="card-text">{sArea.numberOfSeats} Seats</p>
+                      <p className={"card-text"}>{sArea.hourPrice} EGP/ Hour</p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={`/Booking/SharedArea/${sArea._id}`}
+                  className={`btn text-white m-auto ${styles.btnCard}`}
+                >
+                  <span>Book now</span>
+                </a>
+              </div>
+            </div>
+            {/*    silent room*/}
+            <div className="col-lg-3">
+              <div className={`card ${styles.cards}`}>
+                <img
+                  // src={card.image}
+                  src={pic4}
+                  className={`card-img-top ${styles.cardImg}`}
+                  alt="Shared Area"
+                />
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-8">
+                      <h6 id={"silent"} className="card-title">
+                        Silent Room
+                      </h6>
+                      <p className="card-text">
+                        {sArea.numberOfSilentSeats} Seats
+                      </p>
+                      <p className={"card-text"}>
+                        {sArea.silentSeatPrice} EGP/ Hour
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={`/Booking/SilentRoom/${sArea._id}`}
+                  className={`btn text-white m-auto ${styles.btnCard}`}
+                >
+                  <span>Book now</span>
+                </a>
+              </div>
+            </div>
        </div>
-      
-       {/* <span class="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-  </span> */}
- 
-  {/* <div className="col-lg-3">
-    <div className={`card ${styles.cards}`}>
-      <img src={pic1} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
-      <div className="card-body">
-        <h6 className="card-title">Training/Courses Room</h6>
-        <p className="card-text">35 Seats</p>
-    </div>
-    <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>    </div>
-   
-  </div>
-  <div className="col-lg-3">
-    <div className={`card ${styles.cards}`}>
-      <img src={R1} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
-      <div className="card-body">
-        <h6 className="card-title">Shared Area</h6>
-        <p className="card-text">15 Seats</p>
-    </div>
-      <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>
-    </div>
-   
-  </div>
-  <div className="col-lg-3">
-    <div className={`card ${styles.cards}`}>
-      <img src={pic3} className={`card-img-top ${styles.cardImg}`} alt="Room1" />
-      <div className="card-body">
-        <h6 className="card-title">Silent Room</h6>
-        <p className="card-text">5 Seats</p>
-    </div>
-      <button className={`btn text-white m-auto ${styles.btnCard}`}>Book now</button>
-    </div>
-   
-  </div> */}
  
 </div>
 </div>
@@ -132,8 +165,26 @@ export default function WorkSpace() {
   <div className={`${styles.icon}`}>
       <i class="fa-solid fa-location-dot"></i>
   </div>
-  <p className='mt-2'>Address: 50 MohyEldin Abo El-Azz -Dokki</p>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nostrum porro commodi quos iusto dolore debitis quia quidem dignissimos ut. Nobis porro asperiores maxime voluptatem aliquid autem placeat architecto quia!</p>
+  <p onClick={visitGoogleMaps} className="mt-2">
+            Address: {address}
+          </p>
+          <div className={"aboutSpace"}>
+            <div>
+              {dailyRoutine.map((routine, index) => (
+                <div
+                  key={index}
+                  style={{ display: "flex", margin: 24 }}
+                  className="dailyRoutine"
+                >
+                  <div className={"spanDay"}>{routine.day}</div>
+                  <div>Open Time: {routine.openTime}</div>
+                  <div>Close Time:{routine.closeTime}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+  {/* <p className='mt-2'>Address: 50 MohyEldin Abo El-Azz -Dokki</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nostrum porro commodi quos iusto dolore debitis quia quidem dignissimos ut. Nobis porro asperiores maxime voluptatem aliquid autem placeat architecto quia!</p> */}
 </div>
 <hr className={`${styles.line}`}></hr>
 <div className="row">
@@ -157,6 +208,9 @@ export default function WorkSpace() {
   <div className="col-lg-6">
     <div className="roles">
       <h5 className='my-2'>Rules</h5>
+       {/* {rules.map((rule) => (
+                <h6>{rule}</h6>
+              ))} */}
       <h6>Lorem ipsum dolor sit.</h6>
       <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h6>
       <h6>Lorem ipsum dolor sit amet consectetur.</h6>
@@ -165,7 +219,7 @@ export default function WorkSpace() {
   </div>
   
 </div>
-
+<Reviews id={spaceId} />
 </div>
    <Footer/>
    
