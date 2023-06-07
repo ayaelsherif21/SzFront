@@ -8,7 +8,7 @@ import NotFound from "../NotFound/NotFound";
 import Register from "../Register/Register";
 import Recommendation from "../Recommendation/Recommendation";
 import Services from "../Services/Services";
-// import UserProfile from "../Profile/Guest/userProfile";
+import UserProfile from "../Profile/Guest/userProfile";
 import OwnerProfile from "../Profile/Owner/ownerProfile";
 import Osignup from "../Owner/Osignup";
 import Ologin from "../Owner/Ologin";
@@ -24,7 +24,6 @@ import jwtDecode from "jwt-decode";
 import Booking from "../Booking/Booking";
 import Payment from "../Booking/Payment";
 import BB from "../Booking/BB";
-import OProfile from "../OwnerProfile/OProfile";
 
 //className="App"
 function App() {
@@ -45,8 +44,6 @@ function App() {
   return (
     <>
       
-
-
       <Navbar loginData={loginData} />
       <div>
         <Routes>
@@ -54,10 +51,22 @@ function App() {
           <Route path="Home" element={<Home />}></Route>
           <Route path="About" element={<About />}></Route>
           <Route path="Services" element={<Services />}></Route>
-          <Route path={"MeetingRoom"} element={<MeetingRoom/>}/>
-          <Route path="Workspace" element={<WorkSpace />}/>
+          <Route path="MeetingRoom" element={<MeetingRoom/>}/>
+          <Route path="Workspace/:spaceId" element={<WorkSpace />}></Route>
           <Route path='/Room/:id' element={<Room />}></Route>
-          <Route path="Booking" element={<Booking />}></Route>
+          <Route
+            path="Booking/:spaceId/:index/:roomId"
+            element={<Booking />}
+          ></Route>
+          <Route
+            path="Booking/SharedArea/:spaceId"
+            element={<Booking />}
+          ></Route>
+          <Route
+            path="Booking/SilentRoom/:spaceId"
+            element={<Booking />}
+          ></Route>
+          {/* <Route path="Booking" element={<Booking />}></Route> */}
           <Route path="BB" element={<BB/>}></Route>
           <Route path="Payment" element={<Payment/>}></Route>
           <Route path="Recommendation" element={<Recommendation />}></Route>
@@ -67,12 +76,13 @@ function App() {
           <Route path="Register" element={<Register />}></Route>
           <Route path="/ResetPassword" element={<ResetPassword />}></Route>
           <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
-          {/* <Route path="UserProfile/:id" element={<UserProfile />}></Route> */}
-          <Route path="OProfile" element={<OProfile />}></Route>
-
+          <Route path="UserProfile/" element={<UserProfile />}>
+            {" "}
+          </Route>
           <Route path="OwnerProfile" element={<OwnerProfile />}></Route>
           <Route path="Osignup" element={<Osignup />}></Route>
           <Route path="Ologin" element={<Ologin />}></Route>
+          {/* <Route path={":ownerId/addSpace"} element={<WorkspaceForm />}></Route> */}
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </div>
