@@ -1,0 +1,31 @@
+.sp {
+  display: flex;
+  width: 500px;
+  margin-top: 2rem;
+  /* background-color: white; */
+}
+
+.spImage {
+  height: 100px;
+}
+.spName {
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.btnnWs {
+  margin-top: 10px;
+  width: 70%;
+  position: relative;
+  font-size: 11px;
+  /* letter-spacing: 3px; */
+  height: 3em;
+  /* padding: 0 3em; */
+  border: none;
+  background-color: #4b86b4;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+  border-radius: 20px;
+  float: left;
+}
