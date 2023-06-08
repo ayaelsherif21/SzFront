@@ -4,6 +4,9 @@ import axios from '../../api/axios';
 import { useNavigate } from 'react-router';
 import styles from "../Login/Login.module.css";
 import LoginBg from "../../images/11.jpg";
+import jwtDecode from "jwt-decode";
+import Cookies from "js-cookie";
+
 export default function Ologin() {
     let [user,setUser]=useState({
         email:"",
@@ -12,6 +15,8 @@ export default function Ologin() {
       let [errorMsg , setErrorMsg] = useState("");
       let [errorList , setErrorList] = useState([]);
       let [loading , setLoading]=useState(false);
+      const [userId, setUserId] = useState(null);
+
       // let isShownRepeated;
       // let isShown;
 
@@ -30,23 +35,58 @@ export default function Ologin() {
         setErrorList(validationResult.error.details)
         setLoading(false);
        }
-       else{
-         let {data} = await axios.post(
-         "https://spacezone-backend.cyclic.app/api/owner/loginOwner" ,
-          user
-         );
-         if(data.status == "success"){
+       else {
+        let { data } = await axios
+          .post("/api/owner/loginOwner", user, {
+            headers: { "Content-Type": "application/json" },
+          })
+          .then((e) => {
+            console.log(e.data.data.owner);
+            // let ownerData;
+            // console.log("token");
+            // console.log(e.data.token);
+            // console.log(Cookies.getItem("token"));
+            window.sessionStorage.setItem("ownerRole", e.data.data.owner.role);
+            // window.sessionStorage.setItem("ownerToken", e.data.token);
+            window.sessionStorage.setItem(
+              "ownerNumber",
+              e.data.data.owner.number
+            );
+            window.sessionStorage.setItem(
+              "ownerName",
+              e.data.data.owner.userName
+            );
+            console.log("data");
+            console.log(e.data.data);
+            window.sessionStorage.setItem("ownerId", e.data.data.owner._id);
+            window.sessionStorage.setItem("ownerEmail", e.data.data.owner.email);
+            // console.log(window.sessionStorage.getItem("ownerName"));
+            //   alert(`Logging in Welcome ${e.data.data.user.userName}`);
+            // const { user } = e.data.data;
+            //   console.log(user);
+            // window.sessionStorage.setItem('token', e.data.token);
+            Cookies.set("token", e.data.token);
+            axios.defaults.headers.common[
+              "Authorization"
+            ] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
+            const decodedToken = jwtDecode(e.data.token);
+            setUserId(decodedToken.userId);
+            // console.log(sessionStorage.getItem("token"));
+            // this is how you get the token every time as it is stored in sessionStorage
+            // console.log(e.data.data._id);
+            setLoading(false);
             goToHome();
-         }
-       else{
-        setErrorMsg(data.status);
-       }
-      setLoading(false);
+            // console.log(decodedToken);
+          })
+          .catch((err) => {
+            alert(err.message);
+          });
       }
     }
       function validateForm(){ 
     const schema=Joi.object({
-      email:Joi.string().required().email({tlds:{allow: ["com", "net"]}}),
+      email:Joi.string().required(),
+      // .email({tlds:{allow: ["com", "net"]}}),
       password:Joi.string().required(),
     });
      return schema.validate(user,{abortEarly:false});
@@ -56,7 +96,7 @@ export default function Ologin() {
          let myUser={...user};
          myUser[e.target.name]=e.target.value;
          setUser(myUser);
-         console.log(myUser);
+        //  console.log(myUser);
       }
       return (
         <>
