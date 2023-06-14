@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 import Logo from "../../images/SpaceZone.svg";
 import axios from "../../api/axios";
 import Cookies from "js-cookie";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar({loginData}) {
       console.log(loginData)

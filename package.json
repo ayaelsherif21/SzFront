@@ -26,6 +26,7 @@
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.1",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^5.0.1",
     "resuite": "^0.0.2",
     "rsuite": "^5.33.1",
