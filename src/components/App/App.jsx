@@ -33,7 +33,7 @@ function App() {
     let token = localStorage.getItem("token");
     let decoded = jwtDecode(token);
     setLoginData(decoded);
-    // console.log(loginData)
+    console.log(loginData)
   }
   useEffect(()=>{
     if(localStorage.getItem("token"))

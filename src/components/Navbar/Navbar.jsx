@@ -5,7 +5,9 @@ import Logo from "../../images/SpaceZone.svg";
 import axios from "../../api/axios";
 import Cookies from "js-cookie";
 
-export default function Navbar() {
+export default function Navbar({loginData}) {
+      console.log(loginData)
+
     const [userData, setUserData] = useState([]);
     useEffect(() => {
         axios.get("api/user/me", {headers: {Authorization: `Bearer ${sessionStorage.getItem("token")}`}}).then((e) => {
@@ -15,9 +17,12 @@ export default function Navbar() {
         });
     }, []);
 
-
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      }
 
     function Logout() {
+        deleteCookie("login_data");
         axios
           .post("api/user/logout")
           .then((e) => {
@@ -101,36 +106,40 @@ export default function Navbar() {
                                 to="OwnerProfile"
                             ></Link>
                         </li>
-                        <li>
-              <div className={`${styles.dropdown}`}>
-            <button className={` px-2 ${styles.dropbtn}`}>Login
-              <i className="fa fa-caret-down px-1 " />
-            </button>
-            <div className={`${styles.dropdownContent}`}>
-              <a href="Login">as a guest</a>
-              <a href="Ologin">as a owner</a>
-            
-            </div>
-          </div>
-          </li>
-          <li>
-              <div className={`${styles.dropdown}`}>
-            <button className={`px-2 ${styles.dropbtn}`}>Sign up
-              <i className="fa fa-caret-down px-1" />
-            </button>
-            <div className={`${styles.dropdownContent}`}>
-              <a href="Register">as a guest</a>
-              <a href="Osignup">as a owner</a>
-            
-            </div>
-          </div>
-          </li>
-            
-                        <li className="nav-item mx-2">
+
+                    {!loginData?<> <li>
+                            
+                            <div className={`${styles.dropdown}`}>
+                            <button className={` px-2 ${styles.dropbtn}`}>Login
+                              <i className="fa fa-caret-down px-1 " />
+                            </button>
+                            <div className={`${styles.dropdownContent}`}>
+                              <a href="Login">as a guest</a>
+                              <a href="Ologin">as a owner</a>
+                            
+                            </div>
+                          </div>
+                          </li>
+                          <li>
+                              <div className={`${styles.dropdown}`}>
+                            <button className={`px-2 ${styles.dropbtn}`}>Sign up
+                              <i className="fa fa-caret-down px-1" />
+                            </button>
+                            <div className={`${styles.dropdownContent}`}>
+                              <a href="Register">as a guest</a>
+                              <a href="Osignup">as a owner</a>
+                            
+                            </div>
+                          </div>
+                          </li>
+                            </>
+                             : <li className="nav-item mx-2">
                             <Link className="nav-link" onClick={Logout} to="Login">
                                 Logout
                             </Link>
-                        </li>
+                        </li> }    
+           
+                       
                     </ul>
                 </div>
             </div>

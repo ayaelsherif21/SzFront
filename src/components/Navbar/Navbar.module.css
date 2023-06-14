@@ -62,6 +62,7 @@
     text-decoration: none!important;
     display: block;
     text-align: left;
+    font-size: 12px;
   }
   
   /* Add a grey background color to dropdown links on hover */
