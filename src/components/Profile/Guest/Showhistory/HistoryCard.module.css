@@ -1,0 +1,33 @@
+.HcardImgg {
+    overflow: hidden;
+    width: 90%;
+    height: 10.7vw;
+    object-fit: cover;
+  }
+  .imgH {
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+    border-radius: 10px !important;
+    height: 50%;
+    
+  }
+  .Hcard {
+    position: relative;
+    width: 90px;
+    height: 250px;
+    color: #2e2d31;
+    /* background: #131313; */
+    overflow: hidden;
+    border-radius: 20px;
+    flex-direction: row;
+    overflow: hidden;
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the percentage as per your needs */
+    margin-bottom: 20px; 
+  }
+  .verticalLine {
+    height: 30px;
+    border-left: 1px solid #8a918a;
+    position: absolute;
+    right: 40%;
+}

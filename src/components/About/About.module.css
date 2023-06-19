@@ -1,6 +1,56 @@
 body{
-    background-color: #e7eff6;
+    background-color: #f0f5f8;
 }
+.aboutUs {
+    margin-top: 0px;
+    padding-top: 120px;
+  }
+  
+ .leftPic {
+    margin-right: 10px;
+    width: 50%;
+  }
+  .picOfAbout{
+    width: 200%;
+
+  }
+ .sectioHeading h2 {
+    margin-right: 60px;
+  }
+  
+ .sectioHeading p {
+    margin-top: 20px;
+  }
+  
+ .factItem .icon {
+    width: 45px;
+    height: 45px;
+  }
+/*   
+  .factItem {
+    margin-top: 45px;
+  } */
+  
+  .factItem .countDigit {
+    font-size: 30px;
+    font-weight: 600;
+    color: #2a2a2a;
+    margin-top: 5px;
+  }
+  
+  .countTitle {
+    font-size: 15px;
+    color: #4b86b4;
+    font-weight: 500;
+
+  }
+  
+  .aboutUs .factItem p {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
 .about{
     margin-top: 60px;
 

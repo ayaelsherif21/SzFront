@@ -1,3 +1,44 @@
-.caca{
-    display: flex;
+
+.imgBo{
+    width: 200px;
 }
+.noBook{
+    /* display: flex; */
+    justify-content: center;
+    align-content: center;
+}
+.noBook p{
+    font-style: italic;
+    font-weight: bold;
+}
+.BookingTitle {
+    font-size: 20px;
+    color: 	#2a4d69;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  } 
+  .BookingTitle::before,.BookingTitle::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: 	#2a4d69;
+  }
+  
+  .BookingTitle::before {
+    width: 10px;
+    height: 10px;
+    background-color: 	#2a4d69;
+  }
+  
+  .BookingTitle::after {
+    width: 10px;
+    height: 10px;
+    animation: pulse 1s linear infinite;
+  }

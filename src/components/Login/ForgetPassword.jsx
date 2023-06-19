@@ -3,7 +3,7 @@ import Joi from "joi";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./Login.module.css"
-
+import forgetPic from "../../images/14.jpg"
 export default function ForgetPassword() {
   let [user, setUser] = useState({
     email: "",
@@ -62,7 +62,19 @@ export default function ForgetPassword() {
   }
   
   return (
-    <div className={`${styles.filterLogin}`}>
+    <div
+    className="w-100 h-100vh"
+    style={{
+      backgroundImage: "url(" + forgetPic + ")",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}
+  >
+<div className={`${styles.filterLogin}`}>
     <div className="container">
       <div className="row">
       <div className={`col-lg-12 ${styles.LogCont}`}>
@@ -88,6 +100,8 @@ export default function ForgetPassword() {
 </div>
     </div>
     </div>
+    </div>
+  
 
   );
 }

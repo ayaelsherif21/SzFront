@@ -9,52 +9,47 @@ import styles from "./Login.module.css";
 
 export default function Login() {
   let [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-  let [errorMsg, setErrorMsg] = useState("");
-  let [errorList, setErrorList] = useState([]);
-  let [loading, setLoading] = useState(false);
-  const [userId, setUserId]= useState(null);
+  email: "",
+  password: "",
+});
+let [errorMsg, setErrorMsg] = useState("");
+let [errorList, setErrorList] = useState([]);
+let [loading, setLoading] = useState(false);
+const [userId, setUserId] = useState(null);
 
-  // let isShownRepeated;
-  // let isShown;
+// let isShownRepeated;
+// let isShown;
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
+function goToHome() {
+  let path = "/Home";
+  navigate(path);
+}
 
-  function goToHome() {
-    let path = "/Home";
-    navigate(path);
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    const decodedToken = jwtDecode(token);
+    setUserId(decodedToken.userId);
   }
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      const decodedToken = jwtDecode(token);
-      setUserId(decodedToken.userId);
-    }
-  }, []);
-  async function submitFormData(e) {
-    e.preventDefault();
-    // setErrorMsg(Errors(user));
-    setLoading(true);
-    let validationResult = validateForm();
-    console.log(validationResult);
-    if (validationResult.error) {
-      alert("Validation Error");
-      setErrorList(validationResult.error.details)
-      setLoading(false);
-    }
-    else {
-      let data = await axios.post(
-        "/api/user/loginUser",
-        user,
-        {
-          headers: { 'Content-Type': 'application/json' },
-        }
-      ).then((e) => {
-        alert(`Logging in Welcome ${e.data.data.user.userName}`);
-        goToHome()
+}, []);
+async function submitFormData(e) {
+  e.preventDefault();
+  setLoading(true);
+  let validationResult = validateForm();
+  // console.log(validationResult);
+  if (validationResult.error) {
+    alert("Validation Error");
+    setErrorList(validationResult.error.details);
+    setLoading(false);
+  } else {
+    let data = await axios
+      .post("/api/user/loginUser", user, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((e) => {
+        // alert(`Logging in Welcome ${e.data.data.user.userName}`);
+        goToHome();
         const { user } = e.data.data;
         console.log(user);
         window.sessionStorage.setItem("userName", user.userName);
@@ -62,35 +57,40 @@ export default function Login() {
         window.sessionStorage.setItem("userPhone",user.number );
         window.sessionStorage.setItem("userRole", user.role);
         // window.sessionStorage.setItem('token', e.data.token);
-        Cookies.set("token", e.data.token);     
-        axios.defaults.headers.common["Authorization"] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
+        Cookies.set("token", e.data.token);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${e.data.token}`; // this is how you send token in the Authorization as a header
         const decodedToken = jwtDecode(e.data.token);
         setUserId(decodedToken.userId);
-        // console.log(sessionStorage.getItem("token"))
+        // console.log(sessionStorage.getItem("token"));
         // this is how you get the token every time as it is stored in sessionStorage
-        // console.log(e.data.data._id)
+        // console.log(e.data.data._id);
         // console.log(decodedToken);
-
-      }).catch((err)=>{
-        alert(err.message)
-        setLoading(false);
       })
-      setLoading(false);
-    }
+      .catch((err) => {
+        alert(err.message);
+      });
+    setLoading(false);
   }
-  function validateForm() {
-    const schema = Joi.object({
-      email: Joi.string().required(),
-      password: Joi.string().required(),
-    });
-    return schema.validate(user, { abortEarly: false });
-  }
-  function getFormValue(e) {
-    let myUser = { ...user };
-    myUser[e.target.name] = e.target.value;
-    setUser(myUser);
-    console.log(myUser);
-  }
+}
+
+function validateForm() {
+  const schema = Joi.object({
+    email: Joi.string().required(),
+    //.email({ tlds: { allow: ["com", "net"] } }),
+    password: Joi.string().required(),
+  });
+  return schema.validate(user, { abortEarly: false });
+}
+
+function getFormValue(e) {
+  let myUser = { ...user };
+  myUser[e.target.name] = e.target.value;
+  setUser(myUser);
+  // console.log(myUser);
+}
+
 
   return (
     <>

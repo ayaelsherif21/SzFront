@@ -57,8 +57,8 @@ export default function Home() {
                   name="your_zone"
                 /> */}
               </div>
-              <button className={`btn text-white px-4 py-2 ${styles.homebtn}`}>Find Your Workspace</button>
-              
+              <button className={`btn text-white px-4 py-2 ${styles.homebtn}`}  
+        >Find Your Workspace</button>
               </form>
           </div>
         

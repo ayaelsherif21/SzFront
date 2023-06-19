@@ -1,4 +1,4 @@
-.become-partner {
+/* .become-partner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,4 +47,60 @@
 
 .partner-info .btn:hover {
   background-color: #3367d6;
+} */
+.become-partner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  background-color: #f7f7f7;
 }
+
+.partner-photo {
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.partner-photo img {
+  width: 380px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.partner-info {
+  margin-top: 50px;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.partner-info h5 {
+  /* margin-bottom: 20px; */
+  font-size: 40px;
+  font-weight: 900;
+  color: #4b86b4;}
+
+.partner-info p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.partner-info .btn {
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 50px!important;
+  background-color: #4b86b4!important;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.partner-info .btn:hover {
+  background-color: #63ace5!important;
+  width: 220px;}

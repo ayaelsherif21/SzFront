@@ -23,7 +23,63 @@ export default function Filter() {
             <RangeSlider defaultValue={[2, 50]} onChange={handleRange} />
           </div>
         </div>
-        <div className="rates mt-4">
+     
+        <div className="features mt-4">
+          <h6 className="featuesHead">Rooms</h6>
+          {/* <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-wifi"} /> Wifi
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-person-through-window"} /> Balcony
+          </label>
+          <br /> */}
+            <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-gamepad"} /> Shared Area 
+          </label>
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-volume-mute"} /> Silent Rooms
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-people-group"} /> Meeting Rooms
+          </label>
+          <br />
+        
+        
+          {/* <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-person-chalkboard"} /> Training/Course Rooms
+          </label> */}
+          <br />
+        </div>
+        <div className="avails mt-4">
+          <h6 className="availsHead">Available</h6>
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-circle-xmark"} /> Show non-available
+          </label>
+          <br />
+        </div>
+        <div className="payment mt-4">
+          <h6 className="paymentHead">Payment</h6>
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-sack-dollar"} /> Cash
+          </label>
+          <br />
+          <label htmlFor="">
+            <input className={"m-lg-1"} type="checkbox" />
+            <i className={"fa fa-credit-card"} /> Credit Card
+          </label>
+          <br />
+        </div>
+           <div className="rates mt-4">
           <h6 className="ratesHead">Rates</h6>
           <label>
           
@@ -61,60 +117,6 @@ export default function Filter() {
             <i className={"fa fa-star"} /> &up
             </div>
           </label>
-        </div>
-        <div className="features mt-4">
-          <h6 className="featuesHead">Features</h6>
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-wifi"} /> Wifi
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-person-through-window"} /> Balcony
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-volume-mute"} /> Silent Rooms
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-people-group"} /> Meeting Rooms
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-gamepad"} /> Arcade Rooms
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-person-chalkboard"} /> Training/Course Rooms
-          </label>
-          <br />
-        </div>
-        <div className="avails mt-4">
-          <h6 className="availsHead">Available</h6>
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-circle-xmark"} /> Show non-available
-          </label>
-          <br />
-        </div>
-        <div className="payment mt-4">
-          <h6 className="paymentHead">Payment</h6>
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-sack-dollar"} /> Cash
-          </label>
-          <br />
-          <label htmlFor="">
-            <input className={"m-lg-1"} type="checkbox" />
-            <i className={"fa fa-credit-card"} /> Credit Card
-          </label>
-          <br />
         </div>
       </div>
       </div>

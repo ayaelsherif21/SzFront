@@ -5,7 +5,7 @@ export const SearchResultsList = ({ results }) => {
   return (
     <div className={`${styles.resultsList}`}>
       {results.map((result, id) => {
-        return <SearchResult result={result.name} key={id} />;
+        return <SearchResult result={result.zoneId} key={id} />;
       })}
     </div>
   );

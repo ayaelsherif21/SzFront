@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import styles from "./SearchBar.module.css";
+import axios from "../../../api/axios";
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar({ setResults }) {
   const [input, setInput] = useState("");
+  const [search, setSearch] = useState('');
+  const navigate  = useNavigate();
   // const Zones = [
   //   { id: 1, zone: "Dokki"},
   //   { id: 2, zone: "Shoubra"},
@@ -11,37 +15,75 @@ export default function SearchBar({ setResults }) {
   //   { id: 4, zone: "Helwan"},
   //   { id: 5, zone: "Faisal "},
   // ];
-  const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => {
-        const results = json.filter((zone) => {
-          return (
-            value &&
-            zone &&
-            zone.name &&
-            zone.name.toLowerCase().includes(value)
-          );
-        });
-        setResults(results);
-      });
-  };
+  // const fetchData = (value) => {
+  //   fetch(`api/places/getAllPlaces?zone=${search}`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       const results = json.filter((zone) => {
+  //         return (
+  //           value &&
+  //           zone &&
+  //           zone.name &&
+  //           zone.name.toLowerCase().includes(value)
+  //         );
+  //       });
+  //       setResults(results);
+  //     });
+  // };
 
-  const handleChange = (value) => {
-    setInput(value);
-    fetchData(value);
-  };
+  // const handleChange = (value) => {
+  //   setInput(value);
+  //   fetchData(value);
+  // };
+  // const handleSearch = async (e) => {
+  //   e.preventDefault();
 
+  //   // Make API request to fetch search results
+  //   const response = await axios.get(`api/places/getAllPlaces?zone=${searchTerm}`);
+
+  //   // Assuming the API response contains an array of results
+  //   const results = response.data.results;
+
+  //   // Navigate to the first result's zone, if available
+  //   if (results.length > 0) {
+  //     const firstResult = results[0];
+  //     navigate(`/Recommendation/${firstResult.zone}`);
+  //   }
+  // };
+  // const fetchSurfData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "api/places/getAllPlaces"
+  //     );
+  //     setPlaces(response.data.data.places);
+  //   } catch (error) {
+  //     console.log("Error fetching surf data:", error);
+  //   }
+  // };
+
+  // const handleSearch = async () => {
+  //   let data = await axios.get(`api/places/getAllPlaces?zone=${search}`
+  //     )
+  //     .then((response) => {
+  //       console.log(response.data.data);
+  //       navigate("Recommendation", { data: response.data.data });
+  //       alert(`Search Successful`);
+  //     });
+  // };
   return (
     <div className={`input-wrapper ${styles.inputWrapper}`}>
       <FaSearch id="search-icon" className={`${styles.searchIcon}`}/>
+      <form>
       <input
       className={`${styles.searchInp}`}
-      // className="inputField "
         placeholder="Where do you want to work?"
-        value={input}
-        onChange={(e) => handleChange(e.target.value)}
+        // value={search}
+        // onChange={(e) => setSearch(e.target.value)}
+        // onChange={(e) => handleChange(e.target.value)}
       />
+        
+      </form>
     </div>
   );
 };

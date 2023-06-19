@@ -3,7 +3,7 @@ import Joi from "joi";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./Login.module.css"
- 
+import ResetPic from "../../images/16.jpg"
 export default function ResetPassword() {
   let [user, setUser] = useState({
     password: "",
@@ -61,9 +61,22 @@ const schema=Joi.object({
 
   return (
     <>
+     <div
+    className="w-100 h-100vh"
+    style={{
+      backgroundImage: "url(" + ResetPic + ")",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+      height: "100vh",
+      color: "#f5f5f5",
+    }}
+  >
+<div className={`${styles.filterLogin}`}>
        <div className="container">
       <div className="row">
-      <div className={`col-lg-12 mt-4 ${styles.LogCont}`}>
+      <div className={`col-lg-12 ${styles.LogCont}`}>
       <form className={`${styles.formMain}`} action onSubmit={submitFormData}>
       <p className={`${styles.heading}`}>Reset Password</p>
     {errorMsg ? (
@@ -94,13 +107,14 @@ const schema=Joi.object({
      onChange={getFormValue}
      name="confirm-password" />
   </div>
-  <button id="button">Submit
+  <button id="button" className={`${styles.LastBtn}`}>Submit
   {loading ? (<i className="fa fa-spinner fa-spin text-white ps-2"></i>) : (ResetPassword)}</button>
 </form>
 </div>
 </div>
     </div>
-    
+    </div> 
+     </div>
     </>
 
   );

@@ -11,12 +11,13 @@ const joiPassword = Joi.extend(joiPasswordExtendCore);
 
 
 export default function Register() {
-  let [user,setUser]=useState({
-    userName : "",
-    email : "",
-    password : "",
-    passwordConfirmation : "",
-    number : ""
+  let [user, setUser] = useState({
+    userName: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+    number: "",
+    // gender: ""
   });
   let [errorMsg, setErrorMsg] = useState("");
   let [errorList, setErrorList] = useState([]);
@@ -28,28 +29,28 @@ export default function Register() {
     let path = "/Login";
     navigate(path);
   }
-  async function submitFormData(e){
-   e.preventDefault();
-   setLoading(true);
-   let validationResult=validateForm();
-   console.log(validationResult);
-   if(validationResult.error){
-    setErrorList(validationResult.error.details)
-    setLoading(false);
-   }
-   else{
-     let {data} = await axios.post(
-     "https://spacezone-backend.cyclic.app/api/user/signupUser" ,user);
-     if(data.status == "success"){
-      goToLogin();
-      alert("You have been registered, Welcome!");
-     }
-     else{
-     setErrorMsg(data.status);
-   }
-   setLoading(false);
+  async function submitFormData(e) {
+    e.preventDefault();
+    setLoading(true);
+    let validationResult = validateForm();
+    console.log(validationResult);
+    if (validationResult.error) {
+      setErrorList(validationResult.error.details);
+      setLoading(false);
+    } else {
+      let { data } = await axios.post(
+        "https://spacezone-backend.cyclic.app/api/user/signupUser",
+        user
+      );
+      if (data.status == "success") {
+        goToLogin();
+        alert("You have been registered, Welcome!");
+      } else {
+        setErrorMsg(data.status);
+      }
+      setLoading(false);
+    }
   }
-}
 function validateForm(){ 
 const schema=Joi.object({
   userName:Joi.string().required().min(3).max(25),

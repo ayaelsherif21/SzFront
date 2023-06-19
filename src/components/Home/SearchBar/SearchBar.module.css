@@ -16,7 +16,7 @@
   border: none;
   height: 100%;
   font-size: 14px;
-  width: 100%;
+  width: 150%;
   margin-left: 5px;
 }
 
@@ -26,4 +26,8 @@
 
 .searchIcon {
   color: royalblue;
+}
+.homebtn{
+  background-color: #4b86b4!important;
+  border-radius: 50px!important;
 }

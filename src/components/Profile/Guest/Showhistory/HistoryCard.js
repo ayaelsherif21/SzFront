@@ -2,30 +2,50 @@
 
 import React from "react";
 import {Container, Row, Col, Image} from "react-bootstrap";
+import styles from "./HistoryCard.module.css"
 
 const HistoryCard = ({bookings}) => {
     return (
         <Container>
             <Row>
                 {bookings.map((booking, index) => (
-                    <Col md={4} key={index} className="mt-5 card text-left shadow">
+                    <Col md={3} key={index} className={`${styles.Hcard} my-3 mx-3 shadow`}>
                         <div className="overflow">
+                            <div className={`${styles.HcardImgg}`}>
                             <Image
-                                style={{height: 100, width: 100}}
+                                
                                 src={booking.image}
                                 alt={booking.title}
                                 fluid
-                                className={"card-img-top"}
+                                className={`w-100 ${styles.imgH}`}
                             />
+                            
+                            </div>
                             <div className="card-body text-dark">
-                                <p className="card-room"><strong>{booking.title}</strong></p>
+                                {/* <p className="card-room"><strong>{booking.title}</strong></p> */}
+                                <div class={`${styles.verticalLine}`}>
+                            </div>
+                                <div className={`${styles.tapp}`}>
+                                
+                                    <span className={`${styles.cardTitle}`}>{booking.title}
+                                    </span>
+                                    
+                                    <span className={`float-end ${styles.priceWs}`}>
+                                    {booking.price}{" "}
+                                    <span
+                                        className={`float-end`}
+                                        style={{ fontSize: "9px", color: "gray" }}
+                                    >
+                                        EGP/HOUR
+                                    </span>
+                                    </span>
+                                    <hr></hr>
+                                </div>
                                 <div className="card-footer">
                                     <div className="card-text text-secondary">
                                         {booking.duration}
                                     </div>
-                                    <div className="price"> {booking.price} EGP </div>
                                     <p>{booking.date}</p>
-                                    <p>{booking.description}</p>
                                 </div>
                             </div>
                         </div>

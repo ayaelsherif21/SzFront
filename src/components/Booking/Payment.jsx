@@ -1,11 +1,24 @@
 import React from 'react'
 import styles from "../Booking/Payment.module.css"
+import PaymentPic from "../../images/8.jpg"
+
 export default function Payment() {
   return (
     <>
-   
+   <div
+    className="w-100 h-100vh"
+    style={{
+      // backgroundImage: "url(" + PaymentPic + ")",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+      height: "100vh",
+    }}
+  >
+<div className={`${styles.filterLogin}`}>
  <div className="container m-auto">
-    <div className={`${styles.model}`}>
+    <div className={`mt-5 ${styles.model}`}>
 <form className={`${styles.form}`}>
   <div className={`${styles.paymentOptions}`}>
     <button className={`${styles.btnPay}`} name="paypal" type="button">
@@ -82,6 +95,9 @@ export default function Payment() {
   </div>
   <button className={`${styles.purchaseBtn}`}>Book</button>
 </form>
+</div>
+
+</div>
 </div>
 
 </div>
